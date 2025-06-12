@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cita Previa SEPE 2025 - Reservar Cita Online INEM | InfoSEPE</title>
-    <meta name="description" content="Solicita tu cita previa SEPE 2025 online. Guía completa para reservar cita INEM, anular citas y gestionar todos tus trámites. ✅ Rápido y fácil.">
-    <meta name="keywords" content="cita previa sepe, cita inem, reservar cita sepe, cita previa online, anular cita sepe, telefono sepe cita previa">
+    <title>Cita Previa INEM SEPE 2025 - Reservar Online 24/7 | InfoSEPE</title>
+    <meta name="description" content="Reserva tu cita previa INEM SEPE 2025 online. Guía completa, proceso paso a paso y acceso directo al sistema oficial. ✅ Disponible 24/7">
+    <meta name="keywords" content="cita previa inem, cita previa sepe, reservar cita sepe online, cita inem 2025, telefono cita previa sepe">
     
     <!-- AdSense Head Tag -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
@@ -16,71 +16,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* Estilos específicos para cita previa */
-        .cita-hero {
+        .inem-hero {
             background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
         
-        .cita-hero::before {
+        .inem-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.1" points="0,1000 1000,0 1000,1000"/></svg>') no-repeat center center/cover;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.15" points="0,1000 1000,0 1000,1000"/></svg>') no-repeat center center/cover;
         }
         
-        .service-card {
+        .quick-access {
             background: white;
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-xl);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary-color);
+            border-radius: var(--border-radius-xl);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-xl);
+            margin-top: -50px;
             position: relative;
-            overflow: hidden;
+            z-index: 10;
+            border-top: 6px solid var(--primary-color);
         }
         
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .service-card.popular::before {
-            content: '⭐ MÁS POPULAR';
-            position: absolute;
-            top: 0;
-            right: 0;
+        .access-btn {
             background: var(--gradient-primary);
             color: white;
-            padding: var(--spacing-xs) var(--spacing-md);
-            font-size: var(--font-size-xs);
-            font-weight: 600;
-            border-radius: 0 var(--border-radius-lg) 0 var(--border-radius);
-        }
-        
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .quick-action-btn {
-            background: var(--gradient-primary);
-            color: white;
-            padding: var(--spacing-md) var(--spacing-xl);
+            padding: var(--spacing-lg) var(--spacing-2xl);
             border: none;
             border-radius: var(--border-radius-full);
             font-weight: 600;
@@ -88,43 +56,63 @@
             cursor: pointer;
             transition: var(--transition);
             width: 100%;
-            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: var(--spacing-sm);
+            text-decoration: none;
         }
         
-        .quick-action-btn:hover {
-            transform: translateY(-2px);
+        .access-btn:hover {
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
         
-        .steps-container {
+        .access-btn.primary {
+            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+            font-size: var(--font-size-xl);
+            padding: var(--spacing-xl) var(--spacing-2xl);
+        }
+        
+        .process-timeline {
             background: var(--background-light);
             padding: var(--spacing-3xl) 0;
         }
         
-        .step {
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
             display: flex;
             align-items: center;
-            margin-bottom: var(--spacing-xl);
-            padding: var(--spacing-lg);
-            background: white;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+            margin-bottom: var(--spacing-3xl);
+            position: relative;
         }
         
-        .step:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateX(5px);
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
         }
         
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
+        .timeline-step {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -132,29 +120,100 @@
             justify-content: center;
             font-size: var(--font-size-2xl);
             font-weight: bold;
-            margin-right: var(--spacing-lg);
-            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid white;
         }
         
-        .step-content h3 {
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-sm);
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: var(--spacing-2xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            margin: 0 var(--spacing-xl);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .requirement-card {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--success-color);
+            transition: var(--transition);
+        }
+        
+        .requirement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .requirement-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--success-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-lg);
         }
         
-        .step-content p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        .cta-section {
+        .contact-options {
             background: var(--gradient-primary);
             color: white;
             padding: var(--spacing-3xl) 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto var(--spacing-lg);
+        }
+        
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .faq-item {
@@ -163,22 +222,23 @@
             margin-bottom: var(--spacing-md);
             box-shadow: var(--shadow-sm);
             overflow: hidden;
+            border: 1px solid var(--border-color);
         }
         
         .faq-question {
             padding: var(--spacing-lg);
-            background: var(--primary-color);
-            color: white;
+            background: var(--background-light);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
+            color: var(--text-primary);
             transition: var(--transition);
         }
         
         .faq-question:hover {
-            background: var(--secondary-color);
+            background: #e0e7ff;
         }
         
         .faq-answer {
@@ -186,39 +246,36 @@
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease;
-            background: var(--background-light);
+            border-top: 1px solid var(--border-color);
         }
         
         .faq-answer.active {
             padding: var(--spacing-lg);
-            max-height: 300px;
+            max-height: 400px;
         }
         
-        .contact-info {
-            background: white;
-            padding: var(--spacing-xl);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-            border-left: 4px solid var(--success-color);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--success-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--font-size-lg);
+        @media (max-width: 768px) {
+            .timeline-container::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 80px;
+            }
+            
+            .timeline-step {
+                position: absolute;
+                left: 0;
+                width: 60px;
+                height: 60px;
+                font-size: var(--font-size-lg);
+            }
+            
+            .timeline-content {
+                margin: 0;
+                margin-left: var(--spacing-lg);
+            }
         }
     </style>
 </head>
@@ -238,12 +295,6 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </nav>
         </div>
     </header>
@@ -257,7 +308,10 @@
                         <a href="../" class="breadcrumb-link">Inicio</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <span class="breadcrumb-current">Cita Previa</span>
+                        <a href="../cita-previa/" class="breadcrumb-link">Cita Previa</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="breadcrumb-current">INEM SEPE</span>
                     </li>
                 </ol>
             </nav>
@@ -265,32 +319,62 @@
     </section>
 
     <!-- Hero Section -->
-    <section class="cita-hero">
+    <section class="inem-hero">
         <div class="container">
-            <div class="d-flex align-items-center">
-                <div class="flex-1">
-                    <h1 class="text-4xl font-weight-bold mb-3">Cita Previa SEPE 2025</h1>
-                    <p class="text-xl mb-4">Reserva tu cita online de forma rápida y sencilla. Disponible 24/7 para todos tus trámites SEPE e INEM.</p>
-                    
-                    <div class="d-flex gap-3 mb-4 flex-wrap">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="fas fa-check-circle text-success"></i>
-                            <span>Disponible 24/7</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="fas fa-clock text-success"></i>
-                            <span>Confirmación inmediata</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="fas fa-mobile-alt text-success"></i>
-                            <span>Desde cualquier dispositivo</span>
-                        </div>
+            <div class="text-center">
+                <h1 class="text-5xl font-weight-bold mb-3">Cita Previa INEM SEPE 2025</h1>
+                <p class="text-xl mb-4">Reserva tu cita online de forma rápida y sencilla. Sistema oficial disponible 24/7</p>
+                
+                <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-clock" style="color: #10b981;"></i>
+                        <span>Disponible 24/7</span>
                     </div>
-                    
-                    <a href="#servicios" class="btn btn-lg" style="background: white; color: var(--primary-color);">
-                        <i class="fas fa-calendar-plus"></i> Reservar Cita Ahora
-                    </a>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                        <span>Confirmación inmediata</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-shield-alt" style="color: #10b981;"></i>
+                        <span>100% oficial</span>
+                    </div>
                 </div>
+                
+                <p class="text-lg">
+                    <strong>⚠️ IMPORTANTE:</strong> Solo se atiende con cita previa en todas las oficinas SEPE
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acceso Rápido -->
+    <section class="container">
+        <div class="quick-access">
+            <h3 class="text-center mb-4"><i class="fas fa-calendar-plus"></i> Acceso Directo al Sistema Oficial</h3>
+            <p class="text-center text-secondary mb-4">Haz clic en el botón correspondiente según tu situación</p>
+            
+            <div class="d-grid gap-3">
+                <a href="#" class="access-btn primary" onclick="reservarCitaSepe()">
+                    <i class="fas fa-calendar-check"></i> Reservar Nueva Cita SEPE
+                </a>
+                
+                <a href="#" class="access-btn" onclick="consultarCita()">
+                    <i class="fas fa-search"></i> Consultar Cita Existente
+                </a>
+                
+                <a href="#" class="access-btn" onclick="modificarCita()">
+                    <i class="fas fa-edit"></i> Modificar Cita
+                </a>
+                
+                <a href="#" class="access-btn" onclick="anularCita()">
+                    <i class="fas fa-times-circle"></i> Anular Cita
+                </a>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="text-sm text-secondary">
+                    <i class="fas fa-info-circle"></i> Todos los enlaces redirigen al sistema oficial de SEPE
+                </p>
             </div>
         </div>
     </section>
@@ -298,109 +382,259 @@
     <!-- AdSense Banner -->
     <div class="container">
         <div class="ad-container">
-            📢 Espacio publicitario - Banner 728x90
-            <!-- Aquí irá el código de AdSense -->
+            📢 Espacio publicitario - Banner 728x90<br>
+            <small>Anuncios relacionados con servicios públicos, trámites online o consultoría laboral</small>
         </div>
     </div>
 
-    <!-- Servicios de Cita Previa -->
-    <section class="content-section" id="servicios">
+    <!-- Proceso Paso a Paso -->
+    <section class="process-timeline">
         <div class="container">
             <div class="section-header">
-                <h2>Servicios de Cita Previa</h2>
-                <p>Selecciona el tipo de cita que necesitas gestionar</p>
+                <h2>🔄 Cómo Reservar tu Cita SEPE - Paso a Paso</h2>
+                <p>Proceso completo para solicitar cita previa en el SEPE (INEM)</p>
             </div>
             
-            <div class="d-grid grid-cols-auto gap-4">
-                <!-- SEPE/INEM -->
-                <div class="service-card popular">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 class="text-2xl font-weight-bold mb-3 text-primary">Cita Previa SEPE (INEM)</h3>
-                    <p class="text-secondary mb-4">Para gestionar prestaciones por desempleo, subsidios, inscripción como demandante de empleo y otros trámites relacionados con el SEPE.</p>
-                    
-                    <div class="mb-4">
-                        <h4 class="font-weight-semibold mb-2">Trámites disponibles:</h4>
-                        <ul class="text-sm text-secondary">
-                            <li class="mb-1">• Solicitar pensión de jubilación</li>
-                            <li class="mb-1">• Tramitar incapacidad temporal</li>
-                            <li class="mb-1">• Renovar tarjeta sanitaria</li>
-                            <li class="mb-1">• Consultas sobre cotizaciones</li>
-                            <li class="mb-1">• Certificados y informes</li>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-step">1</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">🌐 Accede al Sistema Oficial</h3>
+                        <p class="text-secondary mb-3">Entra en la sede electrónica del SEPE o llama por teléfono:</p>
+                        <ul class="text-sm">
+                            <li class="mb-2">• <strong>Web:</strong> sede.sepe.gob.es (recomendado)</li>
+                            <li class="mb-2">• <strong>Teléfono:</strong> 919 26 79 70 (lunes a viernes 8-18h)</li>
+                            <li class="mb-2">• <strong>Presencial:</strong> Solo con cita previa</li>
                         </ul>
+                        <div class="mt-3" style="background: #dbeafe; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #1d4ed8;">💡 Recomendación:</strong> Usa la web oficial, es más rápido y está disponible 24 horas.
+                        </div>
                     </div>
-                    
-                    <button class="quick-action-btn" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);" onclick="reservarCita('seguridad-social')">
-                        <i class="fas fa-calendar-check"></i> Reservar Cita Seg. Social
-                    </button>
                 </div>
-
-                <!-- Extranjería -->
-                <div class="service-card">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                        <i class="fas fa-passport"></i>
-                    </div>
-                    <h3 class="text-2xl font-weight-bold mb-3" style="color: #f59e0b;">Cita Previa Extranjería</h3>
-                    <p class="text-secondary mb-4">Para renovación de NIE, permisos de residencia, nacionalidad y otros trámites de extranjería.</p>
-                    
-                    <div class="mb-4">
-                        <h4 class="font-weight-semibold mb-2">Servicios incluidos:</h4>
-                        <ul class="text-sm text-secondary">
-                            <li class="mb-1">• Renovación de NIE</li>
-                            <li class="mb-1">• Permiso de residencia</li>
-                            <li class="mb-1">• Autorización de trabajo</li>
-                            <li class="mb-1">• Reagrupación familiar</li>
-                            <li class="mb-1">• Solicitud de nacionalidad</li>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">2</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">🔐 Identifícate en el Sistema</h3>
+                        <p class="text-secondary mb-3">Para acceder online necesitas uno de estos métodos:</p>
+                        <ul class="text-sm">
+                            <li class="mb-2">• <strong>Certificado digital</strong> (más usado)</li>
+                            <li class="mb-2">• <strong>DNI electrónico</strong> con lector</li>
+                            <li class="mb-2">• <strong>Cl@ve PIN</strong> (gratis en cl@ve.gob.es)</li>
+                            <li class="mb-2">• <strong>Usuario y contraseña</strong> del SEPE</li>
                         </ul>
+                        <div class="mt-3" style="background: #fef3c7; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #d97706;">⚠️ ¿No tienes certificado?</strong> Solicita cl@ve PIN, lo tienes en minutos y es gratuito.
+                        </div>
                     </div>
-                    
-                    <button class="quick-action-btn" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);" onclick="reservarCita('extranjeria')">
-                        <i class="fas fa-calendar-check"></i> Reservar Cita Extranjería
-                    </button>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">3</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">📋 Selecciona el Servicio</h3>
+                        <p class="text-secondary mb-3">Elige el tipo de trámite que necesitas realizar:</p>
+                        <ul class="text-sm">
+                            <li class="mb-2">• <strong>Prestaciones:</strong> Solicitar paro, subsidios</li>
+                            <li class="mb-2">• <strong>Demanda de empleo:</strong> Inscribirse, renovar</li>
+                            <li class="mb-2">• <strong>Consultas:</strong> Información sobre expedientes</li>
+                            <li class="mb-2">• <strong>Formación:</strong> Cursos y certificados</li>
+                            <li class="mb-2">• <strong>Otros trámites:</strong> Modificación de datos</li>
+                        </ul>
+                        <div class="mt-3" style="background: #ecfdf5; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #059669;">📝 Importante:</strong> Ten claro qué trámite necesitas para agilizar el proceso.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">4</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">📍 Elige Oficina y Fecha</h3>
+                        <p class="text-secondary mb-3">Selecciona la oficina más conveniente y una fecha disponible:</p>
+                        <ul class="text-sm">
+                            <li class="mb-2">• <strong>Oficina:</strong> Busca por código postal o provincia</li>
+                            <li class="mb-2">• <strong>Fecha:</strong> Hasta 45 días de anticipación</li>
+                            <li class="mb-2">• <strong>Hora:</strong> Según disponibilidad de la oficina</li>
+                            <li class="mb-2">• <strong>Observaciones:</strong> Añade información si es necesario</li>
+                        </ul>
+                        <div class="mt-3" style="background: #f0f9ff; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #0369a1;">🎯 Consejo:</strong> Las primeras horas tienen menos espera.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">5</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">✅ Confirmación y Preparación</h3>
+                        <p class="text-secondary mb-3">Guarda la confirmación y prepara la documentación:</p>
+                        <ul class="text-sm">
+                            <li class="mb-2">• <strong>Número de cita:</strong> Anótalo o guárdalo</li>
+                            <li class="mb-2">• <strong>Documentación:</strong> DNI/NIE y documentos específicos</li>
+                            <li class="mb-2">• <strong>Llegada:</strong> 10 minutos antes de la hora</li>
+                            <li class="mb-2">• <strong>Recordatorio:</strong> Puedes recibir SMS de recordatorio</li>
+                        </ul>
+                        <div class="mt-3" style="background: #dcfce7; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #16a34a;">🎉 ¡Listo!</strong> Ya tienes tu cita confirmada. Recibirás un email con todos los detalles.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cómo Reservar Cita -->
-    <section class="steps-container">
+    <!-- Requisitos y Documentación -->
+    <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>¿Cómo Reservar tu Cita Previa?</h2>
-                <p>Sigue estos sencillos pasos para reservar tu cita online</p>
+                <h2>📄 Documentación Necesaria</h2>
+                <p>Qué documentos debes llevar según el tipo de trámite</p>
             </div>
             
-            <div class="steps-list">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Selecciona el Servicio</h3>
-                        <p>Elige el tipo de cita que necesitas: SEPE, Seguridad Social o Extranjería. Cada servicio tiene sus propias opciones y requisitos específicos.</p>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Documentación Básica</h3>
+                    <p class="text-secondary mb-3">Documentos que SIEMPRE debes llevar:</p>
+                    <ul class="text-sm">
+                        <li class="mb-2">✅ DNI o NIE original y en vigor</li>
+                        <li class="mb-2">✅ Número de la Seguridad Social</li>
+                        <li class="mb-2">✅ Número de cuenta bancaria (IBAN)</li>
+                        <li class="mb-2">✅ Confirmación de la cita previa</li>
+                    </ul>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Para Prestaciones</h3>
+                    <p class="text-secondary mb-3">Si vas a solicitar prestación por desempleo:</p>
+                    <ul class="text-sm">
+                        <li class="mb-2">📋 Certificado de empresa</li>
+                        <li class="mb-2">📋 Vida laboral actualizada</li>
+                        <li class="mb-2">📋 Últimas 6 nóminas</li>
+                        <li class="mb-2">📋 Informe médico (si procede)</li>
+                    </ul>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Inscripción Demanda</h3>
+                    <p class="text-secondary mb-3">Para inscribirte como demandante de empleo:</p>
+                    <ul class="text-sm">
+                        <li class="mb-2">🎓 Títulos académicos</li>
+                        <li class="mb-2">🎓 Certificados de cursos</li>
+                        <li class="mb-2">🎓 Carné de conducir (si tienes)</li>
+                        <li class="mb-2">🎓 CV actualizado</li>
+                    </ul>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Formación y Cursos</h3>
+                    <p class="text-secondary mb-3">Para trámites relacionados con formación:</p>
+                    <ul class="text-sm">
+                        <li class="mb-2">📚 Solicitud del curso</li>
+                        <li class="mb-2">📚 Justificación de la formación</li>
+                        <li class="mb-2">📚 Documentación académica</li>
+                        <li class="mb-2">📚 Compromiso de actividad</li>
+                    </ul>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Ciudadanos Extranjeros</h3>
+                    <p class="text-secondary mb-3">Documentación adicional para extranjeros:</p>
+                    <ul class="text-sm">
+                        <li class="mb-2">🌍 NIE en vigor</li>
+                        <li class="mb-2">🌍 Autorización de residencia</li>
+                        <li class="mb-2">🌍 Autorización de trabajo</li>
+                        <li class="mb-2">🌍 Empadronamiento actualizado</li>
+                    </ul>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">¿Dudas sobre Documentos?</h3>
+                    <p class="text-secondary mb-3">Si no estás seguro de qué llevar:</p>
+                    <ul class="text-sm">
+                        <li class="mb-2">📞 Llama al 919 26 79 70</li>
+                        <li class="mb-2">📞 Consulta la web oficial</li>
+                        <li class="mb-2">📞 Mejor llevar documentos de sobra</li>
+                        <li class="mb-2">📞 Pregunta en la misma cita</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opciones de Contacto -->
+    <section class="contact-options">
+        <div class="container">
+            <h2 class="text-4xl font-weight-bold mb-3">📞 Múltiples Formas de Solicitar Cita</h2>
+            <p class="text-xl mb-4">Elige la opción que más te convenga</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Online (Recomendado)</h3>
+                    <p class="mb-3">La forma más rápida y cómoda</p>
+                    <ul class="text-sm text-left">
+                        <li>✅ Disponible 24/7</li>
+                        <li>✅ Confirmación inmediata</li>
+                        <li>✅ Sin esperas telefónicas</li>
+                        <li>✅ Puedes modificar/anular</li>
+                    </ul>
+                    <div class="mt-4">
+                        <strong>Llamada gratuita</strong>
                     </div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Introduce tus Datos</h3>
-                        <p>Proporciona tu DNI/NIE, datos de contacto y selecciona la oficina más cercana a tu domicilio. Todos los datos están protegidos y encriptados.</p>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">App Móvil SEPE</h3>
+                    <p class="mb-3">Desde tu smartphone</p>
+                    <ul class="text-sm text-left">
+                        <li>📱 Descarga gratuita</li>
+                        <li>📱 Funciones completas</li>
+                        <li>📱 Notificaciones push</li>
+                        <li>📱 Acceso rápido</li>
+                    </ul>
+                    <div class="mt-4">
+                        <strong>App Store / Google Play</strong>
                     </div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Elige Fecha y Hora</h3>
-                        <p>Selecciona la fecha y hora que mejor se adapte a tu agenda. Podrás ver todas las citas disponibles en tiempo real.</p>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-building"></i>
                     </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Confirmación Inmediata</h3>
-                        <p>Recibirás la confirmación al instante por email y SMS con todos los detalles de tu cita y la documentación que debes llevar.</p>
+                    <h3 class="text-xl font-weight-bold mb-3">Oficinas SEPE</h3>
+                    <p class="mb-3">Solo para casos urgentes</p>
+                    <ul class="text-sm text-left">
+                        <li>🏢 Solo con cita previa</li>
+                        <li>🏢 Información general</li>
+                        <li>🏢 Casos excepcionales</li>
+                        <li>🏢 No se dan citas presenciales</li>
+                    </ul>
+                    <div class="mt-4">
+                        <strong>Consulta ubicaciones</strong>
                     </div>
                 </div>
             </div>
@@ -410,137 +644,60 @@
     <!-- AdSense Medium Rectangle -->
     <div class="container">
         <div class="ad-container">
-            📢 Espacio publicitario - Medium Rectangle 300x250
-            <!-- Aquí irá el código de AdSense -->
+            📢 Espacio publicitario - Medium Rectangle 300x250<br>
+            <small>Anuncios relacionados con servicios administrativos, gestoría online o consultorías laborales</small>
         </div>
     </div>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="text-4xl font-weight-bold mb-3">¿Necesitas Ayuda con tu Cita?</h2>
-            <p class="text-xl mb-4">Nuestro equipo de expertos está disponible para ayudarte</p>
-            
-            <div class="d-grid grid-cols-auto gap-4 mt-5" style="max-width: 800px; margin: 0 auto;">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-weight-bold text-primary">Teléfono SEPE</h4>
-                            <p class="text-xl font-weight-bold text-success">919 26 79 70</p>
-                            <p class="text-sm text-secondary">Lunes a Viernes: 8:00 - 20:00h</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-weight-bold text-primary">Sede Electrónica</h4>
-                            <p class="text-lg font-weight-bold text-success">sede.sepe.gob.es</p>
-                            <p class="text-sm text-secondary">Disponible 24/7</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Anular Cita -->
+    <!-- FAQ Section -->
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>¿Necesitas Anular o Modificar tu Cita?</h2>
-                <p>Gestiona tus citas de forma rápida y sencilla</p>
+                <h2>❓ Preguntas Frecuentes sobre Cita Previa SEPE</h2>
+                <p>Resolvemos las dudas más comunes sobre las citas en el SEPE</p>
             </div>
             
-            <div class="d-grid grid-cols-auto gap-4">
-                <div class="service-card">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
-                        <i class="fas fa-calendar-times"></i>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Con cuánta antelación puedo pedir cita previa en el SEPE?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3 class="text-2xl font-weight-bold mb-3" style="color: #ef4444;">Anular Cita</h3>
-                    <p class="text-secondary mb-4">Cancela tu cita previa de forma inmediata. Podrás anular hasta 2 horas antes de la cita programada.</p>
-                    
-                    <div class="mb-4">
-                        <h4 class="font-weight-semibold mb-2">Información necesaria:</h4>
-                        <ul class="text-sm text-secondary">
-                            <li class="mb-1">• Número de localizador de la cita</li>
-                            <li class="mb-1">• DNI o NIE</li>
-                            <li class="mb-1">• Fecha de la cita original</li>
+                    <div class="faq-answer">
+                        <p>Puedes solicitar cita previa con hasta <strong>45 días de antelación</strong>. Te recomendamos reservar con tiempo suficiente, especialmente en épocas de alta demanda como enero, septiembre o después de periodos vacacionales.</p>
+                        <p><strong>Consejo:</strong> Si necesitas una cita urgente, revisa el sistema varias veces al día, ya que pueden liberarse citas por anulaciones.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué documentación debo llevar obligatoriamente?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>SIEMPRE obligatorio:</strong></p>
+                        <ul>
+                            <li>• DNI o NIE original y en vigor</li>
+                            <li>• Confirmación de la cita previa (impresa o en móvil)</li>
+                            <li>• Número de la Seguridad Social</li>
                         </ul>
+                        <p><strong>Dependiendo del trámite:</strong> Certificado de empresa, vida laboral, nóminas, títulos académicos, etc. En la confirmación de tu cita se especificará qué documentos adicionales necesitas.</p>
                     </div>
-                    
-                    <button class="quick-action-btn" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);" onclick="anularCita()">
-                        <i class="fas fa-times-circle"></i> Anular Cita
-                    </button>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
-                        <i class="fas fa-edit"></i>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Puedo ir sin cita previa al SEPE?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3 class="text-2xl font-weight-bold mb-3" style="color: #8b5cf6;">Modificar Cita</h3>
-                    <p class="text-secondary mb-4">Cambia la fecha u hora de tu cita existente sin necesidad de cancelar y volver a reservar.</p>
-                    
-                    <div class="mb-4">
-                        <h4 class="font-weight-semibold mb-2">Qué puedes modificar:</h4>
-                        <ul class="text-sm text-secondary">
-                            <li class="mb-1">• Fecha de la cita</li>
-                            <li class="mb-1">• Hora de la cita</li>
-                            <li class="mb-1">• Oficina (si hay disponibilidad)</li>
+                    <div class="faq-answer">
+                        <p><strong>NO</strong>, desde 2020 es <strong>obligatorio tener cita previa</strong> para ser atendido en cualquier oficina del SEPE. Sin cita previa no te atenderán.</p>
+                        <p><strong>Únicas excepciones:</strong></p>
+                        <ul>
+                            <li>• Entrega de documentación específica (sin atención personalizada)</li>
+                            <li>• Información general básica</li>
+                            <li>• Situaciones de extrema urgencia (muy excepcional)</li>
                         </ul>
-                    </div>
-                    
-                    <button class="quick-action-btn" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);" onclick="modificarCita()">
-                        <i class="fas fa-calendar-edit"></i> Modificar Cita
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="content-section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Preguntas Frecuentes sobre Cita Previa</h2>
-                <p>Resolvemos las dudas más comunes sobre las citas SEPE</p>
-            </div>
-            
-            <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Con cuánta antelación puedo pedir cita previa?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Puedes solicitar cita previa con hasta 45 días de antelación. Te recomendamos reservar con tiempo suficiente, especialmente en épocas de alta demanda como inicio y final de año.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Qué documentación debo llevar a la cita?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Siempre debes llevar tu DNI o NIE original y en vigor. Dependiendo del trámite, podrás necesitar documentación adicional como contratos de trabajo, nóminas, certificados médicos, etc. En la confirmación de tu cita se especificará qué documentos necesitas.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Puedo ir sin cita previa?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>En general, es necesario tener cita previa para ser atendido. Solo en casos muy excepcionales y urgentes se puede atender sin cita, pero esto está sujeto a disponibilidad y puede suponer largas esperas.</p>
                     </div>
                 </div>
                 
@@ -550,17 +707,79 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Se recomienda llegar 10 minutos antes de la cita. Si llegas con más de 15 minutos de retraso, es posible que tengas que esperar o incluso reprogramar la cita para otro día.</p>
+                        <p><strong>Recomendación:</strong> Llega 10 minutos antes de tu cita.</p>
+                        <p><strong>Si llegas tarde:</strong></p>
+                        <ul>
+                            <li>• <strong>Menos de 15 minutos:</strong> Normalmente te atienden, pero puede haber espera</li>
+                            <li>• <strong>Más de 15 minutos:</strong> Es posible que tengas que reprogramar la cita</li>
+                            <li>• <strong>Más de 30 minutos:</strong> Cita perdida, tendrás que solicitar una nueva</li>
+                        </ul>
+                        <p><strong>Importante:</strong> En casos de fuerza mayor (transporte público, emergencia), explica la situación al personal.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Puedo pedir cita para otra persona?</span>
+                        <span>¿Puedo solicitar cita para otra persona?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sí, puedes solicitar cita para un familiar directo o mediante representación legal. Necesitarás autorización por escrito y documentación que acredite la relación familiar o la representación legal.</p>
+                        <p><strong>SÍ</strong>, pero con limitaciones:</p>
+                        <p><strong>Puedes solicitar para:</strong></p>
+                        <ul>
+                            <li>• Familiares directos (cónyuge, hijos, padres)</li>
+                            <li>• Personas con representación legal</li>
+                            <li>• Personas con discapacidad (con autorización)</li>
+                        </ul>
+                        <p><strong>Necesitarás:</strong> Autorización por escrito, documento que acredite la relación familiar o representación, y DNI de ambas personas.</p>
+                        <p><strong>Nota:</strong> La persona interesada debe acudir personalmente a la cita.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo puedo anular o modificar mi cita?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Formas de anular/modificar:</strong></p>
+                        <ul>
+                            <li>• <strong>Online:</strong> sede.sepe.gob.es (mismo proceso que reservar)</li>
+                            <li>• <strong>Teléfono:</strong> 919 26 79 70</li>
+                            <li>• <strong>App móvil SEPE</strong></li>
+                        </ul>
+                        <p><strong>Información necesaria:</strong> Número de localizador de la cita, DNI/NIE y fecha de la cita original.</p>
+                        <p><strong>Plazo:</strong> Puedes anular hasta 2 horas antes de la cita. Para modificar, necesitas disponibilidad en nuevas fechas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿El sistema de citas funciona los fines de semana?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Sistema online:</strong> Disponible 24/7, incluyendo fines de semana y festivos.</p>
+                        <p><strong>Atención telefónica:</strong> Solo de lunes a viernes, de 8:00 a 18:00 horas.</p>
+                        <p><strong>Oficinas SEPE:</strong> Cerradas los fines de semana y festivos.</p>
+                        <p><strong>Recomendación:</strong> Usa el sistema online para máxima flexibilidad horaria.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué hago si no puedo acceder al sistema online?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Problemas comunes y soluciones:</strong></p>
+                        <ul>
+                            <li>• <strong>Sin certificado digital:</strong> Solicita cl@ve PIN gratuito</li>
+                            <li>• <strong>Certificado caducado:</strong> Renueva o usa cl@ve PIN</li>
+                            <li>• <strong>Problemas técnicos:</strong> Prueba otro navegador o dispositivo</li>
+                            <li>• <strong>No encuentras tu oficina:</strong> Busca por código postal</li>
+                        </ul>
+                        <p><strong>Alternativa:</strong> Llama al 919 26 79 70 para solicitar cita por teléfono.</p>
                     </div>
                 </div>
             </div>
@@ -571,13 +790,15 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <h3>📅 Recibe Recordatorios de tus Citas</h3>
-                <p>Te enviamos recordatorios por email y SMS para que no olvides ninguna cita importante</p>
+                <h3>📧 Recordatorios de Cita SEPE</h3>
+                <p>Te enviamos recordatorios antes de tu cita para que no se te olvide</p>
                 <form class="newsletter-form" onsubmit="suscribirRecordatorios(event)">
                     <input type="email" class="newsletter-input" placeholder="Tu email para recordatorios..." required>
                     <button type="submit" class="newsletter-btn">Activar Recordatorios</button>
                 </form>
-                <p class="text-sm mt-3" style="opacity: 0.8;">✅ Gratuito ✅ Sin spam ✅ Cancelar cuando quieras</p>
+                <p class="text-sm mt-3" style="opacity: 0.8;">
+                    ✅ Recordatorio 24h antes ✅ Recordatorio 2h antes ✅ Documentos a llevar ✅ Cancelar cuando quieras
+                </p>
             </div>
         </div>
     </section>
@@ -596,21 +817,21 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Trámites Populares</h4>
+                    <h4>Trámites SEPE</h4>
                     <ul>
                         <li><a href="../tramites/sellar-paro.html">Sellar Paro</a></li>
                         <li><a href="../prestaciones/desempleo.html">Prestación Desempleo</a></li>
-                        <li><a href="../ayudas/ingreso-minimo-vital.html">Ingreso Mínimo Vital</a></li>
-                        <li><a href="../cursos/">Cursos Gratuitos</a></li>
+                        <li><a href="../tramites/apuntarse-paro.html">Apuntarse al Paro</a></li>
+                        <li><a href="../subsidios/">Subsidios SEPE</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Información</h4>
+                    <h4>Ayudas Populares</h4>
                     <ul>
-                        <li><a href="../">Inicio</a></li>
-                        <li><a href="../contacto/">Contacto</a></li>
-                        <li><a href="../politica-privacidad/">Privacidad</a></li>
-                        <li><a href="../aviso-legal/">Aviso Legal</a></li>
+                        <li><a href="../ayudas/ingreso-minimo-vital.html">Ingreso Mínimo Vital</a></li>
+                        <li><a href="../ayudas/madres-solteras.html">Ayudas Madres Solteras</a></li>
+                        <li><a href="../ayudas/alquiler.html">Ayudas Alquiler</a></li>
+                        <li><a href="../cursos/">Cursos Gratuitos</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -619,14 +840,15 @@
                         <li><a href="https://www.sepe.es" target="_blank" rel="noopener">SEPE Oficial</a></li>
                         <li><a href="https://sede.sepe.gob.es" target="_blank" rel="noopener">Sede Electrónica</a></li>
                         <li><a href="https://www.seg-social.es" target="_blank" rel="noopener">Seguridad Social</a></li>
-                        <li><a href="https://extranjeros.inclusion.gob.es" target="_blank" rel="noopener">Extranjería</a></li>
+                        <li><a href="https://clave.gob.es" target="_blank" rel="noopener">Cl@ve PIN</a></li>
+                        <li><a href="tel:919267970">Teléfono: 919 26 79 70</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 InfoSEPE. Portal informativo no oficial.</p>
-                <p>Para citas oficiales, utiliza siempre los canales oficiales del SEPE y organismos públicos.</p>
+                <p>&copy; 2025 InfoSEPE. Portal informativo no oficial sobre cita previa SEPE.</p>
+                <p>Para citas oficiales, utiliza siempre los canales oficiales del SEPE en sede.sepe.gob.es</p>
             </div>
         </div>
     </footer>
@@ -638,18 +860,49 @@
 
     <!-- Scripts -->
     <script>
-        // Mostrar/ocultar botón back to top
-        window.addEventListener('scroll', function() {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
+        // Funciones para reservar cita
+        function reservarCitaSepe() {
+            trackEvent('cita-reservar-sepe');
+            
+            const mensaje = `🌐 REDIRECCIÓN AL SISTEMA OFICIAL SEPE
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+📍 DESTINO: sede.sepe.gob.es
+🔐 NECESITAS: Certificado digital o cl@ve PIN
+
+📋 PASOS RÁPIDOS:
+1. Acceder a la sede electrónica
+2. Identificarte con certificado/cl@ve
+3. Seleccionar "Cita Previa"
+4. Elegir oficina y fecha
+5. Confirmar la cita
+
+⏰ DURACIÓN ESTIMADA: 5-10 minutos
+
+🆘 ¿PROBLEMAS DE ACCESO?
+• Sin certificado → Solicita cl@ve PIN en cl@ve.gob.es
+• Problemas técnicos → Llama al 919 26 79 70
+
+¿Continuar al sitio oficial?`;
+
+            if (confirm(mensaje)) {
+                // En la versión real, aquí redirigiría a la web oficial
+                window.open('https://sede.sepe.gob.es', '_blank');
+            }
+        }
+
+        function consultarCita() {
+            trackEvent('cita-consultar');
+            alert('🔍 CONSULTAR CITA EXISTENTE\n\nPara consultar tu cita necesitas:\n• Número de localizador\n• DNI/NIE\n• Fecha de la cita\n\nAcceso: sede.sepe.gob.es > Cita Previa > Consultar');
+        }
+
+        function modificarCita() {
+            trackEvent('cita-modificar');
+            alert('✏️ MODIFICAR CITA\n\nPuedes cambiar:\n• Fecha de la cita\n• Hora de la cita\n• Oficina (según disponibilidad)\n\nAcceso: sede.sepe.gob.es > Cita Previa > Modificar');
+        }
+
+        function anularCita() {
+            trackEvent('cita-anular');
+            alert('❌ ANULAR CITA\n\nPlazo: Hasta 2 horas antes\nInformación necesaria:\n• Número de localizador\n• DNI/NIE\n• Fecha original\n\nAcceso: sede.sepe.gob.es > Cita Previa > Anular');
         }
 
         // Toggle FAQ
@@ -665,71 +918,91 @@
                 }
             });
             
-            // Toggle actual
+            // Toggle actual FAQ
+            const isOpening = !answer.classList.contains('active');
             answer.classList.toggle('active');
             
-            if (answer.classList.contains('active')) {
+            if (isOpening) {
                 icon.style.transform = 'rotate(180deg)';
+                trackEvent('faq-abierta', element.querySelector('span').textContent.substring(0, 50));
+                
+                // Scroll suave a la pregunta
+                setTimeout(() => {
+                    element.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }, 100);
             } else {
                 icon.style.transform = 'rotate(0deg)';
             }
         }
 
-        // Reservar cita
-        function reservarCita(tipo) {
-            trackEvent('cita-reservar', tipo);
-            
-            // Simulación del proceso de reserva
-            mostrarModalReserva(tipo);
-        }
-
-        function mostrarModalReserva(tipo) {
-            const nombres = {
-                'sepe': 'SEPE/INEM',
-                'seguridad-social': 'Seguridad Social',
-                'extranjeria': 'Extranjería'
-            };
-            
-            alert(`Redirigiendo al sistema de citas de ${nombres[tipo]}...\n\nEn la versión real, esto te llevaría al formulario de reserva correspondiente con:\n• Selección de oficina\n• Calendario de disponibilidad\n• Formulario de datos\n• Confirmación instantánea`);
-        }
-
-        // Anular cita
-        function anularCita() {
-            trackEvent('cita-anular');
-            alert('Redirigiendo al sistema de anulación de citas...\n\n¿Tienes el número de localizador de tu cita?\n\nEn la versión real, aquí accederías al formulario para cancelar tu cita.');
-        }
-
-        // Modificar cita
-        function modificarCita() {
-            trackEvent('cita-modificar');
-            alert('Redirigiendo al sistema de modificación de citas...\n\nPodrás cambiar:\n• Fecha de la cita\n• Hora de la cita\n• Oficina (según disponibilidad)');
-        }
-
-        // Suscripción a recordatorios
+        // Newsletter recordatorios
         function suscribirRecordatorios(event) {
             event.preventDefault();
             const email = event.target.querySelector('input[type="email"]').value;
             
-            if (email) {
-                alert(`¡Perfecto! ${email} ha sido registrado para recibir recordatorios.\n\nRecibirás:\n• Recordatorio 24h antes de tu cita\n• Recordatorio 2h antes de tu cita\n• Información sobre documentación necesaria`);
+            if (email && validarEmail(email)) {
+                const mensaje = `🎉 ¡Perfecto! ${email} se ha registrado para recordatorios de cita SEPE.
+
+📧 RECIBIRÁS:
+• Recordatorio 24 horas antes de tu cita
+• Recordatorio 2 horas antes de tu cita  
+• Lista de documentos a llevar
+• Instrucciones para llegar a la oficina
+
+📅 FRECUENCIA:
+• Solo cuando tengas citas programadas
+• Máximo 2 emails por cita
+• Puedes cancelar en cualquier momento
+
+🔒 PRIVACIDAD:
+• Datos protegidos según RGPD
+• Solo para recordatorios de citas
+• Nunca compartimos tu información
+
+📬 PRIMER RECORDATORIO:
+Se activará automáticamente cuando reserves tu próxima cita
+
+¡Gracias por usar InfoSEPE!`;
+
+                alert(mensaje);
                 event.target.reset();
-                trackEvent('recordatorios-suscripcion', email);
+                trackEvent('newsletter-recordatorios', email);
+            } else {
+                alert('❌ Por favor, introduce un email válido');
             }
         }
 
-        // Mobile menu
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            // En una implementación real, aquí se mostraría el menú móvil
+        function validarEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // Back to top
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         });
 
-        // Search functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            trackEvent('scroll-to-top');
+        }
+
+        // Búsqueda
         document.querySelector('.search-input').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 const query = this.value;
                 if (query.trim()) {
-                    alert(`Buscando: "${query}"\n\nEn la versión real, esto mostraría resultados relacionados con tu búsqueda.`);
-                    trackEvent('busqueda', query);
+                    trackEvent('busqueda-cita', query);
+                    // Implementar búsqueda
+                    alert(`Buscando información sobre: "${query}"\n\nEn la versión real, esto mostraría resultados relacionados con cita previa SEPE.`);
                 }
             }
         });
@@ -737,48 +1010,156 @@
         document.querySelector('.search-btn').addEventListener('click', function() {
             const query = document.querySelector('.search-input').value;
             if (query.trim()) {
-                alert(`Buscando: "${query}"\n\nEn la versión real, esto mostraría resultados relacionados con tu búsqueda.`);
-                trackEvent('busqueda', query);
+                trackEvent('busqueda-cita', query);
+                alert(`Buscando información sobre: "${query}"\n\nEn la versión real, esto mostraría resultados relacionados con cita previa SEPE.`);
             }
         });
 
         // Event tracking
         function trackEvent(action, label = '') {
-            console.log(`Track: ${action}${label ? ' - ' + label : ''}`);
+            console.log(`📊 Track Cita SEPE: ${action}${label ? ' - ' + label : ''}`);
             
-            // Aquí integrarías Google Analytics
+            // Google Analytics 4
             if (typeof gtag !== 'undefined') {
                 gtag('event', action, {
-                    'event_category': 'cita-previa',
-                    'event_label': label
+                    'event_category': 'cita-previa-sepe',
+                    'event_label': label,
+                    'page_title': 'Cita Previa INEM SEPE 2025',
+                    'page_location': window.location.href
                 });
             }
         }
 
-        // Smooth scroll para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // Tracking avanzado para AdSense
+        let maxScroll = 0;
+        let tiempoEnPagina = 0;
+        let startTime = Date.now();
+
+        // Scroll depth tracking
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                if (maxScroll >= 25 && maxScroll < 30) {
+                    trackEvent('scroll-25-percent');
+                } else if (maxScroll >= 50 && maxScroll < 55) {
+                    trackEvent('scroll-50-percent');
+                } else if (maxScroll >= 75 && maxScroll < 80) {
+                    trackEvent('scroll-75-percent');
+                } else if (maxScroll >= 90) {
+                    trackEvent('scroll-90-percent');
                 }
-            });
+            }
         });
 
-        // Auto-tracking de tiempo en página para AdSense
-        let startTime = Date.now();
+        // Tiempo en página
         setInterval(() => {
-            const timeSpent = Math.floor((Date.now() - startTime) / 1000);
-            if (timeSpent === 30) trackEvent('tiempo-30-segundos');
-            if (timeSpent === 60) trackEvent('tiempo-1-minuto');
-            if (timeSpent === 180) trackEvent('tiempo-3-minutos');
+            tiempoEnPagina = Math.floor((Date.now() - startTime) / 1000);
+            
+            if (tiempoEnPagina === 30) {
+                trackEvent('tiempo-30-segundos');
+            } else if (tiempoEnPagina === 60) {
+                trackEvent('tiempo-1-minuto');
+            } else if (tiempoEnPagina === 180) {
+                trackEvent('tiempo-3-minutos');
+            } else if (tiempoEnPagina === 300) {
+                trackEvent('tiempo-5-minutos');
+            }
         }, 1000);
 
-        console.log('Página Cita Previa cargada correctamente');
+        // Animaciones on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observar elementos para animaciones
+            document.querySelectorAll('.requirement-card, .contact-card, .faq-item').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Tracking inicial
+            trackEvent('pagina-cargada');
+            
+            console.log('🎉 Página Cita Previa INEM SEPE cargada correctamente');
+            console.log('📊 Funcionalidades activas:');
+            console.log('  ✅ Acceso directo a sistema oficial SEPE');
+            console.log('  ✅ Guía paso a paso completa');
+            console.log('  ✅ FAQ expandible con 8 preguntas');
+            console.log('  ✅ Documentación detallada por trámites');
+            console.log('  ✅ Múltiples opciones de contacto');
+            console.log('  ✅ Newsletter de recordatorios');
+            console.log('  ✅ Tracking completo para Analytics y AdSense');
+            console.log('  ✅ Diseño responsive optimizado');
+        });
+
+        // Notificaciones inteligentes
+        setTimeout(() => {
+            mostrarNotificacion('💡 Recuerda: El sistema online está disponible 24/7, incluso fines de semana', 'info');
+        }, 20000);
+
+        setTimeout(() => {
+            mostrarNotificacion('📱 Tip: También puedes usar la app móvil oficial del SEPE', 'info');
+        }, 45000);
+
+        function mostrarNotificacion(mensaje, tipo = 'info') {
+            const colores = {
+                'info': '#3b82f6',
+                'success': '#10b981',
+                'warning': '#f59e0b'
+            };
+
+            const notificacion = document.createElement('div');
+            notificacion.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${colores[tipo]};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                z-index: 10000;
+                max-width: 350px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                cursor: pointer;
+                font-size: 0.9rem;
+                line-height: 1.4;
+            `;
+            notificacion.textContent = mensaje;
+            
+            notificacion.addEventListener('click', function() {
+                this.style.transform = 'translateX(100%)';
+                setTimeout(() => this.remove(), 300);
+            });
+            
+            document.body.appendChild(notificacion);
+            
+            setTimeout(() => {
+                notificacion.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                if (notificacion.parentNode) {
+                    notificacion.style.transform = 'translateX(100%)';
+                    setTimeout(() => notificacion.remove(), 300);
+                }
+            }, 6000);
+        }
     </script>
 
     <!-- Schema.org markup para SEO -->
@@ -786,45 +1167,137 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Cita Previa SEPE 2025",
-        "description": "Reserva tu cita previa SEPE, INEM, Seguridad Social y Extranjería online. Guía completa y proceso simplificado.",
-        "url": "https://infosepe.com/cita-previa/",
+        "name": "Cita Previa INEM SEPE 2025 - Reservar Online",
+        "description": "Guía completa para reservar cita previa en el SEPE (INEM). Proceso paso a paso, documentación necesaria y acceso directo al sistema oficial.",
+        "url": "https://infosepe.com/cita-previa/inem-sepe/",
+        "inLanguage": "es-ES",
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-06-12",
+        "author": {
+            "@type": "Organization",
+            "name": "InfoSEPE",
+            "url": "https://infosepe.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "InfoSEPE",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://infosepe.com/assets/images/logo.png"
+            }
+        },
         "mainEntity": {
             "@type": "GovernmentService",
             "name": "Cita Previa SEPE",
-            "description": "Servicio de reserva de citas previas para trámites del SEPE",
+            "alternateName": "Cita Previa INEM",
+            "description": "Servicio de reserva de citas previas para trámites en el Servicio Público de Empleo Estatal",
             "provider": {
                 "@type": "GovernmentOrganization",
-                "name": "SEPE - Servicio Público de Empleo Estatal"
+                "name": "SEPE - Servicio Público de Empleo Estatal",
+                "url": "https://www.sepe.es",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+34-919267970",
+                    "contactType": "customer service",
+                    "availableLanguage": "Spanish",
+                    "hoursAvailable": "Mo-Fr 08:00-18:00"
+                }
             },
             "serviceType": "Cita Previa",
-            "areaServed": "España"
-        }
+            "areaServed": {
+                "@type": "Country",
+                "name": "España"
+            },
+            "availableChannel": [
+                {
+                    "@type": "ServiceChannel",
+                    "serviceUrl": "https://sede.sepe.gob.es",
+                    "serviceType": "Online",
+                    "hoursAvailable": "24/7"
+                },
+                {
+                    "@type": "ServiceChannel",
+                    "servicePhone": "+34-919267970",
+                    "serviceType": "Phone",
+                    "hoursAvailable": "Mo-Fr 08:00-18:00"
+                }
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Inicio",
+                    "item": "https://infosepe.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Cita Previa",
+                    "item": "https://infosepe.com/cita-previa/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "INEM SEPE",
+                    "item": "https://infosepe.com/cita-previa/inem-sepe/"
+                }
+            ]
+        },
+        "hasPart": [
+            {
+                "@type": "HowTo",
+                "name": "Cómo reservar cita previa SEPE online",
+                "description": "Guía paso a paso para solicitar cita previa en el SEPE",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "Acceder al sistema oficial",
+                        "text": "Entra en sede.sepe.gob.es o llama al 919 26 79 70"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Identificarse",
+                        "text": "Usa certificado digital, DNI electrónico o cl@ve PIN"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Seleccionar servicio",
+                        "text": "Elige el tipo de trámite que necesitas realizar"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Elegir oficina y fecha",
+                        "text": "Selecciona la oficina más conveniente y fecha disponible"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Confirmar cita",
+                        "text": "Guarda la confirmación y prepara la documentación"
+                    }
+                ]
+            }
+        ],
+        "potentialAction": [
+            {
+                "@type": "ReserveAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://sede.sepe.gob.es",
+                    "actionPlatform": [
+                        "http://schema.org/DesktopWebPlatform",
+                        "http://schema.org/MobileWebPlatform"
+                    ]
+                },
+                "object": {
+                    "@type": "Event",
+                    "name": "Cita Previa SEPE"
+                }
+            }
+        ]
     }
     </script>
 </body>
-</html>4">
-                        <h4 class="font-weight-semibold mb-2">¿Para qué necesitas la cita?</h4>
-                        <ul class="text-sm text-secondary">
-                            <li class="mb-1">• Solicitar prestación por desempleo</li>
-                            <li class="mb-1">• Inscribirse como demandante de empleo</li>
-                            <li class="mb-1">• Gestionar subsidios y ayudas</li>
-                            <li class="mb-1">• Consultas sobre formación profesional</li>
-                            <li class="mb-1">• Modificar datos personales</li>
-                        </ul>
-                    </div>
-                    
-                    <button class="quick-action-btn" onclick="reservarCita('sepe')">
-                        <i class="fas fa-calendar-check"></i> Reservar Cita SEPE
-                    </button>
-                </div>
-
-                <!-- Seguridad Social -->
-                <div class="service-card">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-2xl font-weight-bold mb-3" style="color: #10b981;">Cita Previa Seguridad Social</h3>
-                    <p class="text-secondary mb-4">Para pensiones, jubilación, incapacidades, tarjeta sanitaria y otros trámites de la Seguridad Social.</p>
-                    
-                    <div class="mb-
+</html>
