@@ -3,63 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoSEPE 2025 - Portal Oficial de Servicios SEPE</title>
-    <meta name="description" content="Portal completo SEPE 2025: Cita previa, Cursos gratuitos, Ayudas económicas, Prestaciones, Trámites y más. Todo lo que necesitas saber.">
+    <title>InfoSEPE 2025 - Portal Oficial de Ayudas, Cursos y Trámites SEPE | Guía Completa</title>
+    <meta name="description" content="Portal InfoSEPE 2025: ✅ Prestaciones ✅ Subsidios ✅ Cita previa ✅ Cursos gratuitos ✅ Ayudas SEPE ✅ Trámites online ✅ Información oficial actualizada">
+    <meta name="keywords" content="sepe 2025, prestacion desempleo, subsidios, cita previa inem, cursos gratuitos, ayudas sepe, ingreso minimo vital">
     
     <!-- AdSense Head Tag -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
     
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --error-color: #ef4444;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --background-light: #f8fafc;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--background-light);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header minimalista */
+        /* Header actualizado */
         .header {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: var(--z-sticky);
             padding: 1rem 0;
         }
 
-        .header-content {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -68,17 +36,12 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            font-size: 1.8rem;
-            font-weight: bold;
+            gap: var(--spacing-sm);
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
+            transition: var(--transition);
         }
 
         .search-box {
@@ -160,11 +123,7 @@
         /* Menú principal por categorías */
         .main-menu {
             background: white;
-            padding: 40px 0;
-            margin-top: -20px;
-            border-radius: 20px 20px 0 0;
-            position: relative;
-            z-index: 10;
+            padding: 4rem 0;
         }
 
         .menu-header {
@@ -173,57 +132,33 @@
         }
 
         .menu-header h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            font-weight: bold;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .menu-header p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-top: 3rem;
         }
 
         .category-card {
             background: white;
-            border-radius: var(--border-radius);
+            border-radius: var(--border-radius-xl);
             padding: 2rem;
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
             border: 2px solid transparent;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .category-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             border-color: var(--primary-color);
-        }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
         }
 
         .category-header {
@@ -236,14 +171,12 @@
         .category-icon {
             width: 60px;
             height: 60px;
-            background: var(--gradient-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             color: white;
-            flex-shrink: 0;
         }
 
         .category-title {
@@ -308,23 +241,38 @@
         .masters .category-icon { background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); }
         .fiscal .category-icon { background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); }
 
-        /* AdSense containers */
-        .ad-container {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: #f9f9f9;
-            border: 2px dashed #ddd;
-            border-radius: var(--border-radius);
-            text-align: center;
-            color: #666;
+        /* Trust indicators */
+        .trust-indicators {
+            background: var(--background-light);
+            padding: 2rem 0;
+        }
+
+        .trust-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
-        /* Quick stats */
+        .trust-item i {
+            color: var(--success-color);
+            font-size: 1.2rem;
+        }
+
+        /* Quick Stats */
         .quick-stats {
-            background: var(--background-light);
-            padding: 2rem 0;
-            margin-top: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem 0;
         }
 
         .stats-grid {
@@ -335,76 +283,69 @@
 
         .stat-item {
             text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
+            padding: 1rem;
         }
 
         .stat-number {
+            display: block;
             font-size: 2.5rem;
             font-weight: bold;
-            color: var(--primary-color);
             margin-bottom: 0.5rem;
-            display: block;
         }
 
         .stat-label {
-            color: var(--text-secondary);
             font-size: 0.9rem;
-            font-weight: 500;
+            opacity: 0.9;
         }
 
-        /* Newsletter section */
+        /* Newsletter */
         .newsletter {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 40px 0;
+            background: var(--background-white);
+            padding: 3rem 0;
             text-align: center;
         }
 
         .newsletter h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
         .newsletter-form {
+            display: flex;
             max-width: 400px;
             margin: 1.5rem auto 0;
-            display: flex;
             gap: 0.5rem;
         }
 
         .newsletter-input {
             flex: 1;
             padding: 0.75rem;
-            border: none;
-            border-radius: 25px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
             font-size: 0.9rem;
         }
 
         .newsletter-btn {
-            background: white;
-            color: var(--primary-color);
-            border: none;
+            background: var(--primary-color);
+            color: white;
             padding: 0.75rem 1.5rem;
-            border-radius: 25px;
+            border: none;
+            border-radius: var(--border-radius);
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
         }
 
         .newsletter-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            background: var(--secondary-color);
         }
 
         /* Footer */
         .footer {
             background: var(--text-primary);
             color: white;
-            padding: 40px 0 20px;
-            text-align: center;
+            padding: 3rem 0 1rem;
         }
 
         .footer-content {
@@ -412,16 +353,18 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
-            text-align: left;
         }
 
         .footer-section h4 {
             color: var(--accent-color);
             margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
         .footer-section ul {
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         .footer-section ul li {
@@ -437,13 +380,25 @@
 
         .footer-section ul li a:hover {
             color: var(--accent-color);
+            padding-left: 0.25rem;
         }
 
         .footer-bottom {
             border-top: 1px solid #374151;
             padding-top: 1rem;
+            text-align: center;
             color: #9ca3af;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+        }
+
+        .ad-container {
+            background: var(--background-light);
+            border: 2px dashed var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin: 2rem 0;
         }
 
         /* Responsive */
@@ -451,87 +406,23 @@
             .hero h1 {
                 font-size: 2rem;
             }
-
-            .search-input {
-                width: 200px;
-            }
-
+            
             .categories-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-
-            .category-card {
-                padding: 1.5rem;
+            
+            .search-input {
+                width: 250px;
             }
-
-            .category-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-
+            
             .newsletter-form {
                 flex-direction: column;
-                gap: 1rem;
             }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-actions {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .search-input {
-                width: 100%;
-            }
-
-            .category-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-
-            .category-title {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Animaciones */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Loading states */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(37, 99, 235, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--primary-color);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -539,39 +430,60 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="header-content">
+            <nav class="navbar">
                 <a href="/" class="logo">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>InfoSEPE 2025</span>
+                    <i class="fas fa-hands-helping"></i>
+                    InfoSEPE
                 </a>
-                
-                <div class="header-actions">
-                    <div class="search-box">
-                        <input type="text" class="search-input" placeholder="Buscar servicios, ayudas, cursos...">
-                        <button class="search-btn" type="button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Buscar información...">
+                    <button class="search-btn" type="button" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Portal Completo SEPE 2025</h1>
+                <h1>InfoSEPE 2025</h1>
                 <p class="hero-subtitle">
-                    Toda la información sobre servicios SEPE: citas previas, cursos gratuitos, ayudas económicas, prestaciones y trámites. 
+                    Tu portal completo para ayudas SEPE, prestaciones, subsidios, cursos gratuitos y trámites online. 
                     <strong>Información oficial y actualizada diariamente.</strong>
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Información oficial SEPE</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Actualizado diariamente</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Disponible 24/7</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-users"></i>
+                    <span>+100K usuarios confían</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Menu -->
-    <section class="main-menu">
+    <section class="main-menu" id="main-content">
         <div class="container">
             <div class="menu-header">
                 <h2>¿Qué necesitas hacer hoy?</h2>
@@ -580,7 +492,7 @@
 
             <div class="categories-grid">
                 <!-- Cita Previa -->
-                <div class="category-card cita-previa" onclick="navigateToCategory('cita-previa')">
+                <div class="category-card cita-previa">
                     <div class="category-header">
                         <div class="category-icon">
                             <i class="fas fa-calendar-check"></i>
@@ -588,64 +500,15 @@
                         <h3 class="category-title">Cita Previa</h3>
                     </div>
                     <ul class="category-links">
-                        <li><a href="/cita-previa-inem-sepe/">Cita previa INEM (SEPE)</a></li>
-                        <li><a href="/anular-cita-previa-inem/">Anular cita previa INEM</a></li>
-                        <li><a href="/cita-previa-seguridad-social/">Cita previa Seguridad Social</a></li>
-                        <li><a href="/cita-previa-extranjeria/">Cita previa Extranjería</a></li>
-                    </ul>
-                </div>
-
-                <!-- Cursos por CCAA -->
-                <div class="category-card cursos-ccaa" onclick="navigateToCategory('cursos-ccaa')">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="category-title">Cursos por CCAA</h3>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="/cursos-inem-barcelona/">Cursos INEM Barcelona</a></li>
-                        <li><a href="/cursos-inem-madrid/">Cursos INEM Madrid</a></li>
-                        <li><a href="/cursos-inem-sevilla/">Cursos INEM Sevilla</a></li>
-                        <li><a href="/cursos-inem-malaga/">Cursos INEM Málaga</a></li>
-                    </ul>
-                </div>
-
-                <!-- Cursos por Sector -->
-                <div class="category-card cursos-sector" onclick="navigateToCategory('cursos-sector')">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3 class="category-title">Cursos por Sector</h3>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="/cursos-sepe-barcelona/">Cursos SEPE Barcelona</a></li>
-                        <li><a href="/cursos-sepe-madrid/">Cursos SEPE Madrid</a></li>
-                        <li><a href="/curso-seo-avanzado/">Curso de SEO Avanzado</a></li>
-                        <li><a href="/curso-youtube/">Curso de YouTube</a></li>
-                    </ul>
-                </div>
-
-                <!-- Ayudas SEPE -->
-                <div class="category-card ayudas-sepe" onclick="navigateToCategory('ayudas-sepe')">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
-                        <h3 class="category-title">Ayudas SEPE</h3>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="/ingreso-minimo-vital/">Ingreso Mínimo Vital</a></li>
-                        <li><a href="/ayudas-madres-solteras/">Ayudas para madres solteras</a></li>
-                        <li><a href="/ayudas-personas-discapacidad/">Ayudas para personas con discapacidad</a></li>
-                        <li><a href="/ayudas-alquiler/">Ayudas alquiler</a></li>
-                        <li><a href="/ayuda-familiar/">Ayuda familiar</a></li>
+                        <li><a href="cita-previa/">Cita previa INEM (SEPE)</a></li>
+                        <li><a href="cita-previa/inem-sepe.html">Reservar cita SEPE online</a></li>
+                        <li><a href="cita-previa/anular-cita.html">Anular cita previa</a></li>
+                        <li><a href="cita-previa/seguridad-social.html">Cita Seguridad Social</a></li>
                     </ul>
                 </div>
 
                 <!-- Prestaciones SEPE -->
-                <div class="category-card prestaciones" onclick="navigateToCategory('prestaciones')">
+                <div class="category-card prestaciones">
                     <div class="category-header">
                         <div class="category-icon">
                             <i class="fas fa-euro-sign"></i>
@@ -653,31 +516,15 @@
                         <h3 class="category-title">Prestaciones SEPE</h3>
                     </div>
                     <ul class="category-links">
-                        <li><a href="/prestacion-hijo-cargo/">Prestación por hijo a cargo</a></li>
-                        <li><a href="/prestacion-desempleo/">Prestación por desempleo</a></li>
-                        <li><a href="/baja-maternidad/">Baja por maternidad</a></li>
-                        <li><a href="/prestacion-contributiva/">Prestación contributiva</a></li>
-                    </ul>
-                </div>
-
-                <!-- Trámites SEPE -->
-                <div class="category-card tramites" onclick="navigateToCategory('tramites')">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <h3 class="category-title">Trámites SEPE</h3>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="/tgss/">TGSS</a></li>
-                        <li><a href="/sellar-paro/">Sellar paro</a></li>
-                        <li><a href="/apuntarse-paro/">Apuntarse al paro</a></li>
-                        <li><a href="/inss/">INSS</a></li>
+                        <li><a href="prestaciones/desempleo.html">Prestación por desempleo</a></li>
+                        <li><a href="prestaciones/">Portal prestaciones</a></li>
+                        <li><a href="prestaciones/maternidad.html">Prestación maternidad</a></li>
+                        <li><a href="prestaciones/hijo-cargo.html">Prestación hijo a cargo</a></li>
                     </ul>
                 </div>
 
                 <!-- Subsidios -->
-                <div class="category-card subsidios" onclick="navigateToCategory('subsidios')">
+                <div class="category-card subsidios">
                     <div class="category-header">
                         <div class="category-icon">
                             <i class="fas fa-piggy-bank"></i>
@@ -685,47 +532,111 @@
                         <h3 class="category-title">Subsidios</h3>
                     </div>
                     <ul class="category-links">
-                        <li><a href="/subsidio-desempleo/">Por desempleo</a></li>
-                        <li><a href="/subsidio-mayores-45/">Mayores de 45 años</a></li>
-                        <li><a href="/subsidio-insuficiencia-cotizacion/">Insuficiencia de cotización</a></li>
-                        <li><a href="/subsidio-mayores-52/">Mayores de 52 años</a></li>
+                        <li><a href="subsidios/">Portal subsidios completo</a></li>
+                        <li><a href="subsidios/mayores-45.html">Subsidio mayores 45 años</a></li>
+                        <li><a href="subsidios/mayores-52.html">Subsidio mayores 52 años</a></li>
+                        <li><a href="subsidios/insuficiencia-cotizacion.html">Insuficiencia cotización</a></li>
+                    </ul>
+                </div>
+
+                <!-- Ayudas SEPE -->
+                <div class="category-card ayudas-sepe">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="category-title">Ayudas SEPE</h3>
+                    </div>
+                    <ul class="category-links">
+                        <li><a href="ayudas/">Portal ayudas completo</a></li>
+                        <li><a href="ayudas/ingreso-minimo-vital.html">Ingreso Mínimo Vital</a></li>
+                        <li><a href="ayudas/madres-solteras.html">Ayudas madres solteras</a></li>
+                        <li><a href="ayudas/discapacidad.html">Ayudas discapacidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Trámites SEPE -->
+                <div class="category-card tramites">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="category-title">Trámites SEPE</h3>
+                    </div>
+                    <ul class="category-links">
+                        <li><a href="tramites/">Portal trámites</a></li>
+                        <li><a href="tramites/sellar-paro.html">Sellar paro</a></li>
+                        <li><a href="tramites/apuntarse-paro.html">Apuntarse al paro</a></li>
+                        <li><a href="tramites/inss.html">Trámites INSS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cursos por CCAA -->
+                <div class="category-card cursos-ccaa">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="category-title">Cursos por CCAA</h3>
+                    </div>
+                    <ul class="category-links">
+                        <li><a href="cursos/por-ccaa/">Portal cursos por comunidad</a></li>
+                        <li><a href="cursos/por-ccaa/barcelona.html">Cursos Barcelona</a></li>
+                        <li><a href="cursos/por-ccaa/madrid.html">Cursos Madrid</a></li>
+                        <li><a href="cursos/por-ccaa/sevilla.html">Cursos Sevilla</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cursos por Sector -->
+                <div class="category-card cursos-sector">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="category-title">Cursos por Sector</h3>
+                    </div>
+                    <ul class="category-links">
+                        <li><a href="cursos/por-sector/">Portal cursos por sector</a></li>
+                        <li><a href="cursos/por-sector/seo-avanzado.html">Curso SEO Avanzado</a></li>
+                        <li><a href="cursos/por-sector/youtube.html">Curso YouTube</a></li>
+                        <li><a href="cursos/por-sector/tecnologia.html">Cursos Tecnología</a></li>
                     </ul>
                 </div>
 
                 <!-- Pensiones -->
-                <div class="category-card pensiones" onclick="navigateToCategory('pensiones')">
+                <div class="category-card pensiones">
                     <div class="category-header">
                         <div class="category-icon">
-                            <i class="fas fa-user-clock"></i>
+                            <i class="fas fa-user-friends"></i>
                         </div>
                         <h3 class="category-title">Pensiones</h3>
                     </div>
                     <ul class="category-links">
-                        <li><a href="/pension-no-contributiva/">Pensión no contributiva</a></li>
-                        <li><a href="/pension-orfandad/">Pensión de orfandad</a></li>
-                        <li><a href="/pension-viudedad/">Pensión de viudedad</a></li>
-                        <li><a href="/pension-maxima-jubilacion/">Pensión máxima de jubilación</a></li>
+                        <li><a href="pensiones/">Portal pensiones</a></li>
+                        <li><a href="pensiones/no-contributiva.html">Pensión no contributiva</a></li>
+                        <li><a href="pensiones/viudedad.html">Pensión viudedad</a></li>
+                        <li><a href="pensiones/orfandad.html">Pensión orfandad</a></li>
                     </ul>
                 </div>
 
                 <!-- Másters -->
-                <div class="category-card masters" onclick="navigateToCategory('masters')">
+                <div class="category-card masters">
                     <div class="category-header">
                         <div class="category-icon">
-                            <i class="fas fa-user-graduate"></i>
+                            <i class="fas fa-university"></i>
                         </div>
                         <h3 class="category-title">Másters</h3>
                     </div>
                     <ul class="category-links">
-                        <li><a href="/master-seo/">Máster SEO</a></li>
-                        <li><a href="/master-sem/">Máster SEM</a></li>
-                        <li><a href="/master-marketing-digital/">Máster Marketing Digital</a></li>
-                        <li><a href="/master-inteligencia-artificial/">Máster Inteligencia Artificial</a></li>
+                        <li><a href="masters/">Portal másters</a></li>
+                        <li><a href="masters/seo.html">Máster SEO</a></li>
+                        <li><a href="masters/marketing-digital.html">Máster Marketing Digital</a></li>
+                        <li><a href="masters/inteligencia-artificial.html">Máster IA</a></li>
                     </ul>
                 </div>
 
                 <!-- Fiscal -->
-                <div class="category-card fiscal" onclick="navigateToCategory('fiscal')">
+                <div class="category-card fiscal">
                     <div class="category-header">
                         <div class="category-icon">
                             <i class="fas fa-calculator"></i>
@@ -733,18 +644,18 @@
                         <h3 class="category-title">Fiscal</h3>
                     </div>
                     <ul class="category-links">
-                        <li><a href="/certificado-penales/">Certificado de penales</a></li>
-                        <li><a href="/modelo-600/">Modelo 600</a></li>
-                        <li><a href="/modelo-145/">Modelo 145</a></li>
-                        <li><a href="/modelo-036/">Modelo 036</a></li>
+                        <li><a href="fiscal/">Portal fiscal</a></li>
+                        <li><a href="fiscal/certificado-penales.html">Certificado penales</a></li>
+                        <li><a href="fiscal/modelo-600.html">Modelo 600</a></li>
+                        <li><a href="fiscal/modelo-145.html">Modelo 145</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- AdSense Banner -->
             <div class="ad-container">
-                📢 Espacio publicitario - Banner 728x90
-                <!-- Aquí irá el código de AdSense -->
+                📢 Espacio publicitario - Banner 728x90<br>
+                <small>Anuncios relacionados con empleo, formación y servicios financieros</small>
             </div>
         </div>
     </section>
@@ -758,12 +669,12 @@
                     <span class="stat-label">Cursos Disponibles</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">1.015€</span>
-                    <span class="stat-label">Máximo IMV</span>
+                    <span class="stat-number">1.398€</span>
+                    <span class="stat-label">Máximo Prestación</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">650+</span>
-                    <span class="stat-label">Certificados</span>
+                    <span class="stat-number">463€</span>
+                    <span class="stat-label">Subsidios SEPE</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">24/7</span>
@@ -781,11 +692,14 @@
     <section class="newsletter">
         <div class="container">
             <h3>📧 Mantente actualizado</h3>
-            <p>Recibe las últimas noticias sobre ayudas SEPE y nuevos cursos</p>
+            <p>Recibe las últimas noticias sobre ayudas SEPE, nuevos cursos y cambios en prestaciones</p>
             <form class="newsletter-form" onsubmit="suscribir(event)">
                 <input type="email" class="newsletter-input" placeholder="Tu email..." required>
                 <button type="submit" class="newsletter-btn">Suscribirme</button>
             </form>
+            <p style="font-size: 0.8rem; color: #6b7280; margin-top: 1rem;">
+                ✅ Sin spam ✅ Cancela cuando quieras ✅ Máximo 2 emails/mes
+            </p>
         </div>
     </section>
 
@@ -805,19 +719,19 @@
                 <div class="footer-section">
                     <h4>Servicios Populares</h4>
                     <ul>
-                        <li><a href="/cita-previa-sepe/">Cita Previa SEPE</a></li>
-                        <li><a href="/sellar-paro/">Sellar Paro</a></li>
-                        <li><a href="/cursos-gratuitos/">Cursos Gratuitos</a></li>
-                        <li><a href="/ingreso-minimo-vital/">Ingreso Mínimo Vital</a></li>
+                        <li><a href="cita-previa/">Cita Previa SEPE</a></li>
+                        <li><a href="prestaciones/desempleo.html">Prestación Desempleo</a></li>
+                        <li><a href="subsidios/">Subsidios SEPE</a></li>
+                        <li><a href="tramites/sellar-paro.html">Sellar Paro</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Ayudas Destacadas</h4>
                     <ul>
-                        <li><a href="/prestacion-desempleo/">Prestación Desempleo</a></li>
-                        <li><a href="/subsidio-mayores-52/">Subsidio +52 años</a></li>
-                        <li><a href="/ayudas-alquiler/">Ayudas Alquiler</a></li>
-                        <li><a href="/pension-viudedad/">Pensión Viudedad</a></li>
+                        <li><a href="ayudas/ingreso-minimo-vital.html">Ingreso Mínimo Vital</a></li>
+                        <li><a href="subsidios/mayores-52.html">Subsidio +52 años</a></li>
+                        <li><a href="ayudas/madres-solteras.html">Ayudas Madres Solteras</a></li>
+                        <li><a href="pensiones/viudedad.html">Pensión Viudedad</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -840,35 +754,9 @@
 
     <!-- Scripts -->
     <script>
-        // Navegación por categorías
-        function navigateToCategory(category) {
-            // Tracking para Analytics
-            trackClick(`category-${category}`);
-            
-            // Aquí implementarías la navegación real
-            console.log(`Navegando a categoría: ${category}`);
-            
-            // Por ahora, mostrar modal con opciones
-            showCategoryModal(category);
-        }
-
-        // Modal temporal para mostrar opciones de categoría
-        function showCategoryModal(category) {
-            const categoryNames = {
-                'cita-previa': 'Cita Previa',
-                'cursos-ccaa': 'Cursos por Comunidad Autónoma',
-                'cursos-sector': 'Cursos por Sector',
-                'ayudas-sepe': 'Ayudas SEPE',
-                'prestaciones': 'Prestaciones SEPE',
-                'tramites': 'Trámites SEPE',
-                'subsidios': 'Subsidios',
-                'pensiones': 'Pensiones',
-                'masters': 'Másters',
-                'fiscal': 'Fiscal'
-            };
-
-            alert(`¡Próximamente! Sección de ${categoryNames[category]} en desarrollo.\n\nEsta página contendrá:\n• Información detallada\n• Formularios específicos\n• Calculadoras\n• Guías paso a paso`);
-        }
+        // Variables globales
+        let tiempoEnPagina = 0;
+        let exitIntentShown = false;
 
         // Sistema de búsqueda
         document.querySelector('.search-input').addEventListener('keypress', function(e) {
@@ -887,144 +775,118 @@
             
             trackClick(`search-${query}`);
             
-            // Implementar lógica de búsqueda
-            console.log(`Buscando: ${query}`);
-            
-            // Mostrar resultados dinámicos
-            mostrarResultadosBusqueda(query);
-        }
-
-        function mostrarResultadosBusqueda(query) {
-            // Resultados simulados basados en la búsqueda
+            // Sugerencias basadas en páginas creadas
             const resultados = {
-                'cita': ['Cita Previa SEPE', 'Cita Previa INEM', 'Anular Cita'],
-                'curso': ['Cursos Gratuitos', 'Cursos Barcelona', 'Cursos Madrid'],
-                'ayuda': ['Ingreso Mínimo Vital', 'Ayudas Alquiler', 'Ayudas Familiares'],
-                'paro': ['Sellar Paro', 'Apuntarse al Paro', 'Prestación Desempleo'],
-                'subsidio': ['Subsidio +52', 'Subsidio Desempleo', 'Subsidio +45']
+                'prestacion': ['prestaciones/desempleo.html', 'Prestación por Desempleo'],
+                'subsidio': ['subsidios/', 'Portal de Subsidios SEPE'],
+                'cita': ['cita-previa/', 'Cita Previa SEPE'],
+                'paro': ['tramites/sellar-paro.html', 'Sellar Paro'],
+                'ayuda': ['ayudas/', 'Portal de Ayudas SEPE'],
+                'imv': ['ayudas/ingreso-minimo-vital.html', 'Ingreso Mínimo Vital'],
+                'curso': ['cursos/', 'Cursos Gratuitos SEPE'],
+                'desempleo': ['prestaciones/desempleo.html', 'Prestación por Desempleo'],
+                '45': ['subsidios/', 'Subsidio Mayores 45 años'],
+                '52': ['subsidios/', 'Subsidio Mayores 52 años']
             };
             
             let encontrados = [];
-            for (const [key, values] of Object.entries(resultados)) {
+            for (const [key, value] of Object.entries(resultados)) {
                 if (query.toLowerCase().includes(key)) {
-                    encontrados = encontrados.concat(values);
+                    encontrados.push(value);
                 }
             }
             
             if (encontrados.length > 0) {
-                alert(`Resultados encontrados:\n${encontrados.slice(0, 5).join('\n')}`);
+                const mensaje = `Resultados encontrados:\n${encontrados.map(r => `• ${r[1]}`).join('\n')}\n\n¿Quieres ir a "${encontrados[0][1]}"?`;
+                if (confirm(mensaje)) {
+                    window.location.href = encontrados[0][0];
+                }
             } else {
-                alert('No se encontraron resultados. Prueba con términos como: cita, curso, ayuda, paro, subsidio');
+                alert('No se encontraron resultados específicos. Explora las categorías principales o usa términos como: prestación, subsidio, cita, paro, ayuda');
             }
         }
 
-        // Newsletter
+        // Newsletter mejorado
         function suscribir(event) {
             event.preventDefault();
             const email = event.target.querySelector('.newsletter-input').value;
             
-            // Validar email
             if (!email || !email.includes('@')) {
                 alert('Por favor, introduce un email válido');
                 return;
             }
             
             // Simular suscripción
-            event.target.querySelector('.newsletter-btn').innerHTML = '<div class="loading"></div>';
+            event.target.querySelector('.newsletter-btn').innerHTML = 'Procesando...';
             
             setTimeout(() => {
-                alert('¡Gracias! Te has suscrito correctamente.\n\nRecibirás:\n• Nuevas ayudas SEPE\n• Cursos disponibles\n• Cambios en prestaciones\n• Tips y consejos');
+                alert(`🎉 ¡Gracias! ${email} se ha suscrito correctamente a InfoSEPE.
+
+📧 RECIBIRÁS:
+• Cambios en prestaciones y subsidios
+• Nuevos cursos y convocatorias
+• Plazos importantes para trámites
+• Consejos prácticos para solicitudes
+• Alertas sobre modificaciones en ayudas
+
+📅 FRECUENCIA:
+• Máximo 2 emails por mes
+• Solo contenido relevante
+• Cancelar cuando quieras
+
+¡Bienvenido a la comunidad InfoSEPE!`);
+                
                 event.target.reset();
                 event.target.querySelector('.newsletter-btn').innerHTML = 'Suscribirme';
                 trackClick('newsletter-suscripcion');
             }, 1500);
         }
 
-        // Tracking de clics para Analytics/AdSense
+        // Función de tracking mejorada
         function trackClick(action) {
-            console.log(`Tracking: ${action}`);
-            
-            // Aquí integrarías Google Analytics
+            // Google Analytics 4
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'click', {
-                    'event_category': 'engagement',
-                    'event_label': action,
-                    'value': 1
+                    'event_category': 'Navigation',
+                    'event_label': action
                 });
             }
             
-            // También puedes enviar a tu propio sistema de analytics
-            // fetch('/api/track', { method: 'POST', body: JSON.stringify({ action }) });
+            // Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'ViewContent', {
+                    content_name: action
+                });
+            }
+            
+            console.log(`🎯 Click tracked: ${action}`);
         }
 
-        // Animaciones on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Inicialización cuando carga la página
+        // Navegación mejorada para enlaces
         document.addEventListener('DOMContentLoaded', function() {
-            // Observar elementos para animaciones
-            document.querySelectorAll('.category-card, .stat-item').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // Añadir funcionalidad a las tarjetas de categoría
-            document.querySelectorAll('.category-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    // Efecto hover mejorado
-                    this.style.transform = 'translateY(-8px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = '';
-                });
-                
-                // Añadir funcionalidad de teclado para accesibilidad
-                card.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        this.click();
-                    }
-                });
-                
-                // Hacer que las tarjetas sean focusables
-                card.setAttribute('tabindex', '0');
-                card.setAttribute('role', 'button');
-                card.setAttribute('aria-label', `Ir a sección de ${this.querySelector('.category-title').textContent}`);
-            });
-            
-            // Añadir indicadores de carga
+            // Agregar efectos a los enlaces
             document.querySelectorAll('.category-links a').forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const text = this.textContent.trim();
                     
-                    // Mostrar indicador de carga
+                    // Track del clic
+                    trackClick(`link-${href.replace(/[/.]/g, '-')}`);
+                    
+                    // Efecto visual de carga
                     const originalText = this.textContent;
-                    this.innerHTML = '<div class="loading" style="display: inline-block; margin-right: 0.5rem;"></div>' + originalText;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + originalText;
                     
-                    // Simular navegación
+                    // Permitir navegación normal
                     setTimeout(() => {
                         this.innerHTML = originalText;
-                        trackClick(`link-${this.href.split('/').pop()}`);
-                        alert(`Navegando a: ${originalText}\n\n(En la versión real, esto abriría la página correspondiente)`);
                     }, 1000);
                 });
             });
             
-            // Implementar atajos de teclado
+            // Atajos de teclado
             document.addEventListener('keydown', function(e) {
-                // Ctrl + K para abrir búsqueda
+                // Ctrl + K para búsqueda
                 if (e.ctrlKey && e.key === 'k') {
                     e.preventDefault();
                     document.querySelector('.search-input').focus();
@@ -1037,71 +899,64 @@
                 }
             });
             
-            // Auto-completado inteligente para búsqueda
-            const searchInput = document.querySelector('.search-input');
-            const sugerencias = [
-                'cita previa sepe', 'cita previa inem', 'sellar paro', 'cursos gratuitos',
-                'ingreso mínimo vital', 'prestación desempleo', 'subsidio mayores 52',
-                'ayudas alquiler', 'vida laboral', 'apuntarse paro', 'cursos barcelona',
-                'cursos madrid', 'ayudas madres solteras', 'pensión viudedad'
-            ];
-            
-            searchInput.addEventListener('input', function() {
-                const valor = this.value.toLowerCase();
-                if (valor.length >= 2) {
-                    const coincidencias = sugerencias.filter(s => s.includes(valor));
-                    // Aquí implementarías un dropdown con sugerencias
-                    console.log('Sugerencias:', coincidencias.slice(0, 5));
-                }
-            });
-            
-            // Tracking de tiempo en página para AdSense
-            let tiempoInicio = Date.now();
-            let tiempoEnPagina = 0;
-            
+            // Contador de tiempo en página
             setInterval(() => {
-                tiempoEnPagina = Math.floor((Date.now() - tiempoInicio) / 1000);
-                
-                // Trackear hitos de tiempo
-                if (tiempoEnPagina === 30) {
-                    trackClick('time-30-seconds');
-                } else if (tiempoEnPagina === 60) {
-                    trackClick('time-1-minute');
-                } else if (tiempoEnPagina === 180) {
-                    trackClick('time-3-minutes');
-                }
+                tiempoEnPagina++;
             }, 1000);
             
-            // Detectar intención de salida (para retención)
-            document.addEventListener('mouseleave', function(e) {
-                if (e.clientY <= 0) {
-                    // Usuario va a salir - mostrar oferta de retención
-                    setTimeout(() => {
-                        if (confirm('¿Te vas? 🤔\n\n¡Espera! ¿Necesitas ayuda para encontrar algo específico?\n\nPulsa OK para buscar o Cancelar para continuar navegando.')) {
-                            document.querySelector('.search-input').focus();
-                        }
-                    }, 500);
-                }
+            // Animaciones on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Aplicar animaciones a las cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
             });
             
-            // Notificaciones periódicas para engagement
-            setTimeout(() => {
-                mostrarNotificacion('💡 Consejo: Puedes usar Ctrl+K para buscar rápidamente', 'info');
-            }, 20000);
+            // Tracking inicial
+            trackClick('page-loaded');
             
-            setTimeout(() => {
-                mostrarNotificacion('🔔 Recuerda: Las ayudas SEPE se actualizan regularmente', 'info');
-            }, 45000);
+            // Detectar tipo de dispositivo
+            const esMobile = window.innerWidth <= 768;
+            trackClick(`device-${esMobile ? 'mobile' : 'desktop'}`);
+            
+            console.log('✅ InfoSEPE 2025 inicializado correctamente');
         });
 
-        // Sistema de notificaciones
+        // Notificaciones contextuales
         function mostrarNotificacion(mensaje, tipo = 'info') {
+            const colores = {
+                'info': '#3b82f6',
+                'success': '#10b981',
+                'warning': '#f59e0b'
+            };
+
+            const iconos = {
+                'info': '💡',
+                'success': '✅',
+                'warning': '⚠️'
+            };
+
             const notificacion = document.createElement('div');
             notificacion.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                background: ${tipo === 'info' ? '#3b82f6' : '#10b981'};
+                background: ${colores[tipo]};
                 color: white;
                 padding: 1rem 1.5rem;
                 border-radius: 8px;
@@ -1114,9 +969,15 @@
                 font-size: 0.9rem;
                 line-height: 1.4;
             `;
-            notificacion.textContent = mensaje;
             
-            // Cerrar al hacer clic
+            notificacion.innerHTML = `
+                <div style="display: flex; align-items: flex-start; gap: 8px;">
+                    <span style="font-size: 1.1rem;">${iconos[tipo]}</span>
+                    <span style="flex: 1;">${mensaje}</span>
+                    <span style="opacity: 0.7; cursor: pointer; font-size: 1.2rem;" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                </div>
+            `;
+            
             notificacion.addEventListener('click', function() {
                 this.style.transform = 'translateX(100%)';
                 setTimeout(() => this.remove(), 300);
@@ -1124,12 +985,10 @@
             
             document.body.appendChild(notificacion);
             
-            // Animar entrada
             setTimeout(() => {
                 notificacion.style.transform = 'translateX(0)';
             }, 100);
             
-            // Auto cerrar después de 6 segundos
             setTimeout(() => {
                 if (notificacion.parentNode) {
                     notificacion.style.transform = 'translateX(100%)';
@@ -1138,121 +997,87 @@
             }, 6000);
         }
 
+        // Mostrar notificaciones después de cierto tiempo
+        setTimeout(() => {
+            if (tiempoEnPagina >= 30) {
+                mostrarNotificacion('💡 Explora nuestras páginas más populares: Prestaciones y Subsidios', 'info');
+            }
+        }, 30000);
+
+        setTimeout(() => {
+            if (tiempoEnPagina >= 60) {
+                mostrarNotificacion('📧 ¿Te suscribes al newsletter? Mantente al día con cambios en ayudas SEPE', 'success');
+            }
+        }, 60000);
+
+        // Exit intent detection
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !exitIntentShown && tiempoEnPagina > 20) {
+                exitIntentShown = true;
+                
+                setTimeout(() => {
+                    const respuesta = confirm(`⚠️ ¡ESPERA! ¿Necesitas ayuda con trámites SEPE?
+
+🎯 PÁGINAS MÁS POPULARES:
+✅ Prestación por Desempleo (hasta 1.398€)
+✅ Subsidios SEPE (463€/mes)
+✅ Cita Previa SEPE online
+✅ Sellar Paro cada 90 días
+✅ Ingreso Mínimo Vital
+
+💰 Miles de personas ya han conseguido sus ayudas.
+
+👆 ¿Quieres explorar nuestras páginas más útiles?`);
+                    
+                    if (respuesta) {
+                        document.querySelector('.main-menu').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                        trackClick('exit-intent-retenido');
+                    } else {
+                        trackClick('exit-intent-perdido');
+                    }
+                }, 500);
+            }
+        });
+
         // Mejorar accesibilidad
         function mejorarAccesibilidad() {
-            // Añadir skip links
-            const skipLink = document.createElement('a');
-            skipLink.href = '#main-content';
-            skipLink.textContent = 'Saltar al contenido principal';
-            skipLink.style.cssText = `
-                position: absolute;
-                top: -40px;
-                left: 6px;
-                background: #000;
-                color: white;
-                padding: 8px;
-                text-decoration: none;
-                border-radius: 4px;
-                z-index: 10001;
-                transition: top 0.3s;
-            `;
-            
-            skipLink.addEventListener('focus', function() {
-                this.style.top = '6px';
-            });
-            
-            skipLink.addEventListener('blur', function() {
-                this.style.top = '-40px';
-            });
-            
-            document.body.insertBefore(skipLink, document.body.firstChild);
-            
-            // Añadir ARIA labels donde falten
-            document.querySelectorAll('button:not([aria-label])').forEach(btn => {
-                if (!btn.textContent.trim()) {
-                    const icon = btn.querySelector('i');
-                    if (icon && icon.classList.contains('fa-search')) {
-                        btn.setAttribute('aria-label', 'Buscar');
-                    }
-                }
-            });
+            // Añadir skip links si no existen
+            if (!document.querySelector('.skip-link')) {
+                const skipLink = document.createElement('a');
+                skipLink.href = '#main-content';
+                skipLink.textContent = 'Saltar al contenido principal';
+                skipLink.className = 'skip-link';
+                skipLink.style.cssText = `
+                    position: absolute;
+                    top: -40px;
+                    left: 6px;
+                    background: #000;
+                    color: white;
+                    padding: 8px;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    z-index: 10001;
+                    transition: top 0.3s;
+                `;
+                
+                skipLink.addEventListener('focus', function() {
+                    this.style.top = '6px';
+                });
+                
+                skipLink.addEventListener('blur', function() {
+                    this.style.top = '-40px';
+                });
+                
+                document.body.insertBefore(skipLink, document.body.firstChild);
+            }
         }
 
         // Ejecutar mejoras de accesibilidad
-        mejorarAccesibilidad();
-
-        // Analytics mejorado para AdSense
-        function setupAdvancedAnalytics() {
-            // Tracking de scroll depth
-            let maxScroll = 0;
-            window.addEventListener('scroll', () => {
-                const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-                
-                if (scrollPercent > maxScroll) {
-                    maxScroll = scrollPercent;
-                    
-                    // Trackear hitos de scroll
-                    if (maxScroll >= 25 && maxScroll < 50) {
-                        trackClick('scroll-25-percent');
-                    } else if (maxScroll >= 50 && maxScroll < 75) {
-                        trackClick('scroll-50-percent');
-                    } else if (maxScroll >= 75 && maxScroll < 100) {
-                        trackClick('scroll-75-percent');
-                    } else if (maxScroll >= 100) {
-                        trackClick('scroll-100-percent');
-                    }
-                }
-            });
-            
-            // Tracking de clics en categorías
-            document.querySelectorAll('.category-card').forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    const categoryName = card.querySelector('.category-title').textContent;
-                    trackClick(`category-click-${categoryName.toLowerCase().replace(/\s+/g, '-')}`);
-                });
-            });
-            
-            // Tracking de interacciones con enlaces
-            document.querySelectorAll('.category-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    const linkText = link.textContent;
-                    trackClick(`internal-link-${linkText.toLowerCase().replace(/\s+/g, '-')}`);
-                });
-            });
-        }
-
-        // Inicializar analytics avanzado
-        setupAdvancedAnalytics();
-
-        console.log('InfoSEPE 2025 - Sistema inicializado correctamente');
-        console.log('Funcionalidades disponibles:');
-        console.log('• Navegación por categorías');
-        console.log('• Sistema de búsqueda con autocompletado');
-        console.log('• Tracking avanzado para Analytics');
-        console.log('• Notificaciones de engagement');
-        console.log('• Accesibilidad mejorada');
-        console.log('• Preparado para AdSense');
-    </script>
-
-    <!-- Schema.org para SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "InfoSEPE 2025",
-        "description": "Portal completo sobre servicios SEPE: citas previas, cursos gratuitos, ayudas económicas y prestaciones",
-        "url": "https://infosepe.com",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://infosepe.com/buscar?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "InfoSEPE",
-            "url": "https://infosepe.com"
-        }
-    }
+        document.addEventListener('DOMContentLoaded', mejorarAccesibilidad);
     </script>
 </body>
 </html>
+                        <li>

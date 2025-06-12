@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestación por Desempleo 2025 - Cuánto Cobro, Requisitos y Duración | InfoSEPE</title>
+    <meta name="description" content="Prestación por desempleo 2025: ✅ Calculadora oficial ✅ Requisitos actualizados ✅ Cuantías máximas ✅ Duración según cotización ✅ Solicitud online paso a paso">
+    <meta name="keywords" content="prestacion desempleo 2025, cuanto cobra paro, requisitos paro, duracion prestacion desempleo, solicitar paro online, calculadora paro">
+    
+    <!-- AdSense Head Tag -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .prestacion-hero {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prestacion-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.15" points="0,1000 1000,0 1000,1000"/></svg>') no-repeat center center/cover;
+        }
+        
+        .amount-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--border-radius-full);
+            display: inline-block;
+            font-size: var(--font-size-3xl);
+            font-weight: bold;
+            margin: var(--spacing-lg) 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .calculator-container {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-xl);
+            border-top: 6px solid var(--primary-color);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        
+        .form-control {
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-base);
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .calc-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-2xl);
+            border: none;
+            border-radius: var(--border-radius-full);
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+            cursor: pointer;
+            transition: var(--transition);
+            grid-column: 1 / -1;
+            justify-self: center;
+            margin-top: var(--spacing-md);
+        }
+        
+        .calc-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .result-container {
+            background: var(--background-light);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            text-align: center;
+            display: none;
+        }
+        
+        .result-amount {
+            font-size: var(--font-size-4xl);
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: var(--spacing-md) 0;
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .requirement-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .requirement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .requirement-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .amounts-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .amounts-table th,
+        .amounts-table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .amounts-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .amounts-table tr:hover {
+            background: var(--background-light);
+        }
+        
+        .duration-chart {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .duration-bar {
+            display: flex;
+            align-items: center;
+            margin: var(--spacing-md) 0;
+        }
+        
+        .duration-label {
+            min-width: 120px;
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+        }
+        
+        .duration-visual {
+            flex: 1;
+            height: 30px;
+            background: var(--background-gray);
+            border-radius: var(--border-radius);
+            margin: 0 var(--spacing-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .duration-fill {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+        
+        .duration-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 600;
+            font-size: var(--font-size-xs);
+        }
+        
+        .steps-timeline {
+            position: relative;
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .steps-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+        
+        .timeline-step {
+            position: relative;
+            margin-bottom: var(--spacing-xl);
+            padding-left: 80px;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: var(--font-size-xl);
+        }
+        
+        .step-content {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-container {
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: var(--spacing-lg);
+            background: var(--background-light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .faq-answer {
+            padding: 0 var(--spacing-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: var(--spacing-lg);
+            max-height: 500px;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            margin: var(--spacing-lg) 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../" class="logo">
+                    <i class="fas fa-hands-helping"></i>
+                    InfoSEPE
+                </a>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Buscar información...">
+                    <button class="search-btn" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="../" class="breadcrumb-link">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="../prestaciones/" class="breadcrumb-link">Prestaciones</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="breadcrumb-current">Prestación por Desempleo</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="prestacion-hero">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="text-5xl font-weight-bold mb-3">Prestación por Desempleo 2025</h1>
+                <p class="text-xl mb-4">Calcula cuánto cobrarás, duración y requisitos actualizados</p>
+                
+                <div class="amount-highlight">
+                    Hasta 1.398,96€/mes
+                </div>
+                
+                <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-calculator" style="color: #10b981;"></i>
+                        <span>Calculadora oficial</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-calendar-alt" style="color: #10b981;"></i>
+                        <span>Hasta 24 meses</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-percentage" style="color: #10b981;"></i>
+                        <span>70% del salario</span>
+                    </div>
+                </div>
+                
+                <p class="text-lg">
+                    <strong>✅ Información oficial SEPE actualizada enero 2025</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora -->
+    <section class="container">
+        <div class="calculator-container">
+            <div class="text-center">
+                <h3 class="text-3xl font-weight-bold mb-3">
+                    <i class="fas fa-calculator text-primary"></i>
+                    Calculadora de Prestación por Desempleo
+                </h3>
+                <p class="text-lg text-secondary mb-4">
+                    Calcula tu prestación de forma rápida y precisa con los datos oficiales del SEPE
+                </p>
+            </div>
+            
+            <form class="calculator-form" onsubmit="return calcularPrestacion(event)">
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-euro-sign text-primary"></i>
+                        Salario bruto mensual
+                    </label>
+                    <input type="number" class="form-control" id="salario" 
+                           placeholder="Ej: 1800" step="0.01" min="0" max="10000" required>
+                    <small class="text-secondary mt-1">Base reguladora para el cálculo</small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-calendar text-primary"></i>
+                        Meses cotizados
+                    </label>
+                    <input type="number" class="form-control" id="mesesCotizados" 
+                           placeholder="Ej: 24" min="12" max="240" required>
+                    <small class="text-secondary mt-1">Total de meses cotizados en los últimos 6 años</small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-user text-primary"></i>
+                        Edad
+                    </label>
+                    <select class="form-control" id="edad" required>
+                        <option value="">Selecciona tu edad</option>
+                        <option value="menor52">Menor de 52 años</option>
+                        <option value="entre52y55">Entre 52 y 55 años</option>
+                        <option value="mayor55">Mayor de 55 años</option>
+                    </select>
+                    <small class="text-secondary mt-1">La edad afecta a la duración máxima</small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-family text-primary"></i>
+                        Hijos a cargo
+                    </label>
+                    <select class="form-control" id="hijosACargo">
+                        <option value="0">Sin hijos a cargo</option>
+                        <option value="1">1 hijo a cargo</option>
+                        <option value="2">2 hijos a cargo</option>
+                        <option value="3">3 o más hijos a cargo</option>
+                    </select>
+                    <small class="text-secondary mt-1">Pueden aplicarse incrementos por familia numerosa</small>
+                </div>
+                
+                <button type="submit" class="calc-btn">
+                    <i class="fas fa-calculator"></i>
+                    Calcular Mi Prestación
+                </button>
+            </form>
+            
+            <div class="result-container" id="resultado">
+                <!-- Resultados se mostrarán aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="container">
+        <div class="ad-container">
+            📢 Espacio publicitario - Banner 728x90<br>
+            <small>Anuncios sobre empleo, formación profesional o servicios financieros</small>
+        </div>
+    </div>
+
+    <!-- Requisitos -->
+    <section class="content-section" style="background: var(--background-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>✅ Requisitos para la Prestación por Desempleo</h2>
+                <p>Condiciones que debes cumplir para acceder a la prestación contributiva</p>
+            </div>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Período de Cotización</h3>
+                    <p class="text-secondary mb-3">Haber cotizado al menos:</p>
+                    <ul class="text-sm">
+                        <li>• <strong>360 días</strong> (12 meses) en los últimos 6 años</li>
+                        <li>• Cotizaciones por desempleo</li>
+                        <li>• Trabajo por cuenta ajena</li>
+                        <li>• Períodos asimilados válidos</li>
+                    </ul>
+                    <div class="success-box mt-3">
+                        <strong>✅ Tip:</strong> Consulta tu vida laboral para verificar tus cotizaciones
+                    </div>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Situación Legal de Desempleo</h3>
+                    <p class="text-secondary mb-3">Estar en situación legal de desempleo por:</p>
+                    <ul class="text-sm">
+                        <li>• <strong>Despido</strong> (procedente, improcedente, nulo)</li>
+                        <li>• <strong>Fin de contrato temporal</strong></li>
+                        <li>• <strong>Extinción por causas objetivas</strong></li>
+                        <li>• <strong>Resolución voluntaria</strong> por causa justa</li>
+                    </ul>
+                    <div class="warning-box mt-3">
+                        <strong>⚠️ Importante:</strong> La dimisión voluntaria no da derecho a prestación
+                    </div>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Disponibilidad para Trabajar</h3>
+                    <p class="text-secondary mb-3">Demostrar que estás buscando empleo:</p>
+                    <ul class="text-sm">
+                        <li>• <strong>Inscripción</strong> como demandante de empleo</li>
+                        <li>• <strong>Disponibilidad</strong> para aceptar trabajos adecuados</li>
+                        <li>• <strong>Participación</strong> en acciones formativas</li>
+                        <li>• <strong>Sellado</strong> periódico cada 90 días</li>
+                    </ul>
+                    <div class="success-box mt-3">
+                        <strong>✅ Obligatorio:</strong> Sellar la demanda cada 90 días para mantener la prestación
+                    </div>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-weight-bold mb-3">Plazo de Solicitud</h3>
+                    <p class="text-secondary mb-3">Presentar la solicitud en plazo:</p>
+                    <ul class="text-sm">
+                        <li>• <strong>15 días hábiles</strong> desde el cese en el trabajo</li>
+                        <li>• Se cuenta desde el día siguiente al cese</li>
+                        <li>• Solicitud online o presencial</li>
+                        <li>• Documentación completa obligatoria</li>
+                    </ul>
+                    <div class="warning-box mt-3">
+                        <strong>⚠️ Crucial:</strong> Pasado el plazo pierdes días de prestación
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabla de Cuantías -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>💰 Cuantías de la Prestación por Desempleo 2025</h2>
+                <p>Importes oficiales actualizados según el SEPE</p>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="amounts-table">
+                    <thead>
+                        <tr>
+                            <th>Período</th>
+                            <th>Porcentaje Base Reguladora</th>
+                            <th>Tope Mínimo</th>
+                            <th>Tope Máximo</th>
+                            <th>Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primeros 180 días</strong></td>
+                            <td><strong>70%</strong></td>
+                            <td>463,21€</td>
+                            <td>1.398,96€</td>
+                            <td>Período más favorable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Desde día 181</strong></td>
+                            <td><strong>50%</strong></td>
+                            <td>463,21€</td>
+                            <td>1.398,96€</td>
+                            <td>Reducción automática</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Con 1 hijo a cargo</strong></td>
+                            <td>70% / 50%</td>
+                            <td>603,20€</td>
+                            <td>1.398,96€</td>
+                            <td>Incremento del 30%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Con 2+ hijos a cargo</strong></td>
+                            <td>70% / 50%</td>
+                            <td>743,18€</td>
+                            <td>1.398,96€</td>
+                            <td>Incremento del 60%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="warning-box">
+                <h4><i class="fas fa-info-circle"></i> Información Importante</h4>
+                <p><strong>Base reguladora:</strong> Se calcula con las bases de cotización de los últimos 180 días trabajados, dividido entre 6.</p>
+                <p><strong>Topes 2025:</strong> Los importes mínimo y máximo se actualizan anualmente con los Presupuestos Generales del Estado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duración de la Prestación -->
+    <section class="content-section" style="background: var(--background-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>📅 Duración de la Prestación según Cotización</h2>
+                <p>Tiempo que recibirás la prestación según tus meses cotizados</p>
+            </div>
+            
+            <div class="duration-chart">
+                <h3 class="text-xl font-weight-bold mb-4 text-center">Tabla de Duración Oficial SEPE</h3>
+                
+                <div class="duration-bar">
+                    <div class="duration-label">12-17 meses</div>
+                    <div class="duration-visual">
+                        <div class="duration-fill" style="width: 33%;">
+                            <div class="duration-text">4 meses</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="duration-bar">
+                    <div class="duration-label">18-23 meses</div>
+                    <div class="duration-visual">
+                        <div class="duration-fill" style="width: 50%;">
+                            <div class="duration-text">6 meses</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="duration-bar">
+                    <div class="duration-label">24-35 meses</div>
+                    <div class="duration-visual">
+                        <div class="duration-fill" style="width: 67%;">
+                            <div class="duration-text">8 meses</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="duration-bar">
+                    <div class="duration-label">36-47 meses</div>
+                    <div class="duration-visual">
+                        <div class="duration-fill" style="width: 83%;">
+                            <div class="duration-text">10 meses</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="duration-bar">
+                    <div class="duration-label">48-59 meses</div>
+                    <div class="duration-visual">
+                        <div class="duration-fill" style="width: 100%;">
+                            <div class="duration-text">12 meses</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="duration-bar">
+                    <div class="duration-label">60+ meses</div>
+                    <div class="duration-visual">
+                        <div class="duration-fill" style="width: 100%; background: var(--success-color);">
+                            <div class="duration-text">24 meses</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h4><i class="fas fa-star"></i> Casos Especiales</h4>
+                <p><strong>Mayores de 52 años:</strong> Pueden acceder al subsidio tras agotar la prestación.</p>
+                <p><strong>Mayores de 55 años:</strong> Duración máxima de 24 meses si tienen 60+ meses cotizados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Solicitud -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>📋 Cómo Solicitar la Prestación por Desempleo</h2>
+                <p>Proceso paso a paso para solicitar tu prestación online</p>
+            </div>
+            
+            <div class="steps-timeline">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-weight-bold mb-3">Preparar Documentación</h3>
+                        <p class="text-secondary mb-3">Reúne todos los documentos necesarios:</p>
+                        <ul class="text-sm">
+                            <li>• DNI/NIE en vigor</li>
+                            <li>• Número de afiliación a la Seguridad Social</li>
+                            <li>• Certificado de empresa o comunicación de baja</li>
+                            <li>• Vida laboral actualizada</li>
+                            <li>• Cuenta bancaria (IBAN)</li>
+                            <li>• Libro de familia (si tienes hijos a cargo)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-weight-bold mb-3">Acceder a la Sede Electrónica</h3>
+                        <p class="text-secondary mb-3">Entra en el sistema oficial del SEPE:</p>
+                        <ul class="text-sm">
+                            <li>• Ve a <strong>sede.sepe.gob.es</strong></li>
+                            <li>• Identifícate con certificado digital o cl@ve PIN</li>
+                            <li>• Busca "Prestaciones" en el menú</li>
+                            <li>• Selecciona "Solicitar prestación por desempleo"</li>
+                        </ul>
+                        <div class="success-box mt-3">
+                            <strong>✅ Disponible 24/7:</strong> Puedes solicitar la prestación cualquier día a cualquier hora
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-weight-bold mb-3">Rellenar el Formulario</h3>
+                        <p class="text-secondary mb-3">Completa todos los datos requeridos:</p>
+                        <ul class="text-sm">
+                            <li>• Datos personales y de contacto</li>
+                            <li>• Información sobre el último empleo</li>
+                            <li>• Causa de la finalización del contrato</li>
+                            <li>• Datos bancarios para el cobro</li>
+                            <li>• Situación familiar (hijos a cargo)</li>
+                        </ul>
+                        <div class="warning-box mt-3">
+                            <strong>⚠️ Importante:</strong> Revisa todos los datos antes de enviar, cualquier error puede retrasar el proceso
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-weight-bold mb-3">Adjuntar Documentos</h3>
+                        <p class="text-secondary mb-3">Sube los documentos en formato PDF:</p>
+                        <ul class="text-sm">
+                            <li>• Certificado de empresa (obligatorio)</li>
+                            <li>• Documento de identidad</li>
+                            <li>• Justificante de cuenta bancaria</li>
+                            <li>• Documentos adicionales si procede</li>
+                        </ul>
+                        <div class="success-box mt-3">
+                            <strong>✅ Tip:</strong> Asegúrate de que los documentos sean legibles y estén completos
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-weight-bold mb-3">Confirmar y Enviar</h3>
+                        <p class="text-secondary mb-3">Finaliza el proceso:</p>
+                        <ul class="text-sm">
+                            <li>• Revisa toda la información</li>
+                            <li>• Acepta las condiciones</li>
+                            <li>• Envía la solicitud</li>
+                            <li>• Guarda el justificante con número de expediente</li>
+                        </ul>
+                        <div class="success-box mt-3">
+                            <strong>✅ ¡Listo!</strong> Recibirás un SMS y email de confirmación en minutos
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="calc-btn" onclick="solicitarPrestacion()">
+                    <i class="fas fa-external-link-alt"></i>
+                    Solicitar Prestación Online Ahora
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="container">
+        <div class="ad-container">
+            📢 Espacio publicitario - Banner 728x90<br>
+            <small>Anuncios relacionados con empleo, seguros de desempleo o servicios bancarios</small>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="content-section" style="background: var(--background-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>❓ Preguntas Frecuentes sobre Prestación por Desempleo</h2>
+                <p>Resuelve todas tus dudas sobre la prestación contributiva</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cuándo empiezo a cobrar la prestación por desempleo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La prestación se cobra <strong>desde el día siguiente</strong> a la finalización de tu contrato de trabajo, siempre que:</p>
+                        <ul>
+                            <li>• Presentes la solicitud dentro de los 15 días hábiles</li>
+                            <li>• Cumplas todos los requisitos</li>
+                            <li>• Tu documentación esté completa</li>
+                        </ul>
+                        <p><strong>Primer pago:</strong> Suele llegar entre el día 10 y 15 del mes siguiente a la aprobación.</p>
+                        <p><strong>Pagos siguientes:</strong> Entre los días 10 y 15 de cada mes.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué pasa si me despiden estando cobrando el paro?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Si encuentras trabajo mientras cobras la prestación y después te despiden, tienes <strong>dos opciones</strong>:</p>
+                        <p><strong>Opción 1 - Reanudar prestación anterior:</strong></p>
+                        <ul>
+                            <li>• Continúas cobrando lo que te quedaba</li>
+                            <li>• Misma cuantía que tenías</li>
+                            <li>• Si el nuevo trabajo duró menos de 12 meses</li>
+                        </ul>
+                        <p><strong>Opción 2 - Nueva prestación:</strong></p>
+                        <ul>
+                            <li>• Si el nuevo trabajo duró 12+ meses</li>
+                            <li>• Nueva base reguladora (puede ser mayor)</li>
+                            <li>• Nueva duración según cotización</li>
+                        </ul>
+                        <p><strong>Recomendación:</strong> El SEPE calcula automáticamente cuál es más favorable para ti.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Puedo trabajar mientras cobro la prestación por desempleo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>SÍ, es compatible</strong> en estos casos específicos:</p>
+                        <p><strong>Trabajo por cuenta propia:</strong></p>
+                        <ul>
+                            <li>• Puedes mantener el 100% de la prestación</li>
+                            <li>• Durante 270 días (9 meses)</li>
+                            <li>• Solo si eres menor de 30 años o mayor de 52</li>
+                            <li>• O si eres víctima de violencia de género</li>
+                        </ul>
+                        <p><strong>Trabajo por cuenta ajena:</strong></p>
+                        <ul>
+                            <li>• <strong>Temporal inferior a 90 días:</strong> Compatible con el 50%</li>
+                            <li>• <strong>Tiempo parcial:</strong> Compatible parcialmente</li>
+                            <li>• <strong>Tiempo completo:</strong> Se suspende la prestación</li>
+                        </ul>
+                        <p><strong>⚠️ Importante:</strong> Debes comunicar cualquier trabajo al SEPE antes de empezar.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué ocurre si no sello el paro a tiempo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El sellado es <strong>OBLIGATORIO cada 90 días</strong>. Si no sellas:</p>
+                        <p><strong>Retraso de 1-5 días:</strong></p>
+                        <ul>
+                            <li>• Pierdes tantos días de prestación como de retraso</li>
+                            <li>• Puedes sellar y continuar normalmente</li>
+                            <li>• Descuento proporcional en el siguiente pago</li>
+                        </ul>
+                        <p><strong>Retraso de 6-15 días:</strong></p>
+                        <ul>
+                            <li>• Pierdes 15 días de prestación</li>
+                            <li>• Puedes sellar presentando justificación</li>
+                            <li>• El SEPE evalúa si acepta la justificación</li>
+                        </ul>
+                        <p><strong>Retraso superior a 15 días:</strong></p>
+                        <ul>
+                            <li>• <strong>Se extingue la prestación</strong></li>
+                            <li>• Pierdes todo el derecho pendiente</li>
+                            <li>• Solo se readmite por causa muy grave</li>
+                        </ul>
+                        <p><strong>✅ Solución:</strong> Activa las notificaciones del SEPE para recordar las fechas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cuál es la diferencia entre prestación y subsidio por desempleo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Son dos ayudas <strong>completamente diferentes</strong>:</p>
+                        <p><strong>PRESTACIÓN (contributiva):</strong></p>
+                        <ul>
+                            <li>• Basada en tus cotizaciones</li>
+                            <li>• 70% del salario (primeros 6 meses) / 50% (resto)</li>
+                            <li>• Duración: 4 a 24 meses según cotización</li>
+                            <li>• Sin límite de patrimonio</li>
+                            <li>• Tope máximo: 1.398,96€</li>
+                        </ul>
+                        <p><strong>SUBSIDIO (asistencial):</strong></p>
+                        <ul>
+                            <li>• Ayuda asistencial</li>
+                            <li>• Cuantía fija: 463,21€ (80% IPREM)</li>
+                            <li>• Duración: 6-30 meses según circunstancias</li>
+                            <li>• Requiere carecer de rentas</li>
+                            <li>• Para mayores de 45/52 años principalmente</li>
+                        </ul>
+                        <p><strong>Orden de acceso:</strong> Primero prestación, después subsidio (si cumples requisitos).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Me pueden denegar la prestación? ¿Cuáles son los motivos?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>SÍ, pueden denegarte</strong> la prestación por estos motivos:</p>
+                        <p><strong>Motivos administrativos:</strong></p>
+                        <ul>
+                            <li>• No cumplir el período mínimo de cotización</li>
+                            <li>• Presentar la solicitud fuera de plazo</li>
+                            <li>• Documentación incompleta o incorrecta</li>
+                            <li>• Datos contradictorios en la solicitud</li>
+                        </ul>
+                        <p><strong>Motivos laborales:</strong></p>
+                        <ul>
+                            <li>• Dimisión voluntaria sin causa justificada</li>
+                            <li>• Despido disciplinario procedente</li>
+                            <li>• No estar en situación legal de desempleo</li>
+                        </ul>
+                        <p><strong>¿Qué hacer si me deniegan?</strong></p>
+                        <ul>
+                            <li>• Tienes <strong>30 días</strong> para recurrir</li>
+                            <li>• Presenta alegaciones con nueva documentación</li>
+                            <li>• Busca asesoramiento gratuito en servicios sociales</li>
+                            <li>• Muchas denegaciones se revierten en recurso</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué pasa si rechazo ofertas de trabajo estando en el paro?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tienes <strong>obligación de aceptar</strong> ofertas de trabajo adecuadas. Si rechazas:</p>
+                        <p><strong>Primera oferta rechazada:</strong></p>
+                        <ul>
+                            <li>• Advertencia por escrito</li>
+                            <li>• Se anota en tu expediente</li>
+                            <li>• No hay sanción económica</li>
+                        </ul>
+                        <p><strong>Segunda oferta rechazada:</strong></p>
+                        <ul>
+                            <li>• Pérdida de 1 mes de prestación</li>
+                            <li>• Apercibimiento de extinción</li>
+                        </ul>
+                        <p><strong>Tercera oferta rechazada:</strong></p>
+                        <ul>
+                            <li>• <strong>Extinción de la prestación</strong></li>
+                            <li>• Pérdida de todo el derecho pendiente</li>
+                        </ul>
+                        <p><strong>¿Qué se considera "trabajo adecuado"?</strong></p>
+                        <ul>
+                            <li>• Durante los primeros 3 meses: tu profesión habitual</li>
+                            <li>• A partir del 4º mes: cualquier trabajo para el que estés capacitado</li>
+                            <li>• Salario no inferior al 100% de la prestación</li>
+                            <li>• Distancia razonable desde tu domicilio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="text-2xl font-weight-bold mb-3">📧 Mantente Actualizado sobre Prestaciones</h3>
+                <p class="text-lg mb-4">Recibe las últimas novedades sobre prestaciones por desempleo, cambios en cuantías y nuevos requisitos</p>
+                <form class="newsletter-form" onsubmit="return suscribirNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="Tu email..." required>
+                    <button type="submit" class="newsletter-btn">Suscribirme Gratis</button>
+                </form>
+                <p class="text-sm mt-3" style="opacity: 0.8;">
+                    ✅ Cambios en el SEPE ✅ Nuevas cuantías ✅ Plazos importantes ✅ Casos prácticos ✅ Cancelar cuando quieras
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Prestaciones SEPE</h4>
+                    <ul>
+                        <li><a href="desempleo.html">Prestación Desempleo</a></li>
+                        <li><a href="maternidad.html">Prestación Maternidad</a></li>
+                        <li><a href="hijo-cargo.html">Prestación Hijo a Cargo</a></li>
+                        <li><a href="contributiva.html">Prestaciones Contributivas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Otros Servicios</h4>
+                    <ul>
+                        <li><a href="../ayudas/">Ayudas SEPE</a></li>
+                        <li><a href="../subsidios/">Subsidios</a></li>
+                        <li><a href="../tramites/sellar-paro.html">Sellar Paro</a></li>
+                        <li><a href="../cita-previa/">Cita Previa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Trámites Relacionados</h4>
+                    <ul>
+                        <li><a href="../tramites/apuntarse-paro.html">Apuntarse al Paro</a></li>
+                        <li><a href="../ayudas/ingreso-minimo-vital.html">Ingreso Mínimo Vital</a></li>
+                        <li><a href="../pensiones/">Pensiones</a></li>
+                        <li><a href="../cursos/">Cursos Gratuitos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Oficiales</h4>
+                    <ul>
+                        <li><a href="https://www.sepe.es" target="_blank" rel="noopener">SEPE Oficial</a></li>
+                        <li><a href="https://sede.sepe.gob.es" target="_blank" rel="noopener">Sede Electrónica</a></li>
+                        <li><a href="https://www.seg-social.es" target="_blank" rel="noopener">Seguridad Social</a></li>
+                        <li><a href="tel:919267970">Teléfono: 919 26 79 70</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 InfoSEPE. Portal informativo no oficial sobre prestaciones por desempleo.</p>
+                <p>Para solicitudes oficiales de prestación, utiliza siempre los canales oficiales del SEPE en sede.sepe.gob.es</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Variables globales
+        let tiempoEnPagina = 0;
+        let calculadoraUsada = false;
+        
+        // Función para calcular prestación
+        function calcularPrestacion(event) {
+            event.preventDefault();
+            calculadoraUsada = true;
+            
+            const salario = parseFloat(document.getElementById('salario').value);
+            const mesesCotizados = parseInt(document.getElementById('mesesCotizados').value);
+            const edad = document.getElementById('edad').value;
+            const hijosACargo = parseInt(document.getElementById('hijosACargo').value);
+            
+            if (!salario || !mesesCotizados || !edad) {
+                alert('Por favor, completa todos los campos obligatorios');
+                return false;
+            }
+            
+            // Calcular base reguladora (simplificado)
+            const baseReguladora = salario;
+            
+            // Calcular prestación (70% los primeros 6 meses, 50% después)
+            let prestacion70 = baseReguladora * 0.70;
+            let prestacion50 = baseReguladora * 0.50;
+            
+            // Aplicar topes mínimos y máximos
+            const topeMinimo = hijosACargo === 0 ? 463.21 : 
+                              hijosACargo === 1 ? 603.20 : 743.18;
+            const topeMaximo = 1398.96;
+            
+            prestacion70 = Math.max(topeMinimo, Math.min(prestacion70, topeMaximo));
+            prestacion50 = Math.max(topeMinimo, Math.min(prestacion50, topeMaximo));
+            
+            // Calcular duración
+            let duracion;
+            if (mesesCotizados >= 60) duracion = 24;
+            else if (mesesCotizados >= 48) duracion = 12;
+            else if (mesesCotizados >= 36) duracion = 10;
+            else if (mesesCotizados >= 24) duracion = 8;
+            else if (mesesCotizados >= 18) duracion = 6;
+            else duracion = 4;
+            
+            // Mostrar resultados
+            mostrarResultados(prestacion70, prestacion50, duracion, baseReguladora);
+            
+            // Analytics
+            trackEvent('calculadora-prestacion-usada', `salario-${salario}-meses-${mesesCotizados}`);
+            
+            return false;
+        }
+        
+        function mostrarResultados(prestacion70, prestacion50, duracion, baseReguladora) {
+            const resultContainer = document.getElementById('resultado');
+            
+            resultContainer.innerHTML = `
+                <h4 class="text-2xl font-weight-bold mb-4">📊 Tu Prestación Calculada</h4>
+                
+                <div class="d-grid grid-cols-2 gap-4 mb-4">
+                    <div class="text-center p-3" style="background: var(--primary-color); color: white; border-radius: var(--border-radius);">
+                        <div class="text-sm opacity-80">Primeros 180 días (70%)</div>
+                        <div class="result-amount text-2xl">${prestacion70.toFixed(2)}€</div>
+                    </div>
+                    <div class="text-center p-3" style="background: var(--secondary-color); color: white; border-radius: var(--border-radius);">
+                        <div class="text-sm opacity-80">Desde día 181 (50%)</div>
+                        <div class="result-amount text-2xl">${prestacion50.toFixed(2)}€</div>
+                    </div>
+                </div>
+                
+                <div class="text-center mb-4">
+                    <div class="text-lg"><strong>Duración total:</strong> ${duracion} meses</div>
+                    <div class="text-sm text-secondary">Base reguladora: ${baseReguladora.toFixed(2)}€</div>
+                </div>
+                
+                <div style="background: white; padding: 1rem; border-radius: var(--border-radius); margin: 1rem 0;">
+                    <h5><i class="fas fa-calculator text-primary"></i> Desglose del cálculo:</h5>
+                    <ul class="text-sm mt-2">
+                        <li>• <strong>Primeros 6 meses:</strong> ${baseReguladora.toFixed(2)}€ × 70% = ${prestacion70.toFixed(2)}€</li>
+                        <li>• <strong>Resto del período:</strong> ${baseReguladora.toFixed(2)}€ × 50% = ${prestacion50.toFixed(2)}€</li>
+                        <li>• <strong>Total estimado:</strong> ${((prestacion70 * 6) + (prestacion50 * (duracion - 6))).toFixed(2)}€</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center">
+                    <button class="calc-btn" onclick="solicitarPrestacion()">
+                        <i class="fas fa-external-link-alt"></i>
+                        Solicitar Mi Prestación Ahora
+                    </button>
+                </div>
+            `;
+            
+            resultContainer.style.display = 'block';
+            
+            // Scroll suave al resultado
+            setTimeout(() => {
+                resultContainer.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 100);
+        }
+        
+        // Función para solicitar prestación
+        function solicitarPrestacion() {
+            trackEvent('solicitar-prestacion-click');
+            
+            const mensaje = `🌐 REDIRECCIÓN AL SISTEMA OFICIAL SEPE
+
+📍 DESTINO: sede.sepe.gob.es
+🔐 NECESITAS: Certificado digital o cl@ve PIN
+
+📋 DOCUMENTOS A TENER LISTOS:
+• DNI/NIE en vigor
+• Certificado de empresa
+• Número de Seguridad Social
+• Cuenta bancaria (IBAN)
+• Libro de familia (si tienes hijos)
+
+⏰ DURACIÓN: 10-15 minutos
+🎯 DISPONIBLE: 24 horas, 7 días
+
+¿Continuar al sitio oficial del SEPE?`;
+
+            if (confirm(mensaje)) {
+                window.open('https://sede.sepe.gob.es', '_blank');
+            }
+        }
+        
+        // Toggle FAQ
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Cerrar otras FAQs
+            document.querySelectorAll('.faq-answer.active').forEach(faq => {
+                if (faq !== answer) {
+                    faq.classList.remove('active');
+                    faq.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle actual FAQ
+            const isOpening = !answer.classList.contains('active');
+            answer.classList.toggle('active');
+            
+            if (isOpening) {
+                icon.style.transform = 'rotate(180deg)';
+                trackEvent('faq-abierta', element.querySelector('span').textContent.substring(0, 50));
+                
+                // Scroll suave a la pregunta
+                setTimeout(() => {
+                    element.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }, 100);
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Newsletter
+        function suscribirNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            if (email && validarEmail(email)) {
+                const mensaje = `🎉 ¡Perfecto! ${email} se ha suscrito correctamente.
+
+📧 RECIBIRÁS (máximo 2 emails/mes):
+• Cambios en cuantías de prestaciones
+• Nuevos requisitos y plazos
+• Guías prácticas para trámites
+• Alertas sobre deadlines importantes
+• Casos de éxito y testimonios
+
+📅 FRECUENCIA:
+• Boletín mensual con novedades
+• Alertas urgentes solo cuando sea necesario
+• Email de bienvenida con guía PDF
+
+🔒 PRIVACIDAD:
+• Datos protegidos según RGPD
+• Sin spam, solo contenido útil
+• Cancelar con un clic
+
+¡Gracias por confiar en InfoSEPE!`;
+
+                alert(mensaje);
+                event.target.reset();
+                trackEvent('newsletter-prestacion-suscripcion', email);
+            } else {
+                alert('❌ Por favor, introduce un email válido');
+            }
+        }
+        
+        // Función para validar email
+        function validarEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+        
+        // Función de tracking
+        function trackEvent(action, label = '', value = 0) {
+            // Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    'event_category': 'Prestacion Desempleo',
+                    'event_label': label,
+                    'value': value
+                });
+            }
+            
+            // Console para desarrollo
+            console.log(`🎯 Evento: ${action}`, { label, value });
+        }
+        
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Búsqueda mejorada
+        function setupSearch() {
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            const sugerencias = [
+                'prestacion desempleo', 'cuanto cobra paro', 'duracion prestacion', 
+                'requisitos paro', 'solicitar prestacion', 'sellar paro',
+                'calculadora paro', 'base reguladora', 'subsidio desempleo'
+            ];
+            
+            const realizarBusqueda = (query) => {
+                if (!query.trim()) return;
+                
+                const coincidencias = sugerencias.filter(s => 
+                    s.toLowerCase().includes(query.toLowerCase())
+                );
+                
+                let mensaje = `🔍 Buscando: "${query}"\n\n`;
+                
+                if (coincidencias.length > 0) {
+                    mensaje += `💡 Sugerencias relacionadas:\n${coincidencias.slice(0, 3).map(s => `• ${s}`).join('\n')}\n\n`;
+                }
+                
+                mensaje += `📄 Contenido encontrado en esta página:\n`;
+                mensaje += `• Calculadora de prestación interactiva\n`;
+                mensaje += `• Requisitos detallados actualizados\n`;
+                mensaje += `• Tabla oficial de cuantías 2025\n`;
+                mensaje += `• Proceso de solicitud paso a paso\n`;
+                mensaje += `• FAQ completa con casos prácticos\n`;
+                mensaje += `• Duración según cotización\n\n`;
+                mensaje += `🔗 Explora otras secciones usando el menú principal.`;
+                
+                alert(mensaje);
+                trackEvent('busqueda-prestacion', query);
+            };
+            
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    realizarBusqueda(searchInput.value);
+                }
+            });
+            
+            searchBtn.addEventListener('click', () => {
+                realizarBusqueda(searchInput.value);
+            });
+        }
+        
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup funcionalidades
+            setupSearch();
+            
+            // Tracking inicial
+            trackEvent('pagina-cargada', window.location.pathname);
+            
+            // Detectar dispositivo
+            const esMobile = window.innerWidth <= 768;
+            trackEvent('dispositivo', esMobile ? 'mobile' : 'desktop');
+            
+            // Contador de tiempo en página
+            setInterval(() => {
+                tiempoEnPagina++;
+            }, 1000);
+            
+            // Animaciones on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Aplicar animaciones a elementos
+            document.querySelectorAll('.requirement-card, .timeline-step, .faq-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+            
+            // Notificaciones contextuales
+            const notificaciones = [
+                { tiempo: 30, mensaje: '💡 Consejo: Usa la calculadora para conocer tu prestación exacta', tipo: 'info' },
+                { tiempo: 60, mensaje: '⏰ Recuerda: Tienes 15 días para solicitar desde el cese', tipo: 'warning' },
+                { tiempo: 120, mensaje: '📋 ¿Necesitas ayuda? Revisa nuestra FAQ completa', tipo: 'info' }
+            ];
+            
+            notificaciones.forEach(notif => {
+                setTimeout(() => {
+                    if (tiempoEnPagina >= notif.tiempo) {
+                        mostrarNotificacion(notif.mensaje, notif.tipo);
+                    }
+                }, notif.tiempo * 1000);
+            });
+            
+            console.log('✅ Página de prestación por desempleo inicializada correctamente');
+        });
+        
+        // Función para mostrar notificaciones
+        function mostrarNotificacion(mensaje, tipo = 'info') {
+            const colores = {
+                'info': '#3b82f6',
+                'success': '#10b981',
+                'warning': '#f59e0b',
+                'error': '#ef4444'
+            };
+
+            const iconos = {
+                'info': '💡',
+                'success': '✅', 
+                'warning': '⚠️',
+                'error': '❌'
+            };
+
+            const notificacion = document.createElement('div');
+            notificacion.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${colores[tipo] || colores.info};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                z-index: 10000;
+                max-width: 350px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                cursor: pointer;
+                font-size: 0.9rem;
+                line-height: 1.4;
+            `;
+            
+            notificacion.innerHTML = `
+                <div style="display: flex; align-items: flex-start; gap: 8px;">
+                    <span style="font-size: 1.1rem;">${iconos[tipo] || iconos.info}</span>
+                    <span style="flex: 1;">${mensaje}</span>
+                    <span style="opacity: 0.7; cursor: pointer; font-size: 1.2rem;" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                </div>
+            `;
+            
+            notificacion.addEventListener('click', function() {
+                this.style.transform = 'translateX(100%)';
+                setTimeout(() => this.remove(), 300);
+            });
+            
+            document.body.appendChild(notificacion);
+            
+            setTimeout(() => {
+                notificacion.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                if (notificacion.parentNode) {
+                    notificacion.style.transform = 'translateX(100%)';
+                    setTimeout(() => notificacion.remove(), 300);
+                }
+            }, 6000);
+        }
+        
+        // Detección de intención de salida
+        let exitIntentShown = false;
+        
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !calculadoraUsada && !exitIntentShown && tiempoEnPagina > 20) {
+                exitIntentShown = true;
+                
+                setTimeout(() => {
+                    const respuesta = confirm(`⚠️ ¡ESPERA! ¿Te vas sin calcular tu prestación?
+
+🎯 EN SOLO 2 MINUTOS SABRÁS:
+✅ Cuánto dinero vas a cobrar exactamente
+✅ Durante cuántos meses
+✅ Qué documentos necesitas
+✅ Cómo solicitar online
+
+💰 Miles de personas ya han calculado su prestación.
+¿No quieres saber cuánto te corresponde?
+
+👆 Haz clic en ACEPTAR para usar la calculadora gratis`);
+                    
+                    if (respuesta) {
+                        document.querySelector('.calculator-container').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                        document.getElementById('salario').focus();
+                        trackEvent('exit-intent-retenido');
+                    } else {
+                        trackEvent('exit-intent-perdido');
+                    }
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
