@@ -1,0 +1,681 @@
+</div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="../" class="brand-link">
+                        <i class="fas fa-briefcase brand-icon"></i>
+                        <span class="brand-text">InfoSEPE</span>
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <a href="../cita-previa/" class="nav-link">Cita Previa</a>
+                    <a href="../prestaciones/" class="nav-link">Prestaciones</a>
+                    <a href="../subsidios/" class="nav-link active">Subsidios</a>
+                    <a href="../tramites/" class="nav-link">Trámites</a>
+                    <a href="../ayudas/" class="nav-link">Ayudas</a>
+                    <a href="../cursos/" class="nav-link">Cursos</a>
+                </div>
+                <div class="search-container">
+                    <input type="search" placeholder="Buscar..." class="search-input" id="header-search">
+                    <button type="button" class="search-btn" onclick="performSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-section" aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../subsidios/"><i class="fas fa-hand-holding-usd"></i> Subsidios</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <i class="fas fa-hourglass-end"></i> Subsidio por Agotamiento
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-gradient">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">⏳ Subsidio por Agotamiento de Prestación 2025</h1>
+                    <p class="hero-subtitle">
+                        Subsidio de 463,21€ mensuales tras agotar tu prestación contributiva. 
+                        Duración de 6 a 18 meses según tu situación familiar.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">463,21€</span>
+                            <span class="stat-label">Cuantía mensual</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6-18</span>
+                            <span class="stat-label">Meses duración</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Días para solicitar</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#requisitos" class="btn btn-primary btn-lg">
+                            <i class="fas fa-list-check"></i>
+                            Ver Requisitos
+                        </a>
+                        <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-outline btn-lg" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i>
+                            Solicitar en SEPE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="content-section">
+                        <h2>¿Qué es el Subsidio por Agotamiento?</h2>
+                        <p class="lead">
+                            El subsidio por agotamiento es una <strong>ayuda económica de 463,21€ mensuales</strong> 
+                            dirigida a personas que han agotado completamente su prestación contributiva por desempleo 
+                            y se encuentran en situación de necesidad económica.
+                        </p>
+                        
+                        <div class="info-box">
+                            <div class="info-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h3>Diferencias con Otros Subsidios</h3>
+                            </div>
+                            <div class="comparison-table">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Aspecto</th>
+                                            <th>Subsidio Agotamiento</th>
+                                            <th>Subsidio +52 años</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Edad mínima</strong></td>
+                                            <td>Cualquier edad</td>
+                                            <td>52 años cumplidos</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Duración básica</strong></td>
+                                            <td>6 meses</td>
+                                            <td>Hasta jubilación</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Renovación</strong></td>
+                                            <td>Sí, hasta 18 meses total</td>
+                                            <td>Automática si cumple requisitos</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Cotización</strong></td>
+                                            <td>No cotiza a Seguridad Social</td>
+                                            <td>Sí cotiza (125% IPREM)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Requisitos adicionales</strong></td>
+                                            <td>3 meses cotizados último año</td>
+                                            <td>6 años cotizados en total</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <h3>Tipos de Subsidio por Agotamiento</h3>
+                        <div class="tipos-grid">
+                            <div class="tipo-card">
+                                <div class="tipo-header">
+                                    <i class="fas fa-user"></i>
+                                    <h4>General</h4>
+                                </div>
+                                <div class="tipo-content">
+                                    <p><strong>Duración:</strong> 6 meses</p>
+                                    <p><strong>Requisitos:</strong> Básicos + carencia rentas</p>
+                                    <p><strong>Renovable:</strong> Una vez (6 meses más)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tipo-card">
+                                <div class="tipo-header">
+                                    <i class="fas fa-users"></i>
+                                    <h4>Con Responsabilidades Familiares</h4>
+                                </div>
+                                <div class="tipo-content">
+                                    <p><strong>Duración:</strong> 18 meses</p>
+                                    <p><strong>Requisitos:</strong> Básicos + cargas familiares</p>
+                                    <p><strong>Renovable:</strong> Hasta 30 meses total</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <!-- AdSense -->
+                    <div class="ad-container">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"></script>
+                        <ins class="adsbygoogle ad-sidebar"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    
+                    <!-- Calculadora rápida -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-calculator"></i>
+                                Verificador Rápido
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-calc">
+                                <label class="form-label">¿Has agotado la prestación contributiva?</label>
+                                <select id="prestacionAgotada" class="form-control">
+                                    <option value="si">Sí, completamente</option>
+                                    <option value="no">No, aún la cobro</option>
+                                    <option value="nunca">Nunca la he tenido</option>
+                                </select>
+                                
+                                <label class="form-label">Miembros unidad familiar</label>
+                                <select id="miembrosFamiliaQuick" class="form-control">
+                                    <option value="1">1 persona</option>
+                                    <option value="2">2 personas</option>
+                                    <option value="3">3 personas</option>
+                                    <option value="4">4+ personas</option>
+                                </select>
+                                
+                                <label class="form-label">Ingresos familiares mensuales</label>
+                                <input type="number" id="ingresosFamiliaQuick" class="form-control" placeholder="€">
+                                
+                                <button type="button" id="verificarRapido" class="btn btn-primary btn-block mt-3">
+                                    Verificar Acceso
+                                </button>
+                                
+                                <div id="resultadoQuick" class="mt-3" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requisitos -->
+    <section id="requisitos" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">📋 Requisitos para el Subsidio por Agotamiento</h2>
+                <p class="section-subtitle">
+                    Condiciones que debes cumplir para acceder a este subsidio
+                </p>
+            </div>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-hourglass-end"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h3 class="requirement-title">Agotamiento Total</h3>
+                        <p class="requirement-description">
+                            <strong>Haber agotado completamente</strong> una prestación contributiva por desempleo.
+                        </p>
+                        <ul class="requirement-details">
+                            <li>Prestación contributiva totalmente consumida</li>
+                            <li>No haber renunciado voluntariamente</li>
+                            <li>No haber perdido derecho por sanción</li>
+                            <li>Certificado de agotamiento del SEPE</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h3 class="requirement-title">Cotizaciones Recientes</h3>
+                        <p class="requirement-description">
+                            <strong>Al menos 3 meses cotizados</strong> en los 12 meses anteriores al agotamiento.
+                        </p>
+                        <ul class="requirement-details">
+                            <li>Mínimo 90 días de cotización</li>
+                            <li>En el año previo al agotamiento</li>
+                            <li>Cotizaciones efectivas al desempleo</li>
+                            <li>No valen bonificaciones o reducciones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-chart-line-down"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h3 class="requirement-title">Carencia de Rentas</h3>
+                        <p class="requirement-description">
+                            <strong>Ingresos familiares</strong> por debajo del 75% del Salario Mínimo Interprofesional.
+                        </p>
+                        <ul class="requirement-details">
+                            <li><strong>Individual:</strong> Menos de 810€/mes</li>
+                            <li><strong>Familiar:</strong> Menos de 810€ por miembro</li>
+                            <li>Incluye todos los ingresos del hogar</li>
+                            <li>También se valora el patrimonio</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h3 class="requirement-title">Disponibilidad Laboral</h3>
+                        <p class="requirement-description">
+                            <strong>Estar disponible para trabajar</strong> y buscar empleo activamente.
+                        </p>
+                        <ul class="requirement-details">
+                            <li>Demanda de empleo vigente</li>
+                            <li>Búsqueda activa y continuada</li>
+                            <li>Participar en programas del SEPE</li>
+                            <li>Aceptar ofertas de trabajo adecuadas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h3 class="requirement-title">Plazo de Solicitud</h3>
+                        <p class="requirement-description">
+                            <strong>Solicitar dentro de 15 días hábiles</strong> desde el agotamiento de la prestación.
+                        </p>
+                        <ul class="requirement-details">
+                            <li>15 días hábiles máximo</li>
+                            <li>Cuenta desde el día siguiente al agotamiento</li>
+                            <li>Si superas el plazo, pierdes días</li>
+                            <li>No se puede recuperar tiempo perdido</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h3 class="requirement-title">No Rechazar Subsidio</h3>
+                        <p class="requirement-description">
+                            <strong>No haber rechazado</strong> anteriormente un subsidio sin causa justificada.
+                        </p>
+                        <ul class="requirement-details">
+                            <li>Primera solicitud o causa justificada</li>
+                            <li>No renuncia voluntaria previa</li>
+                            <li>Cumplimiento de compromisos anteriores</li>
+                            <li>Histórico limpio de subsidios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duración y Renovación -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">⏱️ Duración y Posibilidades de Renovación</h2>
+                <p class="section-subtitle">
+                    Tiempo que puedes cobrar el subsidio según tu situación
+                </p>
+            </div>
+            
+            <div class="duration-grid">
+                <div class="duration-card">
+                    <div class="duration-header">
+                        <div class="duration-icon bg-blue">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="duration-title">Subsidio General</h3>
+                        <span class="duration-badge">Básico</span>
+                    </div>
+                    <div class="duration-body">
+                        <div class="duration-main">
+                            <span class="duration-time">6 meses</span>
+                            <span class="duration-label">Duración inicial</span>
+                        </div>
+                        <div class="duration-details">
+                            <h4>Renovación Posible</h4>
+                            <ul>
+                                <li><strong>Primera renovación:</strong> 6 meses más</li>
+                                <li><strong>Total máximo:</strong> 12 meses</li>
+                                <li><strong>Requisito:</strong> Seguir sin rentas</li>
+                                <li><strong>Solicitud:</strong> Antes del agotamiento</li>
+                            </ul>
+                        </div>
+                        <div class="duration-total">
+                            <strong>Total posible: 5.558,52€</strong>
+                            <small>(463,21€ × 12 meses)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="duration-card">
+                    <div class="duration-header">
+                        <div class="duration-icon bg-green">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="duration-title">Con Responsabilidades Familiares</h3>
+                        <span class="duration-badge">Familiar</span>
+                    </div>
+                    <div class="duration-body">
+                        <div class="duration-main">
+                            <span class="duration-time">18 meses</span>
+                            <span class="duration-label">Duración inicial</span>
+                        </div>
+                        <div class="duration-details">
+                            <h4>Responsabilidades Familiares</h4>
+                            <ul>
+                                <li>Cónyuge sin ingresos suficientes</li>
+                                <li>Hijos menores de 26 años a cargo</li>
+                                <li>Hijos con discapacidad</li>
+                                <li>Familiares dependientes</li>
+                            </ul>
+                        </div>
+                        <div class="duration-extension">
+                            <h4>Extensión Posible</h4>
+                            <ul>
+                                <li><strong>Renovación:</strong> 12 meses más</li>
+                                <li><strong>Total máximo:</strong> 30 meses</li>
+                                <li><strong>Condición:</strong> Mantener responsabilidades</li>
+                            </ul>
+                        </div>
+                        <div class="duration-total">
+                            <strong>Total posible: 13.896,30€</strong>
+                            <small>(463,21€ × 30 meses)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Solicitud -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">📝 Proceso de Solicitud del Subsidio</h2>
+                <p class="section-subtitle">
+                    Pasos para solicitar tu subsidio por agotamiento de prestación
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-step">1</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">⚠️ Agotamiento de Prestación</h3>
+                        <p class="text-secondary mb-3">El SEPE te notificará el agotamiento:</p>
+                        <ul class="text-sm">
+                            <li>• <strong>Notificación automática:</strong> SMS/email del SEPE</li>
+                            <li>• <strong>Último pago:</strong> Se realiza el mes del agotamiento</li>
+                            <li>• <strong>Fecha clave:</strong> Día siguiente al agotamiento</li>
+                            <li>• <strong>Comprobación:</strong> Verifica en tu expediente online</li>
+                        </ul>
+                        <div class="timeline-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <strong>Consejo:</strong> Prepara la documentación antes del agotamiento
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">2</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">📋 Recopilar Documentación</h3>
+                        <p class="text-secondary mb-3">Documenta tu situación económica y familiar:</p>
+                        <ul class="text-sm">
+                            <li>• <strong>Personal:</strong> DNI/NIE, NSS, demanda empleo vigente</li>
+                            <li>• <strong>Económica:</strong> Declaración rentas, certificados ingresos</li>
+                            <li>• <strong>Familiar:</strong> Libro familia, convivencia, cargas</li>
+                            <li>• <strong>Bancaria:</strong> IBAN cuenta para recibir pagos</li>
+                            <li>• <strong>Laboral:</strong> Vida laboral, certificado empresa</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">3</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">⏰ Solicitud en Plazo</h3>
+                        <p class="text-secondary mb-3">Crucial: respeta el plazo de 15 días hábiles:</p>
+                        <ul class="text-sm">
+                            <li>• <strong>Plazo máximo:</strong> 15 días hábiles desde agotamiento</li>
+                            <li>• <strong>Cómputo:</strong> Solo días laborables (L-V)</li>
+                            <li>• <strong>Consecuencia:</strong> Perder días si superas plazo</li>
+                            <li>• <strong>Recomendación:</strong> Solicitar en primeros 5 días</li>
+                        </ul>
+                        <div class="timeline-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>Importante:</strong> El plazo no se puede recuperar
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">4</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">💻 Presentación de Solicitud</h3>
+                        <p class="text-secondary mb-3">Vías disponibles para presentar:</p>
+                        <ul class="text-sm">
+                            <li>• <strong>Online:</strong> Sede electrónica SEPE (24h disponible)</li>
+                            <li>• <strong>Presencial:</strong> Oficina prestaciones con cita previa</li>
+                            <li>• <strong>Representante:</strong> Familiar o gestor autorizado</li>
+                            <li>• <strong>Correo certificado:</strong> Solo si no hay otras opciones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">5</div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">📋 Resolución del Expediente</h3>
+                        <p class="text-secondary mb-3">El SEPE estudia y resuelve tu solicitud:</p>
+                        <ul class="text-sm">
+                            <li>• <strong>Plazo resolución:</strong> Máximo 15 días hábiles</li>
+                            <li>• <strong>Verificaciones:</strong> Rentas, cotizaciones, familia</li>
+                            <li>• <strong>Notificación:</strong> SMS, email o correo postal</li>
+                            <li>• <strong>Primer pago:</strong> 30 días tras resolución favorable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Obligaciones -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">📌 Obligaciones Durante el Subsidio</h2>
+                <p class="section-subtitle">
+                    Compromisos que debes cumplir mientras cobras el subsidio
+                </p>
+            </div>
+            
+            <div class="obligations-grid">
+                <div class="obligation-card">
+                    <div class="obligation-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="obligation-content">
+                        <h3 class="obligation-title">Búsqueda Activa de Empleo</h3>
+                        <p class="obligation-description">
+                            Debes demostrar que buscas trabajo de forma continuada y efectiva.
+                        </p>
+                        <ul class="obligation-details">
+                            <li>Mantener demanda de empleo vigente</li>
+                            <li>Participar en programas de orientación</li>
+                            <li>Aceptar ofertas de trabajo adecuadas</li>
+                            <li>Asistir a entrevistas de trabajo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="obligation-card">
+                    <div class="obligation-icon">
+                        <i class="fas fa-stamp"></i>
+                    </div>
+                    <div class="obligation-content">
+                        <h3 class="obligation-title">Sellado Periódico</h3>
+                        <p class="obligation-description">
+                            Renovar la demanda y sellar el subsidio cada 90 días.
+                        </p>
+                        <ul class="obligation-details">
+                            <li>Cada 90 días naturales</li>
+                            <li>Presencial u online según disponibilidad</li>
+                            <li>Declarar situación laboral actual</li>
+                            <li>Justificar actividades de búsqueda</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="obligation-card">
+                    <div class="obligation-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="obligation-content">
+                        <h3 class="obligation-title">Comunicar Cambios</h3>
+                        <p class="obligation-description">
+                            Informar inmediatamente de cualquier cambio relevante.
+                        </p>
+                        <ul class="obligation-details">
+                            <li>Inicio de trabajo (cualquier tipo)</li>
+                            <li>Cambios en ingresos familiares</li>
+                            <li>Modificaciones en domicilio</li>
+                            <li>Variaciones en situación familiar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="obligation-card">
+                    <div class="obligation-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="obligation-content">
+                        <h3 class="obligation-title">Participar en Formación</h3>
+                        <p class="obligation-description">
+                            Asistir a cursos y programas formativos del SEPE cuando sean convocados.
+                        </p>
+                        <ul class="obligation-details">
+                            <li>Cursos de formación ocupacional</li>
+                            <li>Programas de recualificación</li>
+                            <li>Talleres de orientación laboral</li>
+                            <li>Itinerarios personalizados de empleo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">❓ Preguntas Frecuentes</h2>
+                <p class="section-subtitle">
+                    Resolvemos las dudas más comunes sobre el subsidio por agotamiento
+                </p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" data-toggle="faq">
+                        <h4>¿Puedo trabajar mientras cobro el subsidio por agotamiento?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Sí, pero con limitaciones. Puedes trabajar a tiempo parcial manteniendo parte del subsidio, 
+                            o hacer trabajos esporádicos de menos de 90 días que suspenden temporalmente el subsidio. 
+                            Los ingresos tot<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsidio por Agotamiento de Prestación 2025 - SEPE | InfoSEPE</title>
+    <meta name="description" content="Subsidio por agotamiento 2025: 463,21€ tras agotar el paro. Requisitos, duración 6-18 meses y cómo solicitarlo. Guía completa SEPE.">
+    <meta name="keywords" content="subsidio agotamiento, paro agotado, subsidio 463 euros, SEPE agotamiento, después del paro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://infosepe.com/subsidios/agotamiento.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Subsidio por Agotamiento de Prestación 2025 - SEPE">
+    <meta property="og:description" content="Todo sobre el subsidio por agotamiento: 463,21€ mensuales tras agotar la prestación contributiva.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://infosepe.com/subsidios/agotamiento.html">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h3>🍪 Gestión de Cookies</h3>
+                <p>Utilizamos cookies para mejorar tu experiencia. 
+                   <a href="../legal/cookies.html" class="cookie-link">Más información</a>
+                </p>
+            </div>
+            <div class="cookie-actions">
+                <button id="accept-all-cookies" class="btn btn-primary btn-sm">Aceptar todas</button>
+                <button id="configure-cookies" class="btn btn-outline btn-sm">Configurar</button>
+                <button id="reject-cookies" class="btn btn-outline btn-sm">Rechazar</button>
+            </div>
+        </div>
