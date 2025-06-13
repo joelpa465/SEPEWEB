@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies | InfoSEPE 2025</title>
+    <meta name="description" content="Política de cookies de InfoSEPE. Información detallada sobre cookies técnicas, analíticas y publicitarias. Gestión y configuración de cookies.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- AdSense Head Tag -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .cookies-hero {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            padding: var(--spacing-lg);
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--spacing-lg);
+        }
+        
+        .cookie-text {
+            flex: 1;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-shrink: 0;
+        }
+        
+        .cookie-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border: none;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .cookie-btn.accept {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .cookie-btn.configure {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .cookie-btn.reject {
+            background: var(--error-color);
+            color: white;
+        }
+        
+        .cookie-config-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1001;
+            padding: var(--spacing-lg);
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-2xl);
+        }
+        
+        .cookie-category {
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius-md);
+        }
+        
+        .cookie-category.essential {
+            border-color: var(--success-color);
+            background: #f0f9ff;
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background: #ccc;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .toggle-switch.active {
+            background: var(--success-color);
+        }
+        
+        .toggle-switch.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(26px);
+        }
+        
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .cookie-table th,
+        .cookie-table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .cookie-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="../" class="brand-link">
+                        <i class="fas fa-briefcase brand-icon"></i>
+                        <span class="brand-text">InfoSEPE</span>
+                    </a>
+                </div>
+                
+                <div class="navbar-menu">
+                    <a href="../" class="nav-link">Inicio</a>
+                    <a href="../cita-previa/" class="nav-link">Cita Previa</a>
+                    <a href="../prestaciones/" class="nav-link">Prestaciones</a>
+                    <a href="../subsidios/" class="nav-link">Subsidios</a>
+                    <a href="../ayudas/" class="nav-link">Ayudas</a>
+                    <a href="../cursos/" class="nav-link">Cursos</a>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar información..." id="searchInput">
+                    <button class="search-btn" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="../" class="breadcrumb-link">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="../legal/" class="breadcrumb-link">Legal</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="breadcrumb-current">Política de Cookies</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="cookies-hero">
+        <div class="container">
+            <h1 class="text-4xl font-weight-bold mb-3">Política de Cookies</h1>
+            <p class="text-lg">Información detallada sobre el uso de cookies en InfoSEPE</p>
+            <button class="btn-primary" style="margin-top: 20px;" onclick="showCookieConfig()">
+                <i class="fas fa-cog"></i> Configurar Cookies
+            </button>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <div class="legal-content">
+        <div class="last-updated">
+            <strong>Última actualización:</strong> 13 de junio de 2025
+        </div>
+
+        <!-- 1. Qué son las Cookies -->
+        <div class="legal-section">
+            <h2><i class="fas fa-cookie-bite"></i> 1. ¿Qué son las Cookies?</h2>
+            <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Nos permiten reconocer su navegador y capturar y recordar cierta información.</p>
+            
+            <div class="highlight-box">
+                <h3>Tipos de cookies que utilizamos:</h3>
+                <ul>
+                    <li><strong>Cookies de sesión:</strong> Se eliminan al cerrar el navegador</li>
+                    <li><strong>Cookies persistentes:</strong> Permanecen hasta su fecha de caducidad</li>
+                    <li><strong>Cookies propias:</strong> Establecidas por InfoSEPE</li>
+                    <li><strong>Cookies de terceros:</strong> Establecidas por servicios externos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. Cookies que Utilizamos -->
+        <div class="legal-section">
+            <h2><i class="fas fa-list"></i> 2. Cookies que Utilizamos</h2>
+            
+            <h3>🔧 Cookies Técnicas (Esenciales)</h3>
+            <p>Son necesarias para el funcionamiento básico del sitio web. No se pueden desactivar.</p>
+            
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Cookie</th>
+                        <th>Propósito</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PHPSESSID</td>
+                        <td>Identificación de sesión del usuario</td>
+                        <td>Sesión</td>
+                    </tr>
+                    <tr>
+                        <td>cookie_consent</td>
+                        <td>Almacena preferencias de cookies</td>
+                        <td>12 meses</td>
+                    </tr>
+                    <tr>
+                        <td>csrf_token</td>
+                        <td>Protección contra ataques CSRF</td>
+                        <td>Sesión</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📊 Cookies Analíticas</h3>
+            <p>Nos ayudan a entender cómo interactúan los visitantes con el sitio web.</p>
+            
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Cookie</th>
+                        <th>Proveedor</th>
+                        <th>Propósito</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_ga</td>
+                        <td>Google Analytics</td>
+                        <td>Distinguir usuarios únicos</td>
+                        <td>2 años</td>
+                    </tr>
+                    <tr>
+                        <td>_ga_XXXXX</td>
+                        <td>Google Analytics</td>
+                        <td>Estado de la sesión de Analytics</td>
+                        <td>2 años</td>
+                    </tr>
+                    <tr>
+                        <td>_gid</td>
+                        <td>Google Analytics</td>
+                        <td>Distinguir usuarios únicos (24h)</td>
+                        <td>24 horas</td>
+                    </tr>
+                    <tr>
+                        <td>_gat</td>
+                        <td>Google Analytics</td>
+                        <td>Limitar la velocidad de peticiones</td>
+                        <td>1 minuto</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🎯 Cookies Publicitarias</h3>
+            <p>Utilizadas para mostrar anuncios relevantes através de Google AdSense.</p>
+            
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Cookie</th>
+                        <th>Proveedor</th>
+                        <th>Propósito</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>__gads</td>
+                        <td>Google AdSense</td>
+                        <td>Medición de interacciones con anuncios</td>
+                        <td>13 meses</td>
+                    </tr>
+                    <tr>
+                        <td>__gpi</td>
+                        <td>Google AdSense</td>
+                        <td>Identificador de publicidad</td>
+                        <td>13 meses</td>
+                    </tr>
+                    <tr>
+                        <td>GoogleAdServingTest</td>
+                        <td>Google AdSense</td>
+                        <td>Test de servicio de anuncios</td>
+                        <td>Sesión</td>
+                    </tr>
+                    <tr>
+                        <td>IDE</td>
+                        <td>Google DoubleClick</td>
+                        <td>Publicidad personalizada</td>
+                        <td>2 años</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⚙️ Cookies de Personalización</h3>
+            <p>Mejoran la experiencia del usuario recordando preferencias.</p>
+            
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Cookie</th>
+                        <th>Propósito</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>theme_preference</td>
+                        <td>Tema visual preferido (claro/oscuro)</td>
+                        <td>6 meses</td>
+                    </tr>
+                    <tr>
+                        <td>search_history</td>
+                        <td>Historial de búsquedas recientes</td>
+                        <td>30 días</td>
+                    </tr>
+                    <tr>
+                        <td>newsletter_shown</td>
+                        <td>Control de popup de newsletter</td>
+                        <td>3 meses</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 3. Finalidades -->
+        <div class="legal-section">
+            <h2><i class="fas fa-target"></i> 3. Finalidades del Uso de Cookies</h2>
+            
+            <div class="highlight-box">
+                <h3>🎯 Funcionalidad del sitio web:</h3>
+                <ul>
+                    <li>Mantener la sesión del usuario activa</li>
+                    <li>Recordar preferencias de navegación</li>
+                    <li>Facilitar el uso de formularios</li>
+                    <li>Proporcionar funciones de seguridad</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>📈 Análisis y mejora:</h3>
+                <ul>
+                    <li>Medir el tráfico y uso del sitio web</li>
+                    <li>Analizar el comportamiento de los usuarios</li>
+                    <li>Optimizar el rendimiento del sitio</li>
+                    <li>Detectar errores y problemas técnicos</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💰 Publicidad relevante:</h3>
+                <ul>
+                    <li>Mostrar anuncios personalizados</li>
+                    <li>Limitar la frecuencia de anuncios</li>
+                    <li>Medir la efectividad publicitaria</li>
+                    <li>Financiar el contenido gratuito del sitio</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. Base Legal -->
+        <div class="legal-section">
+            <h2><i class="fas fa-gavel"></i> 4. Base Legal</h2>
+            
+            <p>El uso de cookies se basa en:</p>
+            <ul>
+                <li><strong>Cookies técnicas:</strong> Interés legítimo para el funcionamiento del sitio</li>
+                <li><strong>Cookies analíticas:</strong> Consentimiento del usuario</li>
+                <li><strong>Cookies publicitarias:</strong> Consentimiento del usuario</li>
+                <li><strong>Cookies de personalización:</strong> Consentimiento del usuario</li>
+            </ul>
+            
+            <p>Cumplimos con la Directiva 2002/58/CE (Directiva ePrivacy) y el RGPD.</p>
+        </div>
+
+        <!-- 5. Gestión de Cookies -->
+        <div class="legal-section">
+            <h2><i class="fas fa-cog"></i> 5. Cómo Gestionar las Cookies</h2>
+            
+            <h3>En InfoSEPE:</h3>
+            <div class="text-center" style="margin: 20px 0;">
+                <button class="btn-primary" onclick="showCookieConfig()">
+                    <i class="fas fa-cog"></i> Configurar Cookies
+                </button>
+            </div>
+            
+            <h3>En su navegador:</h3>
+            <ul>
+                <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies</li>
+                <li><strong>Firefox:</strong> Opciones → Privacidad y seguridad → Cookies</li>
+                <li><strong>Safari:</strong> Preferencias → Privacidad → Cookies</li>
+                <li><strong>Edge:</strong> Configuración → Cookies y permisos del sitio</li>
+            </ul>
+            
+            <h3>Herramientas externas:</h3>
+            <ul>
+                <li><a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a> - Gestionar anuncios personalizados</li>
+                <li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out</a> - Desactivar Analytics</li>
+                <li><a href="https://www.youronlinechoices.eu/" target="_blank">Your Online Choices</a> - Preferencias publicitarias</li>
+            </ul>
+        </div>
+
+        <!-- 6. Consecuencias -->
+        <div class="legal-section">
+            <h2><i class="fas fa-exclamation-triangle"></i> 6. Consecuencias de Desactivar Cookies</h2>
+            
+            <div class="highlight-box">
+                <h3>⚠️ Si desactiva cookies técnicas:</h3>
+                <ul>
+                    <li>El sitio web puede no funcionar correctamente</li>
+                    <li>No podrá utilizar ciertas funcionalidades</li>
+                    <li>Problemas con formularios y navegación</li>
+                    <li>Pérdida de preferencias de usuario</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>📊 Si desactiva cookies analíticas:</h3>
+                <ul>
+                    <li>No afecta al funcionamiento del sitio</li>
+                    <li>Reduce nuestra capacidad de mejora</li>
+                    <li>Menos personalización de contenido</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🎯 Si desactiva cookies publicitarias:</h3>
+                <ul>
+                    <li>Seguirá viendo anuncios</li>
+                    <li>Los anuncios serán menos relevantes</li>
+                    <li>Puede ver anuncios repetitivos</li>
+                    <li>Ayuda a mantener el contenido gratuito</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 7. Contacto -->
+        <div class="legal-section">
+            <h2><i class="fas fa-envelope"></i> 7. Contacto</h2>
+            
+            <div class="contact-info">
+                <h3>Para consultas sobre cookies:</h3>
+                <p><strong>Email:</strong> cookies@infosepe.com</p>
+                <p><strong>Responsable:</strong> InfoSEPE</p>
+                <p><strong>DPO:</strong> dpo@infosepe.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Configuración de Cookies -->
+    <div class="cookie-config-modal" id="cookieConfigModal">
+        <div class="modal-content">
+            <div class="text-center mb-4">
+                <h2><i class="fas fa-cog"></i> Configuración de Cookies</h2>
+                <p>Personaliza tus preferencias de cookies</p>
+            </div>
+            
+            <!-- Cookies Técnicas -->
+            <div class="cookie-category essential">
+                <div class="category-header">
+                    <span class="category-title">🔧 Cookies Técnicas (Obligatorias)</span>
+                    <div class="toggle-switch active disabled">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+                <p>Necesarias para el funcionamiento básico del sitio web. No se pueden desactivar.</p>
+            </div>
+            
+            <!-- Cookies Analíticas -->
+            <div class="cookie-category">
+                <div class="category-header">
+                    <span class="category-title">📊 Cookies Analíticas</span>
+                    <div class="toggle-switch" data-category="analytics">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+                <p>Nos ayudan a entender cómo los visitantes interactúan con el sitio web recopilando y proporcionando información de forma anónima.</p>
+            </div>
+            
+            <!-- Cookies Publicitarias -->
+            <div class="cookie-category">
+                <div class="category-header">
+                    <span class="category-title">🎯 Cookies Publicitarias</span>
+                    <div class="toggle-switch" data-category="advertising">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+                <p>Utilizadas para mostrar anuncios relevantes. Ayudan a financiar el contenido gratuito de nuestro sitio web.</p>
+            </div>
+            
+            <!-- Cookies de Personalización -->
+            <div class="cookie-category">
+                <div class="category-header">
+                    <span class="category-title">⚙️ Cookies de Personalización</span>
+                    <div class="toggle-switch" data-category="personalization">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+                <p>Mejoran la experiencia del usuario recordando preferencias y proporcionando funciones personalizadas.</p>
+            </div>
+            
+            <div class="text-center" style="margin-top: 30px;">
+                <button class="cookie-btn accept" onclick="savePreferences()">
+                    <i class="fas fa-check"></i> Guardar Preferencias
+                </button>
+                <button class="cookie-btn configure" onclick="closeCookieConfig()" style="margin-left: 10px;">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner de Cookies -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h3 style="margin-bottom: 8px;">🍪 Uso de Cookies</h3>
+                <p>Utilizamos cookies técnicas, analíticas y publicitarias para mejorar su experiencia y mostrar contenido personalizado. Al continuar navegando, acepta su uso.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptAllCookies()">
+                    <i class="fas fa-check"></i> Aceptar Todo
+                </button>
+                <button class="cookie-btn configure" onclick="showCookieConfig()">
+                    <i class="fas fa-cog"></i> Configurar
+                </button>
+                <button class="cookie-btn reject" onclick="rejectOptionalCookies()">
+                    <i class="fas fa-times"></i> Rechazar Opcionales
+                </button>
+            </div>
+        </div>
+    </div>
