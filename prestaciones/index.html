@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestaciones por Desempleo SEPE 2025 - Calcular y Solicitar | InfoSEPE</title>
+    <meta name="description" content="Todo sobre prestaciones por desempleo SEPE: requisitos, cuantías, duración, calculadora y cómo solicitarlas. Guía completa actualizada 2025.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS Base Unificado -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    
+    <style>
+        /* Estilos específicos para Prestaciones */
+        .calculator-section {
+            background: var(--section-light);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: 40px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-100);
+        }
+
+        .calculator-form {
+            display: grid;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 16px;
+        }
+
+        .form-input {
+            padding: 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            font-size: 16px;
+            transition: var(--transition-normal);
+            background: var(--white);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-select {
+            padding: 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            font-size: 16px;
+            background: var(--white);
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .calc-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: var(--radius-xl);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .calc-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .calc-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .calculator-result {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 2px solid var(--success);
+            border-radius: var(--radius-xl);
+            padding: 30px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .result-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .result-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .result-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Tabla de requisitos */
+        .requirements-section {
+            background: var(--white);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .requirements-table {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .table-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .table-header h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .table-body {
+            padding: 0;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--gray-200);
+            transition: var(--transition-normal);
+        }
+
+        .table-row:hover {
+            background: var(--gray-50);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            font-size: 16px;
+        }
+
+        .table-cell.type {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .table-cell.description {
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+
+        .table-cell.amount {
+            font-weight: 700;
+            color: var(--success);
+            text-align: center;
+        }
+
+        /* Cards de información */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-normal);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .info-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .info-card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .info-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .info-card-content {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .info-card-list {
+            list-style: none;
+        }
+
+        .info-card-list li {
+            padding: 6px 0;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .info-card-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            background: rgba(16, 185, 129, 0.1);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Steps process */
+        .steps-section {
+            background: var(--gradient-dark);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steps-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-opacity="0.1" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+        }
+
+        .steps-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(var(--blur-sm));
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition-normal);
+            position: relative;
+        }
+
+        .step-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .step-description {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* CTA Section específica */
+        .prestaciones-cta {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-content-prestaciones {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title-prestaciones {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle-prestaciones {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons-prestaciones {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive específico */
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 24px;
+                margin: 0 16px;
+            }
+
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                text-align: left;
+            }
+
+            .table-cell.amount {
+                text-align: left;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cta-buttons-prestaciones {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>InfoSEPE 2025</span>
+                </a>
+                
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar prestaciones, calcular..." id="searchInput">
+                    <button class="search-btn" type="button" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="../" class="breadcrumb-link">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="breadcrumb-current">Prestaciones</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Prestaciones por Desempleo 2025</h1>
+                <p class="hero-subtitle">
+                    Calcula tu prestación, conoce tus derechos y solicítala de forma sencilla. 
+                    Toda la información actualizada sobre prestaciones contributivas y asistenciales.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#calculadora" class="btn btn-primary">
+                        <i class="fas fa-calculator"></i>
+                        Calcular Mi Prestación
+                    </a>
+                    <a href="#solicitar" class="btn btn-ghost">
+                        <i class="fas fa-file-alt"></i>
+                        Solicitar Prestación
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora -->
+    <section class="calculator-section" id="calculadora">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calculadora de Prestaciones SEPE</h2>
+                <p class="section-subtitle">
+                    Introduce tus datos y calcula el importe aproximado de tu prestación por desempleo
+                </p>
+            </div>
+            
+            <div class="calculator-container">
+                <form class="calculator-form" id="calculatorForm">
+                    <div class="form-group">
+                        <label class="form-label" for="salario">
+                            <i class="fas fa-euro-sign"></i>
+                            Salario bruto mensual (€)
+                        </label>
+                        <input type="number" 
+                               class="form-input" 
+                               id="salario" 
+                               placeholder="Ej: 1500" 
+                               min="0" 
+                               step="0.01" 
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="mesesCotizados">
+                            <i class="fas fa-calendar-alt"></i>
+                            Meses cotizados en los últimos 6 años
+                        </label>
+                        <input type="number" 
+                               class="form-input" 
+                               id="mesesCotizados" 
+                               placeholder="Ej: 24" 
+                               min="0" 
+                               max="72" 
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="edad">
+                            <i class="fas fa-user"></i>
+                            Edad actual
+                        </label>
+                        <input type="number" 
+                               class="form-input" 
+                               id="edad" 
+                               placeholder="Ej: 35" 
+                               min="16" 
+                               max="67" 
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="hijos">
+                            <i class="fas fa-child"></i>
+                            ¿Tienes hijos a tu cargo?
+                        </label>
+                        <select class="form-select" id="hijos" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="0">Sin hijos</option>
+                            <option value="1">1 hijo</option>
+                            <option value="2">2 hijos</option>
+                            <option value="3">3 o más hijos</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="calc-button" id="calcButton">
+                        <i class="fas fa-calculator"></i>
+                        Calcular Prestación
+                    </button>
+                </form>
+
+                <div class="calculator-result" id="calculatorResult">
+                    <div class="result-title">
+                        <i class="fas fa-check-circle"></i>
+                        Resultado del Cálculo
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-label">Prestación Mensual</div>
+                            <div class="result-value" id="prestacionMensual">0€</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Duración Máxima</div>
+                            <div class="result-value" id="duracionMaxima">0 meses</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Aproximado</div>
+                            <div class="result-value" id="totalAproximado">0€</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary" onclick="solicitarPrestacion()">
+                            <i class="fas fa-external-link-alt"></i>
+                            Solicitar Mi Prestación Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requisitos y Tipos -->
+    <section class="requirements-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tipos de Prestaciones SEPE</h2>
+                <p class="section-subtitle">
+                    Conoce los diferentes tipos de prestaciones y sus requisitos específicos
+                </p>
+            </div>
+            
+            <div class="requirements-table">
+                <div class="table-header">
+                    <h3>Prestaciones por Desempleo 2025</h3>
+                    <p>Requisitos y cuantías actualizadas</p>
+                </div>
+                <div class="table-body">
+                    <div class="table-row">
+                        <div class="table-cell type">Contributiva</div>
+                        <div class="table-cell description">
+                            Haber cotizado al menos 360 días en los últimos 6 años. Para trabajadores que han perdido su empleo de forma involuntaria.
+                        </div>
+                        <div class="table-cell amount">70% / 50%</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell type">Subsidio Desempleo</div>
+                        <div class="table-cell description">
+                            Para quienes han agotado la prestación contributiva o no cumplen requisitos. Carencia de rentas requerida.
+                        </div>
+                        <div class="table-cell amount">495,11€</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell type">Subsidio +52</div>
+                        <div class="table-cell description">
+                            Específico para mayores de 52 años que han agotado prestaciones anteriores. Hasta la jubilación.
+                        </div>
+                        <div class="table-cell amount">495,11€</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell type">Renta Activa Inserción</div>
+                        <div class="table-cell description">
+                            Para desempleados en situación de especial necesidad: mayores de 45 años, víctimas violencia, etc.
+                        </div>
+                        <div class="table-cell amount">495,11€</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards informativas -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="info-card-title">Duración</h3>
+                    </div>
+                    <div class="info-card-content">
+                        La duración de tu prestación depende de los meses cotizados:
+                    </div>
+                    <ul class="info-card-list">
+                        <li>6-11 meses cotizados: 4 meses</li>
+                        <li>12-17 meses cotizados: 6 meses</li>
+                        <li>18-23 meses cotizados: 8 meses</li>
+                        <li>24+ meses cotizados: hasta 24 meses</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="info-card-title">Documentos</h3>
+                    </div>
+                    <div class="info-card-content">
+                        Documentación necesaria para solicitar la prestación:
+                    </div>
+                    <ul class="info-card-list">
+                        <li>DNI o NIE en vigor</li>
+                        <li>Certificado de empresa</li>
+                        <li>Número de Seguridad Social</li>
+                        <li>IBAN cuenta bancaria</li>
+                        <li>Libro de familia (si procede)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="info-card-title">Plazos</h3>
+                    </div>
+                    <div class="info-card-content">
+                        Plazos importantes que debes conocer:
+                    </div>
+                    <ul class="info-card-list">
+                        <li>Solicitar: 15 días desde el cese</li>
+                        <li>Sellar: cada 90 días (online)</li>
+                        <li>Primer pago: 10-15 días hábiles</li>
+                        <li>Renovar demanda: antes del vencimiento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Solicitud -->
+    <section class="steps-section">
+        <div class="container">
+            <div class="steps-content">
+                <div class="section-header">
+                    <h2 class="section-title">Cómo Solicitar tu Prestación</h2>
+                    <p class="section-subtitle">
+                        Proceso paso a paso para solicitar tu prestación por desempleo
+                    </p>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Reúne Documentos</h3>
+                        <p class="step-description">
+                            Prepara DNI, certificado de empresa, número SS y datos bancarios antes de comenzar.
+                        </p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Pide Cita Previa</h3>
+                        <p class="step-description">
+                            Solicita cita en sede.sepe.gob.es o llama al 919 26 79 70 para atención presencial.
+                        </p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Presenta Solicitud</h3>
+                        <p class="step-description">
+                            Acude a tu cita o solicítala online con certificado digital en la sede electrónica.
+                        </p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Seguimiento</h3>
+                        <p class="step-description">
+                            Consulta el estado de tu expediente online y mantén actualizada tu demanda de empleo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="prestaciones-cta" id="solicitar">
+        <div class="container">
+            <div class="cta-content-prestaciones">
+                <h3 class="cta-title-prestaciones">¿Listo para Solicitar tu Prestación?</h3>
+                <p class="cta-subtitle-prestaciones">
+                    Accede al sistema oficial del SEPE y comienza tu solicitud ahora mismo
+                </p>
+                
+                <div class="cta-buttons-prestaciones">
+                    <a href="#" class="btn btn-secondary" onclick="solicitarPrestacion()">
+                        <i class="fas fa-external-link-alt"></i>
+                        Ir al SEPE Oficial
+                    </a>
+                    <a href="../cita-previa/" class="btn btn-ghost">
+                        <i class="fas fa-calendar-check"></i>
+                        Pedir Cita Previa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Prestaciones SEPE</h4>
+                    <ul>
+                        <li><a href="contributiva.html"><i class="fas fa-money-check-alt" style="margin-right: 8px;"></i>Prestación Contributiva</a></li>
+                        <li><a href="asistencial.html"><i class="fas fa-hand-holding-usd" style="margin-right: 8px;"></i>Prestación Asistencial</a></li>
+                        <li><a href="autonomos.html"><i class="fas fa-user-tie" style="margin-right: 8px;"></i>Prestación Autónomos</a></li>
+                        <li><a href="calculadora.html"><i class="fas fa-calculator" style="margin-right: 8px;"></i>Calculadora</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Subsidios Relacionados</h4>
+                    <ul>
+                        <li><a href="../subsidios/mayores-52.html"><i class="fas fa-user-clock" style="margin-right: 8px;"></i>Subsidio +52 años</a></li>
+                        <li><a href="../subsidios/agotamiento.html"><i class="fas fa-hourglass-end" style="margin-right: 8px;"></i>Subsidio Agotamiento</a></li>
+                        <li><a href="../subsidios/eventual-agrario.html"><i class="fas fa-seedling" style="margin-right: 8px;"></i>Subsidio Agrario</a></li>
+                        <li><a href="../ayudas/ingreso-minimo-vital.html"><i class="fas fa-hands-helping" style="margin-right: 8px;"></i>Ingreso Mínimo Vital</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Trámites Relacionados</h4>
+                    <ul>
+                        <li><a href="../cita-previa/"><i class="fas fa-calendar-check" style="margin-right: 8px;"></i>Cita Previa SEPE</a></li>
+                        <li><a href="../tramites/demanda-empleo.html"><i class="fas fa-file-alt" style="margin-right: 8px;"></i>Demanda de Empleo</a></li>
+                        <li><a href="../tramites/sellar-paro.html"><i class="fas fa-stamp" style="margin-right: 8px;"></i>Sellar Paro</a></li>
+                        <li><a href="../cursos/"><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Cursos Gratuitos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ayuda y Soporte</h4>
+                    <ul>
+                        <li><a href="../contacto.html"><i class="fas fa-envelope" style="margin-right: 8px;"></i>Contacto</a></li>
+                        <li><a href="../legal/aviso-legal.html"><i class="fas fa-gavel" style="margin-right: 8px;"></i>Aviso Legal</a></li>
+                        <li><a href="../legal/politica-privacidad.html"><i class="fas fa-user-shield" style="margin-right: 8px;"></i>Política de Privacidad</a></li>
+                        <li><a href="../legal/cookies.html"><i class="fas fa-cookie-bite" style="margin-right: 8px;"></i>Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 InfoSEPE. Portal informativo del SEPE. No somos el SEPE oficial, sino un portal de información y ayuda para ciudadanos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Variables globales específicas para prestaciones
+        const header = document.getElementById('header');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const calculatorForm = document.getElementById('calculatorForm');
+        const calculatorResult = document.getElementById('calculatorResult');
+
+        // Datos de búsqueda específicos
+        const searchDatabase = {
+            'calcular': { url: '#calculadora', scroll: true },
+            'calculadora': { url: '#calculadora', scroll: true },
+            'solicitar': { url: '#solicitar', scroll: true },
+            'contributiva': { url: 'contributiva.html' },
+            'asistencial': { url: 'asistencial.html' },
+            'autonomos': { url: 'autonomos.html' },
+            'duración': { action: 'mostrarDuracion' },
+            'documentos': { action: 'mostrarDocumentos' },
+            'requisitos': { action: 'mostrarRequisitos' },
+            'cuantia': { action: 'mostrarCuantia' },
+            'plazo': { action: 'mostrarPlazos' }
+        };
+
+        // Header scroll effect
+        function handleScroll() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Búsqueda específica
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (!query) {
+                showNotification('Introduce un término de búsqueda', 'warning');
+                return;
+            }
+
+            let found = false;
+            for (const [keyword, data] of Object.entries(searchDatabase)) {
+                if (query.includes(keyword)) {
+                    found = true;
+                    
+                    if (data.action) {
+                        window[data.action]();
+                    } else if (data.scroll) {
+                        document.querySelector(data.url).scrollIntoView({ 
+                            behavior: 'smooth' 
+                        });
+                    } else if (data.url) {
+                        window.location.href = data.url;
+                    }
+                    break;
+                }
+            }
+
+            if (!found) {
+                showNotification('Prueba con: calcular, solicitar, requisitos, documentos, duración', 'info');
+            }
+        }
+
+        // Calculadora de prestaciones
+        function calcularPrestacion(e) {
+            e.preventDefault();
+            
+            const salario = parseFloat(document.getElementById('salario').value);
+            const mesesCotizados = parseInt(document.getElementById('mesesCotizados').value);
+            const edad = parseInt(document.getElementById('edad').value);
+            const hijos = parseInt(document.getElementById('hijos').value);
+
+            // Validaciones
+            if (!salario || !mesesCotizados || !edad || isNaN(hijos)) {
+                showNotification('Por favor, completa todos los campos', 'warning');
+                return;
+            }
+
+            if (mesesCotizados < 12) {
+                showNotification('Necesitas al menos 12 meses cotizados para la prestación contributiva', 'error');
+                return;
+            }
+
+            // Cálculos (simplificados)
+            const baseRegulatoria = (salario * 12) / 12; // Base mensual
+            const porcentaje = mesesCotizados <= 6 ? 0.7 : 0.5; // 70% primeros 6 meses, 50% resto
+            const prestacionMensual = Math.round(baseRegulatoria * porcentaje);
+            
+            // Duración según meses cotizados
+            let duracion = 0;
+            if (mesesCotizados >= 12 && mesesCotizados < 18) duracion = 6;
+            else if (mesesCotizados >= 18 && mesesCotizados < 24) duracion = 8;
+            else if (mesesCotizados >= 24 && mesesCotizados < 30) duracion = 10;
+            else if (mesesCotizados >= 30 && mesesCotizados < 36) duracion = 12;
+            else if (mesesCotizados >= 36) duracion = Math.min(24, Math.floor(mesesCotizados / 3));
+
+            // Ajuste por hijos
+            let ajusteHijos = 1;
+            if (hijos > 0) ajusteHijos = 1 + (hijos * 0.02); // 2% por hijo
+
+            const prestacionFinal = Math.round(prestacionMensual * ajusteHijos);
+            const totalAproximado = prestacionFinal * duracion;
+
+            // Mostrar resultados
+            document.getElementById('prestacionMensual').textContent = `${prestacionFinal}€`;
+            document.getElementById('duracionMaxima').textContent = `${duracion} meses`;
+            document.getElementById('totalAproximado').textContent = `${totalAproximado.toLocaleString()}€`;
+            
+            calculatorResult.style.display = 'block';
+            
+            // Scroll al resultado
+            setTimeout(() => {
+                calculatorResult.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 200);
+
+            trackEvent('prestacion-calculada', {
+                salario: salario,
+                mesesCotizados: mesesCotizados,
+                edad: edad,
+                hijos: hijos,
+                prestacionFinal: prestacionFinal,
+                duracion: duracion
+            });
+        }
+
+        // Función para solicitar prestación
+        function solicitarPrestacion() {
+            trackEvent('solicitar-prestacion-click');
+            
+            const mensaje = `🌐 REDIRECCIÓN AL SEPE OFICIAL
+
+📍 DESTINO: sede.sepe.gob.es
+🔐 NECESITAS: Certificado digital o cl@ve PIN
+
+📋 DOCUMENTOS A TENER LISTOS:
+• DNI/NIE en vigor
+• Certificado de empresa
+• Número de Seguridad Social
+• Cuenta bancaria (IBAN)
+• Libro de familia (si tienes hijos)
+
+⏰ DURACIÓN: 10-15 minutos
+🎯 DISPONIBLE: 24 horas, 7 días
+
+¿Continuar al sitio oficial del SEPE?`;
+
+            if (confirm(mensaje)) {
+                window.open('https://sede.sepe.gob.es', '_blank');
+            }
+        }
+
+        // Funciones de información
+        function mostrarDuracion() {
+            showNotification('La duración depende de meses cotizados: 12-17 meses → 6 meses prestación | 24+ meses → hasta 24 meses', 'info');
+        }
+
+        function mostrarDocumentos() {
+            showNotification('Documentos necesarios: DNI, certificado empresa, nº SS, IBAN, libro familia (si procede)', 'info');
+        }
+
+        function mostrarRequisitos() {
+            showNotification('Requisitos: 360 días cotizados últimos 6 años + cese involuntario + inscripción demanda empleo', 'info');
+        }
+
+        function mostrarCuantia() {
+            showNotification('Cuantía: 70% base reguladora primeros 6 meses, 50% resto. Mínimo 495,11€ - Máximo 1.686,60€', 'info');
+        }
+
+        function mostrarPlazos() {
+            showNotification('Plazos: Solicitar en 15 días desde cese | Sellar cada 90 días | Primer pago 10-15 días', 'info');
+        }
+
+        // Sistema de notificaciones
+        function showNotification(message, type = 'success') {
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notif => notif.remove());
+
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            
+            const icons = {
+                success: 'fas fa-check-circle',
+                error: 'fas fa-exclamation-circle',
+                warning: 'fas fa-exclamation-triangle',
+                info: 'fas fa-info-circle'
+            };
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <i class="${icons[type]}" style="font-size: 18px;"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 400);
+            }, 5000);
+        }
+
+        // Tracking de eventos
+        function trackEvent(eventName, eventData = {}) {
+            console.log(`Event: ${eventName}`, eventData);
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    'page_title': 'Prestaciones SEPE',
+                    'page_location': window.location.href,
+                    'custom_parameter': eventData
+                });
+            }
+        }
+
+        // Smooth scroll
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Animaciones de entrada
+        function setupAnimations() {
+            const animatedElements = document.querySelectorAll('.info-card, .step-item, .table-row');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                observer.observe(element);
+            });
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAnimations();
+            setupSmoothScroll();
+            
+            // Event listeners
+            window.addEventListener('scroll', handleScroll);
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') performSearch();
+            });
+            
+            // Calculadora
+            calculatorForm.addEventListener('submit', calcularPrestacion);
+            
+            // Tracking inicial
+            trackEvent('page_loaded_prestaciones', {
+                timestamp: new Date().toISOString(),
+                user_agent: navigator.userAgent,
+                device: window.innerWidth <= 768 ? 'mobile' : 'desktop'
+            });
+
+            console.log('💼 Página Prestaciones SEPE cargada correctamente');
+        });
+
+        // Validación en tiempo real
+        document.getElementById('salario').addEventListener('input', function() {
+            const value = parseFloat(this.value);
+            if (value > 0 && value < 600) {
+                this.style.borderColor = '#f59e0b';
+                showNotification('Salario muy bajo para prestación contributiva', 'warning');
+            } else if (value > 5000) {
+                this.style.borderColor = '#f59e0b';
+                showNotification('Verifica el salario introducido', 'warning');
+            } else {
+                this.style.borderColor = '#10b981';
+            }
+        });
+
+        document.getElementById('mesesCotizados').addEventListener('input', function() {
+            const value = parseInt(this.value);
+            if (value > 0 && value < 12) {
+                this.style.borderColor = '#ef4444';
+                showNotification('Mínimo 12 meses para prestación contributiva', 'error');
+            } else if (value >= 12) {
+                this.style.borderColor = '#10b981';
+            }
+        });
+    </script>
+</body>
+</html>
