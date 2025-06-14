@@ -48,32 +48,23 @@
         "description": "Portal completo para gestionar todos los trámites del SEPE: demanda de empleo, renovación, certificados y modificación de datos.",
         "url": "https://infosepe.com/tramites/",
         "mainEntity": {
-            "@type": "Service",
-            "name": "Trámites SEPE",
-            "provider": {
-                "@type": "Organization",
-                "name": "InfoSEPE",
-                "url": "https://infosepe.com"
-            },
-            "serviceType": "Gestión de trámites del SEPE",
-            "areaServed": "España"
+            "@type": "Organization",
+            "name": "SEPE",
+            "url": "https://www.sepe.es"
         },
         "breadcrumb": {
             "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Inicio",
-                    "item": "https://infosepe.com"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Trámites SEPE",
-                    "item": "https://infosepe.com/tramites/"
-                }
-            ]
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://infosepe.com"
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Trámites",
+                "item": "https://infosepe.com/tramites/"
+            }]
         }
     }
     </script>
@@ -91,46 +82,32 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <h3>🍪 Gestión de Cookies</h3>
-                <p>Utilizamos cookies para mejorar tu experiencia de navegación y mostrar contenido personalizado. 
-                   <a href="../legal/cookies.html" class="cookie-link">Más información</a>
-                </p>
-            </div>
-            <div class="cookie-actions">
-                <button id="accept-all-cookies" class="btn btn-primary btn-sm">Aceptar todas</button>
-                <button id="configure-cookies" class="btn btn-outline btn-sm">Configurar</button>
-                <button id="reject-cookies" class="btn btn-outline btn-sm">Rechazar</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <div class="navbar-brand">
                     <a href="../" class="brand-link">
-                        <i class="fas fa-briefcase brand-icon"></i>
+                        <img src="../assets/images/logo.png" alt="InfoSEPE Logo" class="brand-logo">
                         <span class="brand-text">InfoSEPE</span>
                     </a>
                 </div>
-                
-                <div class="navbar-menu">
+
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggle-icon"></span>
+                </button>
+
+                <div class="navbar-menu" id="navbarNav">
                     <a href="../cita-previa/" class="nav-link">Cita Previa</a>
                     <a href="../prestaciones/" class="nav-link">Prestaciones</a>
                     <a href="../subsidios/" class="nav-link">Subsidios</a>
-                    <a href="../tramites/" class="nav-link active">Trámites</a>
                     <a href="../ayudas/" class="nav-link">Ayudas</a>
                     <a href="../cursos/" class="nav-link">Cursos</a>
                 </div>
-                
+
                 <div class="search-container">
-                    <input type="search" placeholder="Buscar trámites..." class="search-input" id="header-search">
-                    <button type="button" class="search-btn" onclick="performSearch()">
+                    <input type="text" class="search-input" placeholder="Buscar información..." id="searchInput">
+                    <button class="search-btn" type="button">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -138,23 +115,21 @@
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb-section" aria-label="breadcrumb">
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
         <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="../">
-                        <i class="fas fa-home"></i>
-                        Inicio
-                    </a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-file-alt"></i>
-                    Trámites SEPE
-                </li>
-            </ol>
+            <nav>
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="../" class="breadcrumb-link">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="breadcrumb-current">Trámites</span>
+                    </li>
+                </ol>
+            </nav>
         </div>
-    </nav>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero-section bg-gradient">
@@ -162,10 +137,11 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        🏛️ Portal de Trámites SEPE 2025
+                        Trámites SEPE 2025
+                        <span class="hero-accent">Gestión Digital</span>
                     </h1>
-                    <p class="hero-subtitle">
-                        Gestiona todos tus trámites del SEPE de forma sencilla y segura. 
+                    <p class="hero-description">
+                        Accede a todos los trámites del SEPE de forma rápida y sencilla. 
                         Guías paso a paso actualizadas para cada procedimiento.
                     </p>
                     <div class="hero-stats">
@@ -249,10 +225,10 @@
                             Inscríbete como demandante de empleo en el SEPE. Primer paso para acceder a prestaciones y servicios de empleo.
                         </p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Registro inicial gratuito</li>
-                            <li><i class="fas fa-check"></i> Acceso a ofertas de empleo</li>
-                            <li><i class="fas fa-check"></i> Derecho a prestaciones</li>
-                            <li><i class="fas fa-check"></i> Cursos de formación</li>
+                            <li><i class="fas fa-check"></i> Alta como demandante</li>
+                            <li><i class="fas fa-check"></i> Actualización de datos</li>
+                            <li><i class="fas fa-check"></i> Búsqueda de empleo</li>
+                            <li><i class="fas fa-check"></i> Orientación laboral</li>
                         </ul>
                         <div class="card-stats">
                             <div class="stat">
@@ -268,12 +244,7 @@
                     <div class="card-footer">
                         <a href="demanda-empleo.html" class="btn btn-primary btn-block">
                             <i class="fas fa-arrow-right"></i>
-                            Cómo Inscribirse
-                        </a>
-                        <a href="https://sede.sepe.gob.es/contenidosSede/generico/contenidos/SubHome.do?tipo=1" 
-                           target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                            <i class="fas fa-external-link-alt"></i>
-                            Acceder al SEPE
+                            Ver Guía Completa
                         </a>
                     </div>
                 </div>
@@ -286,26 +257,26 @@
                         </div>
                         <div class="card-title-area">
                             <h3 class="card-title">Renovar Demanda</h3>
-                            <span class="card-badge urgent">Urgente</span>
+                            <span class="card-badge urgent">Renovación</span>
                         </div>
                     </div>
                     <div class="card-body">
                         <p class="card-description">
-                            Renovación obligatoria de la demanda de empleo para mantener activos tus derechos y prestaciones.
+                            Renueva tu demanda de empleo anualmente o cuando cambien tus circunstancias laborales.
                         </p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Mantén tus prestaciones</li>
-                            <li><i class="fas fa-check"></i> Conserva ofertas de empleo</li>
-                            <li><i class="fas fa-check"></i> Continúa en cursos</li>
-                            <li><i class="fas fa-check"></i> Evita sanciones</li>
+                            <li><i class="fas fa-check"></i> Renovación anual</li>
+                            <li><i class="fas fa-check"></i> Cambio de circunstancias</li>
+                            <li><i class="fas fa-check"></i> Actualización de perfil</li>
+                            <li><i class="fas fa-check"></i> Justificación de búsqueda</li>
                         </ul>
                         <div class="card-stats">
                             <div class="stat">
-                                <span class="stat-value">⏱️ 5 min</span>
+                                <span class="stat-value">⏱️ 10 min</span>
                                 <span class="stat-label">Duración</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-value">📅 Periódica</span>
+                                <span class="stat-value">📅 Anual</span>
                                 <span class="stat-label">Frecuencia</span>
                             </div>
                         </div>
@@ -313,11 +284,6 @@
                     <div class="card-footer">
                         <a href="renovar-demanda.html" class="btn btn-primary btn-block">
                             <i class="fas fa-arrow-right"></i>
-                            Cómo Renovar
-                        </a>
-                        <a href="https://sede.sepe.gob.es/contenidosSede/generico/contenidos/SubHome.do?tipo=2" 
-                           target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                            <i class="fas fa-external-link-alt"></i>
                             Renovar Ahora
                         </a>
                     </div>
@@ -331,44 +297,39 @@
                         </div>
                         <div class="card-title-area">
                             <h3 class="card-title">Sellar Paro</h3>
-                            <span class="card-badge deadline">Cada 90 días</span>
+                            <span class="card-badge frequent">Cada 90 días</span>
                         </div>
                     </div>
                     <div class="card-body">
                         <p class="card-description">
-                            Sellado obligatorio cada 90 días para mantener activa tu prestación por desempleo y evitar la suspensión.
+                            Confirma tu situación de desempleo cada 90 días para mantener tu prestación activa.
                         </p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Obligatorio cada 90 días</li>
-                            <li><i class="fas fa-check"></i> Mantiene prestación activa</li>
-                            <li><i class="fas fa-check"></i> Actualiza situación laboral</li>
-                            <li><i class="fas fa-check"></i> Evita suspensiones</li>
+                            <li><i class="fas fa-check"></i> Confirmación de situación</li>
+                            <li><i class="fas fa-check"></i> Justificación de búsqueda</li>
+                            <li><i class="fas fa-check"></i> Actualización de datos</li>
+                            <li><i class="fas fa-check"></i> Notificaciones automáticas</li>
                         </ul>
                         <div class="card-stats">
                             <div class="stat">
-                                <span class="stat-value">⏱️ 3 min</span>
+                                <span class="stat-value">⏱️ 5 min</span>
                                 <span class="stat-label">Duración</span>
                             </div>
                             <div class="stat">
                                 <span class="stat-value">📅 90 días</span>
-                                <span class="stat-label">Plazo</span>
+                                <span class="stat-label">Frecuencia</span>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
                         <a href="sellar-paro.html" class="btn btn-primary btn-block">
                             <i class="fas fa-arrow-right"></i>
-                            Cómo Sellar
-                        </a>
-                        <a href="https://sede.sepe.gob.es/contenidosSede/generico/contenidos/SubHome.do?tipo=3" 
-                           target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                            <i class="fas fa-external-link-alt"></i>
-                            Sellar Online
+                            Sellar Ahora
                         </a>
                     </div>
                 </div>
 
-                <!-- Certificados SEPE -->
+                <!-- Certificados -->
                 <div class="tramite-card">
                     <div class="card-header">
                         <div class="card-icon bg-purple">
@@ -376,23 +337,23 @@
                         </div>
                         <div class="card-title-area">
                             <h3 class="card-title">Certificados SEPE</h3>
-                            <span class="card-badge new">Actualizado</span>
+                            <span class="card-badge instant">Inmediato</span>
                         </div>
                     </div>
                     <div class="card-body">
                         <p class="card-description">
-                            Obtén certificados oficiales del SEPE: prestaciones, vida laboral, demanda de empleo y participación en cursos.
+                            Obtén certificados oficiales del SEPE: vida laboral, prestaciones, cursos realizados y más.
                         </p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Certificado de prestaciones</li>
-                            <li><i class="fas fa-check"></i> Historial de demanda</li>
-                            <li><i class="fas fa-check"></i> Participación en cursos</li>
-                            <li><i class="fas fa-check"></i> Descarga inmediata PDF</li>
+                            <li><i class="fas fa-check"></i> Vida laboral</li>
+                            <li><i class="fas fa-check"></i> Prestaciones recibidas</li>
+                            <li><i class="fas fa-check"></i> Cursos realizados</li>
+                            <li><i class="fas fa-check"></i> Situación actual</li>
                         </ul>
                         <div class="card-stats">
                             <div class="stat">
-                                <span class="stat-value">⏱️ 2 min</span>
-                                <span class="stat-label">Duración</span>
+                                <span class="stat-value">⚡ Inmediato</span>
+                                <span class="stat-label">Descarga</span>
                             </div>
                             <div class="stat">
                                 <span class="stat-value">📄 PDF</span>
@@ -403,11 +364,6 @@
                     <div class="card-footer">
                         <a href="certificados.html" class="btn btn-primary btn-block">
                             <i class="fas fa-arrow-right"></i>
-                            Tipos de Certificados
-                        </a>
-                        <a href="https://sede.sepe.gob.es/contenidosSede/generico/contenidos/SubHome.do?tipo=4" 
-                           target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                            <i class="fas fa-external-link-alt"></i>
                             Descargar Certificados
                         </a>
                     </div>
@@ -417,30 +373,30 @@
                 <div class="tramite-card">
                     <div class="card-header">
                         <div class="card-icon bg-teal">
-                            <i class="fas fa-user-edit"></i>
+                            <i class="fas fa-edit"></i>
                         </div>
                         <div class="card-title-area">
                             <h3 class="card-title">Modificar Datos</h3>
-                            <span class="card-badge info">Importante</span>
+                            <span class="card-badge update">Actualización</span>
                         </div>
                     </div>
                     <div class="card-body">
                         <p class="card-description">
-                            Actualiza tus datos personales, contacto, formación y experiencia laboral en tu expediente del SEPE.
+                            Actualiza tu información personal, datos de contacto, cuenta bancaria y preferencias.
                         </p>
                         <ul class="card-features">
                             <li><i class="fas fa-check"></i> Datos personales</li>
                             <li><i class="fas fa-check"></i> Información de contacto</li>
-                            <li><i class="fas fa-check"></i> Formación académica</li>
-                            <li><i class="fas fa-check"></i> Experiencia laboral</li>
+                            <li><i class="fas fa-check"></i> Cuenta bancaria</li>
+                            <li><i class="fas fa-check"></i> Preferencias de comunicación</li>
                         </ul>
                         <div class="card-stats">
                             <div class="stat">
-                                <span class="stat-value">⏱️ 10 min</span>
+                                <span class="stat-value">⏱️ 8 min</span>
                                 <span class="stat-label">Duración</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-value">🔄 Cuando necesites</span>
+                                <span class="stat-value">📝 Cuando sea necesario</span>
                                 <span class="stat-label">Frecuencia</span>
                             </div>
                         </div>
@@ -448,30 +404,25 @@
                     <div class="card-footer">
                         <a href="modificar-datos.html" class="btn btn-primary btn-block">
                             <i class="fas fa-arrow-right"></i>
-                            Cómo Modificar
-                        </a>
-                        <a href="https://sede.sepe.gob.es/contenidosSede/generico/contenidos/SubHome.do?tipo=5" 
-                           target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                            <i class="fas fa-external-link-alt"></i>
                             Modificar Datos
                         </a>
                     </div>
                 </div>
 
                 <!-- Otros Trámites -->
-                <div class="tramite-card card-highlight">
+                <div class="tramite-card featured">
                     <div class="card-header">
-                        <div class="card-icon bg-gray">
-                            <i class="fas fa-ellipsis-h"></i>
+                        <div class="card-icon bg-gradient">
+                            <i class="fas fa-list"></i>
                         </div>
                         <div class="card-title-area">
                             <h3 class="card-title">Otros Trámites</h3>
-                            <span class="card-badge secondary">Ver todos</span>
+                            <span class="card-badge complete">Completo</span>
                         </div>
                     </div>
                     <div class="card-body">
                         <p class="card-description">
-                            Descubre otros trámites disponibles en el SEPE: consultas, reclamaciones, cambios de modalidad y más servicios.
+                            Accede a todos los trámites disponibles en la Sede Electrónica del SEPE.
                         </p>
                         <ul class="card-features">
                             <li><i class="fas fa-check"></i> Consultas de expediente</li>
@@ -515,16 +466,16 @@
                 <div class="timeline-item">
                     <div class="timeline-step">1</div>
                     <div class="timeline-content">
-                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">🔐 Accede a la Sede Electrónica</h3>
-                        <p class="text-secondary mb-3">Conéctate a la plataforma oficial del SEPE con tus credenciales:</p>
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">🔐 Accede con Identificación</h3>
+                        <p class="text-secondary mb-3">Entra en la Sede Electrónica con tu método de identificación preferido:</p>
                         <ul class="text-sm">
-                            <li class="mb-2">• <strong>Cl@ve:</strong> Sistema unificado de identificación</li>
-                            <li class="mb-2">• <strong>Certificado digital:</strong> En ordenador o móvil</li>
-                            <li class="mb-2">• <strong>DNI electrónico:</strong> Con lector de tarjetas</li>
-                            <li class="mb-2">• <strong>Usuario/contraseña:</strong> Del SEPE si ya tienes</li>
+                            <li class="mb-2">• <strong>Cl@ve PIN:</strong> Código SMS al teléfono registrado</li>
+                            <li class="mb-2">• <strong>Cl@ve permanente:</strong> Usuario y contraseña personal</li>
+                            <li class="mb-2">• <strong>Certificado digital:</strong> FNMT, DNI electrónico o similares</li>
+                            <li class="mb-2">• <strong>Identificación bancaria:</strong> A través de tu banco online</li>
                         </ul>
-                        <div class="mt-3" style="background: #f0f9ff; padding: 1rem; border-radius: 8px;">
-                            <strong style="color: #0369a1;">💡 Recomendación:</strong> Cl@ve es la opción más sencilla y rápida.
+                        <div class="mt-3" style="background: #dbeafe; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #1d4ed8;">💡 Consejo:</strong> Cl@ve PIN es la opción más rápida si no tienes certificado digital.
                         </div>
                     </div>
                 </div>
@@ -532,17 +483,16 @@
                 <div class="timeline-item">
                     <div class="timeline-step">2</div>
                     <div class="timeline-content">
-                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">📋 Selecciona el Trámite</h3>
-                        <p class="text-secondary mb-3">Navega por las secciones según lo que necesites:</p>
+                        <h3 class="text-xl font-weight-bold mb-3" style="color: #3b82f6;">🔍 Localiza el Trámite</h3>
+                        <p class="text-secondary mb-3">Encuentra el trámite que necesitas realizar:</p>
                         <ul class="text-sm">
-                            <li class="mb-2">• <strong>Prestaciones:</strong> Solicitar o consultar paro</li>
-                            <li class="mb-2">• <strong>Empleo:</strong> Demanda, renovación, ofertas</li>
-                            <li class="mb-2">• <strong>Formación:</strong> Cursos, certificados</li>
-                            <li class="mb-2">• <strong>Empresas:</strong> Si eres empleador</li>
-                            <li class="mb-2">• <strong>Otros:</strong> Reclamaciones, consultas</li>
+                            <li class="mb-2">• <strong>Ciudadanos:</strong> Busca en la sección de personas físicas</li>
+                            <li class="mb-2">• <strong>Buscador:</strong> Utiliza palabras clave relacionadas</li>
+                            <li class="mb-2">• <strong>Navegación:</strong> Explora por categorías temáticas</li>
+                            <li class="mb-2">• <strong>Favoritos:</strong> Marca los trámites más frecuentes</li>
                         </ul>
-                        <div class="mt-3" style="background: #f0fdf4; padding: 1rem; border-radius: 8px;">
-                            <strong style="color: #059669;">🎯 Tip:</strong> Usa el buscador si no encuentras el trámite.
+                        <div class="mt-3" style="background: #ecfdf5; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #059669;">✅ Verificación:</strong> Asegúrate de estar en el trámite correcto antes de comenzar.
                         </div>
                     </div>
                 </div>
@@ -618,210 +568,73 @@
                         <h3 class="doc-title">Documentación Laboral</h3>
                     </div>
                     <ul class="doc-list">
+                        <li><i class="fas fa-check-circle"></i> Contrato de trabajo o finiquito</li>
                         <li><i class="fas fa-check-circle"></i> Certificado de empresa</li>
                         <li><i class="fas fa-check-circle"></i> Vida laboral actualizada</li>
-                        <li><i class="fas fa-check-circle"></i> Nóminas de últimos meses</li>
-                        <li><i class="fas fa-check-circle"></i> Contrato de trabajo</li>
+                        <li><i class="fas fa-check-circle"></i> Justificantes de cotización</li>
                     </ul>
                 </div>
                 
                 <div class="doc-category">
                     <div class="doc-header">
                         <div class="doc-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fas fa-euro-sign"></i>
                         </div>
-                        <h3 class="doc-title">Formación</h3>
+                        <h3 class="doc-title">Documentación Económica</h3>
                     </div>
                     <ul class="doc-list">
-                        <li><i class="fas fa-check-circle"></i> Títulos académicos</li>
-                        <li><i class="fas fa-check-circle"></i> Certificados profesionales</li>
-                        <li><i class="fas fa-check-circle"></i> Cursos de formación</li>
-                        <li><i class="fas fa-check-circle"></i> Competencias digitales</li>
+                        <li><i class="fas fa-check-circle"></i> Declaración de la renta</li>
+                        <li><i class="fas fa-check-circle"></i> Certificado de ingresos</li>
+                        <li><i class="fas fa-check-circle"></i> Datos de patrimonio</li>
+                        <li><i class="fas fa-check-circle"></i> Información sobre prestaciones</li>
                     </ul>
                 </div>
                 
                 <div class="doc-category">
                     <div class="doc-header">
                         <div class="doc-icon">
-                            <i class="fas fa-family"></i>
+                            <i class="fas fa-home"></i>
                         </div>
-                        <h3 class="doc-title">Situación Familiar</h3>
+                        <h3 class="doc-title">Documentación Familiar</h3>
                     </div>
                     <ul class="doc-list">
                         <li><i class="fas fa-check-circle"></i> Libro de familia</li>
-                        <li><i class="fas fa-check-circle"></i> Certificado de convivencia</li>
-                        <li><i class="fas fa-check-circle"></i> Declaración IRPF</li>
-                        <li><i class="fas fa-check-circle"></i> Certificado de discapacidad</li>
+                        <li><i class="fas fa-check-circle"></i> Certificado de matrimonio</li>
+                        <li><i class="fas fa-check-circle"></i> Datos de hijos a cargo</li>
+                        <li><i class="fas fa-check-circle"></i> Situación de dependientes</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Consejos y Tips -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="section-header">
-                        <h2 class="section-title">💡 Consejos para Gestionar Trámites</h2>
-                        <p class="section-subtitle">
-                            Recomendaciones para hacer tus gestiones de forma más eficiente
-                        </p>
-                    </div>
-                    
-                    <div class="tips-list">
-                        <div class="tip-item">
-                            <div class="tip-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="tip-content">
-                                <h4 class="tip-title">Mejor Horario para Tramitar</h4>
-                                <p class="tip-description">
-                                    Las primeras horas (8:00-10:00) y últimas (20:00-22:00) suelen tener menos tráfico 
-                                    en la sede electrónica, lo que hace que el proceso sea más rápido.
-                                </p>
-                            </div>
+            
+            <!-- Consejos de Documentación -->
+            <div class="tips-section">
+                <h3 class="tips-title">💡 Consejos para la Documentación</h3>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <i class="fas fa-file-pdf"></i>
                         </div>
-                        
-                        <div class="tip-item">
-                            <div class="tip-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <div class="tip-content">
-                                <h4 class="tip-title">Usa la App Móvil</h4>
-                                <p class="tip-description">
-                                    Descarga la app "SEPE Cita Previa" para gestionar algunos trámites desde tu móvil. 
-                                    Es especialmente útil para renovar la demanda y consultar tu expediente.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="tip-item">
-                            <div class="tip-icon">
-                                <i class="fas fa-save"></i>
-                            </div>
-                            <div class="tip-content">
-                                <h4 class="tip-title">Guarda Todos los Justificantes</h4>
-                                <p class="tip-description">
-                                    Descarga y archiva todos los comprobantes de tus trámites. Son la única prueba válida 
-                                    de que has realizado la gestión correctamente y en plazo.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="tip-item">
-                            <div class="tip-icon">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <div class="tip-content">
-                                <h4 class="tip-title">Configura Recordatorios</h4>
-                                <p class="tip-description">
-                                    Programa alarmas en tu móvil para recordar fechas importantes: renovación de demanda, 
-                                    sellado del paro, y vencimientos de documentación.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="tip-item">
-                            <div class="tip-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="tip-content">
-                                <h4 class="tip-title">Teléfono de Información</h4>
-                                <p class="tip-description">
-                                    Si tienes dudas, llama al <strong>901 11 99 99</strong> (de lunes a viernes, 8:00 a 20:00). 
-                                    También puedes usar el chat de la sede electrónica.
-                                </p>
-                            </div>
+                        <div class="tip-content">
+                            <h4>Formatos Aceptados</h4>
+                            <p>PDF, JPG, PNG con tamaño máximo de 10MB por archivo</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <!-- AdSense Banner -->
-                    <div class="ad-container">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
-                        <ins class="adsbygoogle ad-sidebar"
-                             style="display:block"
-                             data-ad-client="ca-pub-XXXXXXXXXX"
-                             data-ad-slot="XXXXXXXXXX"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
-                    
-                    <!-- Enlaces Útiles -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-link"></i>
-                                Enlaces Oficiales
-                            </h3>
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <div class="card-body">
-                            <ul class="link-list">
-                                <li>
-                                    <a href="https://sede.sepe.gob.es" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Sede Electrónica SEPE
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.sepe.es/HomeSepe" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Web Principal SEPE
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://clave.gob.es" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Portal Cl@ve
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://sede.seg-social.gob.es" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Seguridad Social
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.aeat.es" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Agencia Tributaria
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="tip-content">
+                            <h4>Documentos Válidos</h4>
+                            <p>Asegúrate de que no estén caducados y sean legibles</p>
                         </div>
                     </div>
-                    
-                    <!-- Newsletter -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-envelope"></i>
-                                Mantente Informado
-                            </h3>
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <i class="fas fa-copy"></i>
                         </div>
-                        <div class="card-body">
-                            <p class="text-sm text-secondary mb-3">
-                                Recibe las últimas novedades sobre trámites del SEPE directamente en tu email.
-                            </p>
-                            <form class="newsletter-form" id="newsletter-form">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Tu email" 
-                                           id="newsletter-email" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-block">
-                                    <i class="fas fa-paper-plane"></i>
-                                    Suscribirse
-                                </button>
-                            </form>
-                            <p class="text-xs text-secondary mt-2">
-                                No spam. Puedes darte de baja cuando quieras.
-                            </p>
+                        <div class="tip-content">
+                            <h4>Guarda Copias</h4>
+                            <p>Mantén una copia de seguridad de toda la documentación</p>
                         </div>
                     </div>
                 </div>
@@ -829,98 +642,167 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section">
+    <!-- Preguntas Frecuentes -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-header text-center">
                 <h2 class="section-title">❓ Preguntas Frecuentes sobre Trámites</h2>
                 <p class="section-subtitle">
-                    Resolvemos las dudas más comunes sobre la gestión de trámites en el SEPE
+                    Resuelve las dudas más comunes sobre la gestión de trámites en el SEPE
                 </p>
             </div>
             
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question" data-toggle="faq">
-                        <h4>¿Puedo hacer todos los trámites online?</h4>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">
+                        <h3>¿Qué documentos necesito para registrarme como demandante de empleo?</h3>
+                        <button class="faq-toggle" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Sí, la mayoría de trámites del SEPE se pueden realizar de forma completamente online a través 
-                            de la Sede Electrónica. Solo algunos trámites muy específicos o cuando hay incidencias 
-                            técnicas requieren acudir presencialmente a una oficina.
-                        </p>
+                        <p>Para registrarte como demandante de empleo necesitas:</p>
+                        <ul>
+                            <li>DNI o NIE en vigor</li>
+                            <li>Número de Seguridad Social</li>
+                            <li>Certificado de empresa (si procede del paro)</li>
+                            <li>Currículum vitae actualizado</li>
+                            <li>Datos de contacto actuales (teléfono y email)</li>
+                        </ul>
+                        <p>Si es tu primera vez, también pueden pedirte documentación adicional sobre tu formación y experiencia laboral.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
-                    <div class="faq-question" data-toggle="faq">
-                        <h4>¿Qué hago si no tengo certificado digital?</h4>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">
+                        <h3>¿Con qué frecuencia debo renovar mi demanda de empleo?</h3>
+                        <button class="faq-toggle" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Puedes usar el sistema Cl@ve, que es más sencillo de obtener. Solo necesitas tu DNI/NIE 
-                            y un teléfono móvil. También puedes registrarte con usuario y contraseña del SEPE 
-                            si ya tienes expediente abierto.
-                        </p>
+                        <p>La renovación de la demanda de empleo es <strong>anual</strong>, pero también debes renovarla cuando:</p>
+                        <ul>
+                            <li>Cambies de domicilio</li>
+                            <li>Modifiques tu situación familiar</li>
+                            <li>Actualices tu formación o experiencia</li>
+                            <li>Cambies tus preferencias de búsqueda de empleo</li>
+                        </ul>
+                        <p>El SEPE te notificará cuando se acerque la fecha de renovación.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
-                    <div class="faq-question" data-toggle="faq">
-                        <h4>¿Cuánto tiempo tengo para renovar la demanda?</h4>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">
+                        <h3>¿Qué pasa si no sello el paro en el plazo establecido?</h3>
+                        <button class="faq-toggle" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            La renovación de la demanda debe hacerse antes de que expire. El SEPE te avisará con 
-                            antelación. Si no renuevas en plazo, tu demanda se dará de baja automáticamente y 
-                            perderás el derecho a prestaciones hasta que vuelvas a inscribirte.
-                        </p>
+                        <p>Si no sellas el paro en los 90 días establecidos:</p>
+                        <ul>
+                            <li><strong>Suspensión temporal:</strong> Se suspende el pago de la prestación</li>
+                            <li><strong>Plazo adicional:</strong> Tienes 15 días naturales para justificar el retraso</li>
+                            <li><strong>Causas justificadas:</strong> Enfermedad, hospitalización, fuerza mayor</li>
+                            <li><strong>Reanudación:</strong> Se reanuda el pago si la causa está justificada</li>
+                        </ul>
+                        <p><strong>Importante:</strong> Si no justificas el retraso, puedes perder la prestación definitivamente.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
-                    <div class="faq-question" data-toggle="faq">
-                        <h4>¿Es obligatorio sellar el paro cada 90 días?</h4>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">
+                        <h3>¿Puedo realizar trámites sin certificado digital?</h3>
+                        <button class="faq-toggle" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Sí, es completamente obligatorio. El sellado confirma que sigues en situación de desempleo 
-                            y buscando trabajo activamente. Si no sellas en plazo, se suspenderá tu prestación y 
-                            podrías perder el derecho a cobrar durante un tiempo.
-                        </p>
+                        <p>Sí, existen varias alternativas al certificado digital:</p>
+                        <ul>
+                            <li><strong>Cl@ve PIN:</strong> Código que se envía por SMS (más rápido)</li>
+                            <li><strong>Cl@ve permanente:</strong> Usuario y contraseña que solicitas en persona</li>
+                            <li><strong>Identificación bancaria:</strong> A través de tu banco online</li>
+                            <li><strong>DNI electrónico:</strong> Si tienes lector de tarjetas</li>
+                        </ul>
+                        <p>Cl@ve PIN es la opción más recomendada si no dispones de certificado digital.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
-                    <div class="faq-question" data-toggle="faq">
-                        <h4>¿Los certificados del SEPE tienen validez oficial?</h4>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">
+                        <h3>¿Cómo puedo consultar el estado de mi expediente?</h3>
+                        <button class="faq-toggle" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Sí, todos los certificados descargados desde la Sede Electrónica tienen plena validez 
-                            oficial y valor legal. Incluyen firma electrónica y código seguro de verificación. 
-                            Son aceptados por cualquier organismo público o empresa.
-                        </p>
+                        <p>Para consultar tu expediente puedes:</p>
+                        <ul>
+                            <li><strong>Sede Electrónica:</strong> Sección "Mis expedientes" tras identificarte</li>
+                            <li><strong>App móvil SEPE:</strong> Disponible para Android e iOS</li>
+                            <li><strong>Teléfono:</strong> 91 273 83 83 (coste según operador)</li>
+                            <li><strong>Oficina presencial:</strong> Con cita previa</li>
+                        </ul>
+                        <p>En "Mis expedientes" verás el estado actual, documentos pendientes y fechas importantes.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
-                    <div class="faq-question" data-toggle="faq">
-                        <h4>¿Qué hago si tengo problemas técnicos?</h4>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">
+                        <h3>¿Qué certificados puedo obtener del SEPE?</h3>
+                        <button class="faq-toggle" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Primero, verifica tu conexión a internet y prueba con otro navegador. Si persiste el problema, 
-                            contacta con el servicio técnico del SEPE llamando al 901 11 99 99 o usando el chat de 
-                            ayuda en la sede electrónica.
-                        </p>
+                        <p>Los principales certificados que puedes obtener son:</p>
+                        <ul>
+                            <li><strong>Vida laboral del SEPE:</strong> Períodos de desempleo y prestaciones</li>
+                            <li><strong>Prestaciones recibidas:</strong> Detalle de importes y fechas</li>
+                            <li><strong>Situación de demanda:</strong> Estado actual como demandante</li>
+                            <li><strong>Cursos realizados:</strong> Formación recibida a través del SEPE</li>
+                            <li><strong>Períodos de cotización:</strong> Para completar vida laboral</li>
+                        </ul>
+                        <p>Todos los certificados se pueden descargar en formato PDF de forma inmediata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alertas y Avisos -->
+    <section class="section">
+        <div class="container">
+            <div class="alerts-grid">
+                <div class="alert alert-info">
+                    <div class="alert-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Información Importante</h4>
+                        <p>Los trámites realizados online tienen la misma validez que los presenciales. Guarda siempre el justificante de presentación.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning">
+                    <div class="alert-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Plazos Importantes</h4>
+                        <p>Respeta los plazos de presentación y renovación. La demora injustificada puede afectar a tus prestaciones.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <div class="alert-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Soporte Disponible</h4>
+                        <p>Si tienes dudas, contacta con el SEPE a través del teléfono 91 273 83 83 o solicita cita previa.</p>
                     </div>
                 </div>
             </div>
@@ -928,25 +810,41 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section bg-gradient">
         <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2 class="cta-title">¿Listo para gestionar tus trámites?</h2>
-                    <p class="cta-description">
-                        Accede ahora a la Sede Electrónica del SEPE y completa todos tus trámites de forma rápida y segura.
-                    </p>
-                </div>
+            <div class="cta-content text-center">
+                <h2 class="cta-title">¿Listo para gestionar tus trámites?</h2>
+                <p class="cta-description">
+                    Accede a la Sede Electrónica del SEPE y realiza todos tus trámites de forma rápida y segura
+                </p>
                 <div class="cta-actions">
                     <a href="https://sede.sepe.gob.es" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
                         <i class="fas fa-external-link-alt"></i>
-                        Ir a Sede Electrónica SEPE
+                        Ir a Sede Electrónica
                     </a>
-                    <a href="../cita-previa/" class="btn btn-outline btn-lg">
-                        <i class="fas fa-calendar-alt"></i>
-                        Solicitar Cita Previa
+                    <a href="https://www.sepe.es/HomeSepe/que-es-el-sepe/comunicacion-institucional/publicaciones/publicaciones-oficina-virtual.html" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+                        <i class="fas fa-book"></i>
+                        Guías Oficiales
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Ad Unit -->
+    <section class="ad-section">
+        <div class="container">
+            <div class="ad-container">
+                <!-- Responsive Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </section>
@@ -957,14 +855,23 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
-                        <a href="../" class="brand-link">
-                            <i class="fas fa-briefcase brand-icon"></i>
-                            <span class="brand-text">InfoSEPE</span>
+                        <img src="../assets/images/logo.png" alt="InfoSEPE Logo" class="footer-logo">
+                        <h3 class="footer-brand-name">InfoSEPE</h3>
+                    </div>
+                    <p class="footer-description">
+                        Portal informativo sobre trámites, prestaciones y servicios del SEPE. 
+                        Información actualizada y consejos prácticos.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <p class="footer-description">
-                            Tu guía completa para todos los trámites y servicios del SEPE. 
-                            Información actualizada y consejos prácticos.
-                        </p>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -1015,60 +922,118 @@
                 <div class="footer-bottom-content">
                     <p class="copyright">
                         © 2025 InfoSEPE. Web informativa no oficial del SEPE. 
-                        <strong>Información actualizada al 13 de junio de 2025.</strong>
+                        Consulta siempre las fuentes oficiales para trámites.
                     </p>
-                    <div class="footer-social">
-                        <span class="social-text">Síguenos:</span>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                    <div class="footer-bottom-links">
+                        <a href="../legal/aviso-legal.html">Aviso Legal</a>
+                        <a href="../legal/politica-privacidad.html">Privacidad</a>
+                        <a href="../legal/cookies.html">Cookies</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4>🍪 Uso de Cookies</h4>
+                <p>Utilizamos cookies propias y de terceros para mejorar tu experiencia y mostrar publicidad personalizada. 
+                <a href="../legal/cookies.html">Más información</a></p>
+            </div>
+            <div class="cookie-actions">
+                <button id="acceptCookies" class="btn btn-primary btn-sm">Aceptar</button>
+                <button id="configureCookies" class="btn btn-outline btn-sm">Configurar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="../assets/js/utils.js"></script>
     <script src="../assets/js/main.js"></script>
     
-    <!-- Page specific JavaScript -->
+    <!-- Page specific functionality -->
     <script>
-        // Inicialización de la página
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar aplicación
-            App.init();
-            
-            // Analytics para página de trámites
-            Analytics.trackPageView('Trámites SEPE', '/tramites/');
-            
-            // Animación de estadísticas del hero
-            const stats = document.querySelectorAll('[data-target]');
+            // Initialize FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const toggle = item.querySelector('.faq-toggle');
+                
+                question.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-toggle i').className = 'fas fa-plus';
+                    });
+                    
+                    // Toggle current item
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        toggle.querySelector('i').className = 'fas fa-minus';
+                    }
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const query = this.value.trim();
+                        if (query) {
+                            // Track search
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'search', {
+                                    search_term: query,
+                                    page_location: 'tramites'
+                                });
+                            }
+                            
+                            // Redirect to SEPE search (or implement internal search)
+                            window.open(`https://sede.sepe.gob.es/SiteSepe/contenidos/buscador/buscar.do?texto=${encodeURIComponent(query)}`, '_blank');
+                        }
+                    }
+                });
+            }
+
+            // Counter animation for hero stats
+            const stats = document.querySelectorAll('.stat-number[data-target]');
             const animateStats = () => {
                 stats.forEach(stat => {
-                    const target = parseInt(stat.dataset.target);
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    const current = parseInt(stat.textContent) || 0;
                     const increment = target / 100;
-                    let current = 0;
                     
-                    const timer = setInterval(() => {
-                        current += increment;
-                        stat.textContent = Math.floor(current);
-                        
-                        if (current >= target) {
-                            stat.textContent = target;
-                            clearInterval(timer);
-                        }
-                    }, 20);
+                    if (current < target) {
+                        stat.textContent = Math.ceil(current + increment);
+                        setTimeout(() => animateStats(), 20);
+                    } else {
+                        stat.textContent = target;
+                    }
                 });
             };
-            
-            // Ejecutar animación cuando el hero sea visible
+
+            // Start counter animation when hero section is visible
             const heroSection = document.querySelector('.hero-section');
             if (heroSection) {
                 const observer = new IntersectionObserver((entries) => {
@@ -1081,86 +1046,116 @@
                 });
                 observer.observe(heroSection);
             }
-            
-            // FAQ toggle functionality
-            const faqQuestions = document.querySelectorAll('[data-toggle="faq"]');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const faqItem = this.closest('.faq-item');
-                    const answer = faqItem.querySelector('.faq-answer');
-                    const icon = this.querySelector('i');
-                    
-                    // Toggle active state
-                    faqItem.classList.toggle('active');
-                    
-                    // Toggle answer visibility
-                    if (faqItem.classList.contains('active')) {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        icon.style.transform = 'rotate(180deg)';
-                    } else {
-                        answer.style.maxHeight = '0';
-                        icon.style.transform = 'rotate(0deg)';
-                    }
-                    
-                    // Analytics tracking
-                    Analytics.trackEvent('FAQ', 'toggle', this.textContent);
-                });
-            });
-            
-            // Newsletter form
-            const newsletterForm = document.getElementById('newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = document.getElementById('newsletter-email').value;
-                    
-                    if (Validate.email(email)) {
-                        // Simular suscripción exitosa
-                        Notify.show('¡Suscripción realizada correctamente!', 'success');
-                        this.reset();
-                        Analytics.trackEvent('Newsletter', 'subscribe', 'tramites');
-                    } else {
-                        Notify.show('Por favor, introduce un email válido', 'error');
-                    }
-                });
-            }
-            
-            // Tracking de clics en enlaces externos
-            const externalLinks = document.querySelectorAll('a[target="_blank"]');
-            externalLinks.forEach(link => {
+
+            // Track external links
+            document.querySelectorAll('a[target="_blank"]').forEach(link => {
                 link.addEventListener('click', function() {
-                    Analytics.trackEvent('External Link', 'click', this.href);
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'external_link_click', {
+                            external_url: this.href,
+                            link_text: this.textContent.trim(),
+                            page_location: 'tramites'
+                        });
+                    }
                 });
             });
-            
-            // Tracking de clics en trámites
-            const tramiteCards = document.querySelectorAll('.tramite-card .btn');
-            tramiteCards.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const cardTitle = this.closest('.tramite-card').querySelector('.card-title').textContent;
-                    Analytics.trackEvent('Tramite', 'click', cardTitle);
+
+            // Track trámite card clicks
+            document.querySelectorAll('.tramite-card .btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.tramite-card');
+                    const tramiteTitle = card.querySelector('.card-title').textContent.trim();
+                    
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'tramite_click', {
+                            tramite_name: tramiteTitle,
+                            button_text: this.textContent.trim(),
+                            page_location: 'tramites'
+                        });
+                    }
                 });
             });
-        });
-        
-        // Función de búsqueda del header
-        function performSearch() {
-            const searchInput = document.getElementById('header-search');
-            const query = searchInput.value.trim();
-            
-            if (query) {
-                Analytics.trackEvent('Search', 'query', query);
-                // Redirigir a página de resultados o filtrar contenido
-                window.location.href = `../buscar/?q=${encodeURIComponent(query)}`;
+
+            // Cookie consent functionality
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptCookies = document.getElementById('acceptCookies');
+            const configureCookies = document.getElementById('configureCookies');
+
+            // Check if user has already accepted cookies
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookieConsent.style.display = 'block';
+                }, 2000);
             }
-        }
-        
-        // Permitir búsqueda con Enter
-        document.getElementById('header-search').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
+
+            acceptCookies.addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieConsent.style.display = 'none';
+                
+                // Load analytics and ads
+                if (typeof gtag !== 'undefined') {
+                    gtag('consent', 'update', {
+                        analytics_storage: 'granted',
+                        ad_storage: 'granted'
+                    });
+                }
+            });
+
+            configureCookies.addEventListener('click', function() {
+                window.location.href = '../legal/cookies.html';
+            });
+
+            // Lazy loading for images
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.getAttribute('data-src');
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+
+            console.log('✅ Trámites page loaded successfully');
         });
+    </script>
+
+    <!-- Schema.org Structured Data for Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://infosepe.com/"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Trámites",
+            "item": "https://infosepe.com/tramites/"
+        }]
+    }
+    </script>
+
+    <!-- Schema.org Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "InfoSEPE",
+        "url": "https://infosepe.com",
+        "description": "Portal informativo sobre trámites, prestaciones y servicios del SEPE",
+        "sameAs": [
+            "https://www.sepe.es",
+            "https://sede.sepe.gob.es"
+        ]
+    }
     </script>
 </body>
 </html>
