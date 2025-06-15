@@ -1,495 +1,387 @@
-<a href="#calculadoras" class="btn btn-primary btn-lg">
-                            <i class="fas fa-play"></i>
-                            Empezar a Calcular
-                        </a>
-                        <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-outline btn-lg" rel="noopener">
-                            <i class="fas fa-external-link-alt"></i>
-                            SEPE Oficial
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Selector de Calculadora -->
-    <section id="calculadoras" class="section">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Selecciona el Tipo de Prestación a Calcular</h2>
-                <p class="section-subtitle">
-                    Elige la calculadora según tu situación laboral y tipo de prestación
-                </p>
-            </div>
-            
-            <div class="calculator-selector">
-                <div class="calculator-option active" data-calculator="contributiva">
-                    <div class="option-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="option-content">
-                        <h3 class="option-title">Prestación Contributiva</h3>
-                        <p class="option-description">Para trabajadores por cuenta ajena que han cotizado mínimo 1 año</p>
-                        <ul class="option-features">
-                            <li>Basada en cotizaciones</li>
-                            <li>70%/50% base reguladora</li>
-                            <li>Hasta 24 meses</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="calculator-option" data-calculator="asistencial">
-                    <div class="option-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <div class="option-content">
-                        <h3 class="option-title">Prestación Asistencial</h3>
-                        <p class="option-description">Subsidio tras agotar la prestación contributiva</p>
-                        <ul class="option-features">
-                            <li>463,21€ mensuales fijos</li>
-                            <li>Requisito de carencia rentas</li>
-                            <li>6-30 meses según situación</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="calculator-option" data-calculator="autonomos">
-                    <div class="option-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <div class="option-content">
-                        <h3 class="option-title">Cese de Actividad</h3>
-                        <p class="option-description">Para autónomos que cesan su actividad involuntariamente</p>
-                        <ul class="option-features">
-                            <li>70% base cotización elegida</li>
-                            <li>Cese involuntario justificado</li>
-                            <li>Hasta 24 meses</li>
-                        </ul>
-                    </div>
-                </div>
+</div>
             </div>
         </div>
     </section>
 
     <!-- Calculadora Contributiva -->
-    <section id="calc-contributiva" class="calculator-section">
+    <section class="section section-light" id="calculadora-contributiva">
         <div class="container">
             <div class="calculator-container">
                 <div class="calculator-header">
-                    <h2><i class="fas fa-briefcase"></i> Calculadora Prestación Contributiva</h2>
-                    <p>Calcula tu prestación por desempleo basada en cotizaciones</p>
+                    <h2>🧮 Calculadora de Prestación Contributiva</h2>
+                    <p>Calcula tu prestación por desempleo basada en tu salario y tiempo cotizado</p>
                 </div>
                 
-                <div class="calculator-form">
+                <form class="calculator-form" onsubmit="return calcularContributiva(event)">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="salarioBrutoContrib" class="form-label">
-                                <i class="fas fa-euro-sign"></i>
-                                Salario Bruto Mensual (€)
-                            </label>
-                            <input type="number" id="salarioBrutoContrib" class="form-control" 
-                                   placeholder="Ej: 1800" min="0" step="0.01">
-                            <small class="form-text">Salario bruto promedio de los últimos 180 días</small>
+                            <label for="salario">Salario bruto mensual (€)</label>
+                            <input type="number" 
+                                   id="salario" 
+                                   name="salario" 
+                                   min="0" 
+                                   step="0.01" 
+                                   placeholder="Ej: 1500"
+                                   required>
+                            <small>Salario de los últimos 6 meses</small>
                         </div>
                         
                         <div class="form-group">
-                            <label for="diasCotizadosContrib" class="form-label">
-                                <i class="fas fa-calendar-days"></i>
-                                Días Cotizados
-                            </label>
-                            <input type="number" id="diasCotizadosContrib" class="form-control" 
-                                   placeholder="Ej: 720" min="365" max="9999">
-                            <small class="form-text">Total días cotizados en los últimos 6 años</small>
+                            <label for="mesesCotizados">Meses cotizados</label>
+                            <input type="number" 
+                                   id="mesesCotizados" 
+                                   name="mesesCotizados" 
+                                   min="12" 
+                                   max="240" 
+                                   placeholder="Ej: 36"
+                                   required>
+                            <small>Total de meses cotizados en tu vida laboral</small>
                         </div>
                         
                         <div class="form-group">
-                            <label for="numeroHijosContrib" class="form-label">
-                                <i class="fas fa-baby"></i>
-                                Hijos a Cargo
-                            </label>
-                            <select id="numeroHijosContrib" class="form-control">
-                                <option value="0">Sin hijos a cargo</option>
+                            <label for="edad">Edad</label>
+                            <input type="number" 
+                                   id="edad" 
+                                   name="edad" 
+                                   min="16" 
+                                   max="67" 
+                                   placeholder="Ej: 35"
+                                   required>
+                            <small>Tu edad actual</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hijosACargo">Hijos a cargo</label>
+                            <select id="hijosACargo" name="hijosACargo">
+                                <option value="0">Sin hijos</option>
                                 <option value="1">1 hijo</option>
-                                <option value="2">2 o más hijos</option>
+                                <option value="2">2 hijos</option>
+                                <option value="3">3 o más hijos</option>
                             </select>
-                            <small class="form-text">Menores de 26 años o con discapacidad</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="edadContrib" class="form-label">
-                                <i class="fas fa-user"></i>
-                                Edad
-                            </label>
-                            <input type="number" id="edadContrib" class="form-control" 
-                                   placeholder="Ej: 35" min="16" max="67">
-                            <small class="form-text">Tu edad actual</small>
                         </div>
                     </div>
                     
-                    <div class="calculator-actions">
-                        <button type="button" id="calcularContrib" class="btn btn-primary btn-lg">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
                             <i class="fas fa-calculator"></i>
-                            Calcular Prestación Contributiva
+                            Calcular Prestación
                         </button>
-                        <button type="button" id="limpiarContrib" class="btn btn-outline btn-lg">
-                            <i class="fas fa-eraser"></i>
+                        <button type="reset" class="btn btn-ghost">
+                            <i class="fas fa-undo"></i>
                             Limpiar
                         </button>
                     </div>
-                </div>
+                </form>
                 
-                <div id="resultadoContrib" class="calculator-result" style="display: none;"></div>
+                <div class="calculator-result" id="resultadoContributiva" style="display: none;">
+                    <!-- Resultado dinámico -->
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Calculadora Asistencial -->
-    <section id="calc-asistencial" class="calculator-section" style="display: none;">
+    <section class="section" id="calculadora-asistencial" style="display: none;">
         <div class="container">
             <div class="calculator-container">
                 <div class="calculator-header">
-                    <h2><i class="fas fa-hands-helping"></i> Calculadora Prestación Asistencial</h2>
-                    <p>Verifica si cumples requisitos para el subsidio de 463,21€</p>
+                    <h2>🤝 Calculadora de Prestación Asistencial</h2>
+                    <p>Verifica si cumples los requisitos para el subsidio asistencial</p>
                 </div>
                 
-                <div class="calculator-form">
+                <form class="calculator-form" onsubmit="return calcularAsistencial(event)">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="miembrosFamiliaAsist" class="form-label">
-                                <i class="fas fa-users"></i>
-                                Miembros Unidad Familiar
-                            </label>
-                            <select id="miembrosFamiliaAsist" class="form-control">
-                                <option value="1">1 persona (solo tú)</option>
-                                <option value="2">2 personas</option>
-                                <option value="3">3 personas</option>
-                                <option value="4">4 personas</option>
-                                <option value="5">5 personas</option>
-                                <option value="6">6+ personas</option>
-                            </select>
-                            <small class="form-text">Incluye cónyuge e hijos a cargo</small>
+                            <label for="edadAsistencial">Edad</label>
+                            <input type="number" 
+                                   id="edadAsistencial" 
+                                   name="edadAsistencial" 
+                                   min="16" 
+                                   max="67" 
+                                   placeholder="Ej: 47"
+                                   required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="ingresosFamiliaAsist" class="form-label">
-                                <i class="fas fa-coins"></i>
-                                Ingresos Familiares Mensuales (€)
-                            </label>
-                            <input type="number" id="ingresosFamiliaAsist" class="form-control" 
-                                   placeholder="Ej: 600" min="0" step="0.01">
-                            <small class="form-text">Suma de todos los ingresos familiares</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="situacionAsist" class="form-label">
-                                <i class="fas fa-info-circle"></i>
-                                Tu Situación
-                            </label>
-                            <select id="situacionAsist" class="form-control">
-                                <option value="agotamiento">He agotado la prestación contributiva</option>
-                                <option value="insuficiente">No tengo 1 año cotizado</option>
-                                <option value="mayores45">Tengo 45 años o más</option>
-                                <option value="responsabilidades">Tengo responsabilidades familiares</option>
+                            <label for="situacionFamiliar">Situación familiar</label>
+                            <select id="situacionFamiliar" name="situacionFamiliar" required>
+                                <option value="">Selecciona...</option>
+                                <option value="soltero">Soltero/a sin cargas</option>
+                                <option value="cargas">Con cargas familiares</option>
+                                <option value="conyuge">Con cónyuge</option>
+                                <option value="hijos">Con hijos menores</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="edadAsist" class="form-label">
-                                <i class="fas fa-birthday-cake"></i>
-                                Edad
-                            </label>
-                            <input type="number" id="edadAsist" class="form-control" 
-                                   placeholder="Ej: 45" min="16" max="67">
-                            <small class="form-text">Tu edad actual</small>
+                            <label for="ingresosAsistencial">Ingresos familiares (€/mes)</label>
+                            <input type="number" 
+                                   id="ingresosAsistencial" 
+                                   name="ingresosAsistencial" 
+                                   min="0" 
+                                   step="0.01" 
+                                   placeholder="Ej: 400"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prestacionAgotada">¿Has agotado la prestación contributiva?</label>
+                            <select id="prestacionAgotada" name="prestacionAgotada" required>
+                                <option value="">Selecciona...</option>
+                                <option value="si">Sí, la he agotado</option>
+                                <option value="no">No, nunca la he cobrado</option>
+                                <option value="insuficiente">Cotización insuficiente</option>
+                            </select>
                         </div>
                     </div>
                     
-                    <div class="calculator-actions">
-                        <button type="button" id="calcularAsist" class="btn btn-primary btn-lg">
-                            <i class="fas fa-check-circle"></i>
-                            Verificar Requisitos
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Verificar Elegibilidad
                         </button>
-                        <button type="button" id="limpiarAsist" class="btn btn-outline btn-lg">
-                            <i class="fas fa-eraser"></i>
+                        <button type="reset" class="btn btn-ghost">
+                            <i class="fas fa-undo"></i>
                             Limpiar
                         </button>
                     </div>
-                </div>
+                </form>
                 
-                <div id="resultadoAsist" class="calculator-result" style="display: none;"></div>
+                <div class="calculator-result" id="resultadoAsistencial" style="display: none;">
+                    <!-- Resultado dinámico -->
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Calculadora Autónomos -->
-    <section id="calc-autonomos" class="calculator-section" style="display: none;">
+    <section class="section section-light" id="calculadora-autonomos" style="display: none;">
         <div class="container">
             <div class="calculator-container">
                 <div class="calculator-header">
-                    <h2><i class="fas fa-user-tie"></i> Calculadora Cese de Actividad</h2>
-                    <p>Calcula tu prestación por cese de actividad como autónomo</p>
+                    <h2>👨‍💼 Calculadora Cese de Actividad</h2>
+                    <p>Para autónomos que cesan su actividad por causas económicas</p>
                 </div>
                 
-                <div class="calculator-form">
+                <form class="calculator-form" onsubmit="return calcularAutonomos(event)">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="baseCotizacionAut" class="form-label">
-                                <i class="fas fa-chart-bar"></i>
-                                Base de Cotización por Cese (€)
-                            </label>
-                            <select id="baseCotizacionAut" class="form-control">
-                                <option value="1000">1.000€ (mínima)</option>
-                                <option value="1200">1.200€</option>
-                                <option value="1500">1.500€</option>
-                                <option value="1800">1.800€</option>
-                                <option value="2100">2.100€</option>
-                                <option value="2400">2.400€</option>
-                                <option value="2700">2.700€</option>
-                                <option value="3000">3.000€</option>
-                                <option value="3500">3.500€</option>
-                                <option value="4070">4.070€ (máxima)</option>
-                            </select>
-                            <small class="form-text">Base elegida para cobertura por cese</small>
+                            <label for="baseCotizacion">Base de cotización mensual (€)</label>
+                            <input type="number" 
+                                   id="baseCotizacion" 
+                                   name="baseCotizacion" 
+                                   min="960" 
+                                   max="4070" 
+                                   placeholder="Ej: 1000"
+                                   required>
+                            <small>Base por la que cotizas en el RETA</small>
                         </div>
                         
                         <div class="form-group">
-                            <label for="mesesCotizadosAut" class="form-label">
-                                <i class="fas fa-calendar-alt"></i>
-                                Meses Cotizados por Cese
-                            </label>
-                            <input type="number" id="mesesCotizadosAut" class="form-control" 
-                                   placeholder="Ej: 18" min="12" max="999">
-                            <small class="form-text">Meses cotizando cobertura por cese</small>
+                            <label for="mesesCotizadosAutonomo">Meses cotizados como autónomo</label>
+                            <input type="number" 
+                                   id="mesesCotizadosAutonomo" 
+                                   name="mesesCotizadosAutonomo" 
+                                   min="12" 
+                                   max="240" 
+                                   placeholder="Ej: 24"
+                                   required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="motivoCese" class="form-label">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                Motivo del Cese
-                            </label>
-                            <select id="motivoCese" class="form-control">
-                                <option value="economicas">Causas económicas (pérdidas >10%)</option>
-                                <option value="tecnicas">Causas técnicas (pérdida licencia)</option>
-                                <option value="fuerza_mayor">Fuerza mayor (siniestro, etc.)</option>
+                            <label for="causaCese">Causa del cese</label>
+                            <select id="causaCese" name="causaCese" required>
+                                <option value="">Selecciona...</option>
+                                <option value="economica">Causas económicas</option>
+                                <option value="fuerza_mayor">Fuerza mayor</option>
                                 <option value="violencia">Violencia de género</option>
-                                <option value="incapacidad">Incapacidad temporal >12 meses</option>
+                                <option value="divorcio">Divorcio/separación</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="edadAut" class="form-label">
-                                <i class="fas fa-user"></i>
-                                Edad
-                            </label>
-                            <input type="number" id="edadAut" class="form-control" 
-                                   placeholder="Ej: 42" min="18" max="67">
-                            <small class="form-text">Tu edad actual</small>
+                            <label for="edadAutonomo">Edad</label>
+                            <input type="number" 
+                                   id="edadAutonomo" 
+                                   name="edadAutonomo" 
+                                   min="16" 
+                                   max="67" 
+                                   placeholder="Ej: 42"
+                                   required>
                         </div>
                     </div>
                     
-                    <div class="calculator-actions">
-                        <button type="button" id="calcularAut" class="btn btn-primary btn-lg">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
                             <i class="fas fa-calculator"></i>
-                            Calcular Prestación Autónomos
+                            Calcular Prestación
                         </button>
-                        <button type="button" id="limpiarAut" class="btn btn-outline btn-lg">
-                            <i class="fas fa-eraser"></i>
+                        <button type="reset" class="btn btn-ghost">
+                            <i class="fas fa-undo"></i>
                             Limpiar
                         </button>
                     </div>
-                </div>
+                </form>
                 
-                <div id="resultadoAut" class="calculator-result" style="display: none;"></div>
+                <div class="calculator-result" id="resultadoAutonomos" style="display: none;">
+                    <!-- Resultado dinámico -->
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Información Adicional -->
-    <section class="section bg-light">
+    <section class="section" id="como-funciona">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="info-section">
-                        <h2>Información Importante sobre los Cálculos</h2>
-                        
-                        <div class="info-card">
-                            <div class="info-header">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <h3>Aviso Legal</h3>
-                            </div>
-                            <p>
-                                Estas calculadoras proporcionan <strong>estimaciones orientativas</strong> basadas en 
-                                los datos que introduces. El cálculo oficial lo realiza el SEPE considerando múltiples 
-                                factores que pueden no estar reflejados aquí.
-                            </p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-header">
-                                <i class="fas fa-chart-line"></i>
-                                <h3>Factores que Influyen</h3>
-                            </div>
-                            <ul>
-                                <li><strong>Bases de cotización reales:</strong> Las exactas de tus últimos meses trabajados</li>
-                                <li><strong>Pagas extraordinarias:</strong> Se prorratean en el cálculo anual</li>
-                                <li><strong>Periodos de IT:</strong> Pueden afectar al cálculo de la base reguladora</li>
-                                <li><strong>Cotizaciones irregulares:</strong> Cambios de salario durante el periodo</li>
-                                <li><strong>Pluriactividad:</strong> Cotizaciones simultáneas en varios regímenes</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-header">
-                                <i class="fas fa-calendar-check"></i>
-                                <h3>Datos Actualizados 2025</h3>
-                            </div>
-                            <div class="datos-2025">
-                                <div class="dato-item">
-                                    <span class="dato-label">IPREM 2025:</span>
-                                    <span class="dato-value">579,02€/mes</span>
-                                </div>
-                                <div class="dato-item">
-                                    <span class="dato-label">SMI 2025:</span>
-                                    <span class="dato-value">1.080€/mes</span>
-                                </div>
-                                <div class="dato-item">
-                                    <span class="dato-label">Tope máximo prestación:</span>
-                                    <span class="dato-value">1.398,96€/mes</span>
-                                </div>
-                                <div class="dato-item">
-                                    <span class="dato-label">Tope mínimo prestación:</span>
-                                    <span class="dato-value">463,21€/mes</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-header">
-                                <i class="fas fa-lightbulb"></i>
-                                <h3>Consejos Útiles</h3>
-                            </div>
-                            <ul>
-                                <li>Solicita tu prestación <strong>inmediatamente</strong> tras el cese laboral</li>
-                                <li>Tienes <strong>15 días hábiles</strong> de plazo para no perder días</li>
-                                <li>Consulta tu <strong>vida laboral</strong> antes de hacer el cálculo</li>
-                                <li>Las <strong>cotizaciones deben estar al día</strong> para generar derecho</li>
-                                <li>Si tienes dudas, consulta en tu <strong>oficina del SEPE</strong></li>
-                            </ul>
-                        </div>
+            <div class="section-header text-center">
+                <h2>📊 Cómo Funcionan las Calculadoras</h2>
+                <p>Información sobre los cálculos y baremos utilizados</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>Prestación Contributiva</h3>
+                    <ul>
+                        <li><strong>Base reguladora:</strong> Promedio bases cotización últimos 6 meses</li>
+                        <li><strong>Cuantía:</strong> 70% primeros 6 meses, 50% siguientes</li>
+                        <li><strong>Máximo 2025:</strong> 1.398,96€/mes</li>
+                        <li><strong>Mínimo 2025:</strong> 501,43€/mes (sin hijos)</li>
+                        <li><strong>Duración:</strong> Según meses cotizados (4-24 meses)</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Prestación Asistencial</h3>
+                    <ul>
+                        <li><strong>Cuantía fija:</strong> 463,21€/mes</li>
+                        <li><strong>Duración:</strong> 6 meses prorrogables</li>
+                        <li><strong>Límite rentas:</strong> 578,60€/mes</li>
+                        <li><strong>Requisitos:</strong> 45+ años o cargas familiares</li>
+                        <li><strong>Renovable:</strong> Hasta 30 meses máximo</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Cese de Actividad</h3>
+                    <ul>
+                        <li><strong>Cuantía:</strong> 70% base de cotización</li>
+                        <li><strong>Máximo 2025:</strong> 1.398,96€/mes</li>
+                        <li><strong>Mínimo 2025:</strong> 501,43€/mes</li>
+                        <li><strong>Duración:</strong> 4-24 meses según cotización</li>
+                        <li><strong>Carencia:</strong> 12 meses cotizando mínimo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>❓ Preguntas Frecuentes</h2>
+                <p>Dudas comunes sobre el cálculo de prestaciones</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Son exactos los cálculos de la calculadora?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Los cálculos son orientativos y se basan en los baremos oficiales del SEPE 2025. 
+                            El resultado final puede variar según circunstancias específicas como pagas extraordinarias, 
+                            variaciones salariales o situaciones particulares. Para el cálculo oficial, consulta directamente con el SEPE.
+                        </p>
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <!-- AdSense -->
-                    <div class="ad-container">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"></script>
-                        <ins class="adsbygoogle ad-sidebar"
-                             style="display:block"
-                             data-ad-client="ca-pub-XXXXXXXXXX"
-                             data-ad-slot="XXXXXXXXXX"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué salario debo introducir?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Debes introducir el salario bruto mensual promedio de los últimos 6 meses trabajados. 
+                            Incluye el salario base, complementos salariales y la parte proporcional de pagas extraordinarias. 
+                            No incluyas dietas, gastos de transporte u otros conceptos no salariales.
+                        </p>
                     </div>
-                    
-                    <!-- Enlaces Relacionados -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-link"></i>
-                                Enlaces Relacionados
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                            <ul class="link-list">
-                                <li>
-                                    <a href="contributiva.html">
-                                        <i class="fas fa-info-circle"></i>
-                                        Guía Prestación Contributiva
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="asistencial.html">
-                                        <i class="fas fa-info-circle"></i>
-                                        Guía Prestación Asistencial
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="autonomos.html">
-                                        <i class="fas fa-info-circle"></i>
-                                        Guía Cese de Actividad
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../tramites/demanda-empleo.html">
-                                        <i class="fas fa-file-alt"></i>
-                                        Cómo Hacer la Demanda
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://sede.sepe.gob.es" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Solicitar en SEPE
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Influyen los hijos en la prestación?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Sí, tener hijos a cargo aumenta el mínimo de la prestación contributiva. 
+                            Con 1 hijo: mínimo 659,73€/mes. Con 2 o más hijos: mínimo 818,40€/mes. 
+                            Para la prestación asistencial, tener hijos puede permitir acceder al subsidio antes de los 45 años.
+                        </p>
                     </div>
-                    
-                    <!-- Herramientas Adicionales -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-tools"></i>
-                                Herramientas Útiles
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                            <ul class="link-list">
-                                <li>
-                                    <a href="https://sede.seg-social.gob.es" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Consultar Vida Laboral
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://sede.sepe.gob.es" target="_blank" rel="noopener">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Estado de tu Expediente
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../cita-previa/">
-                                        <i class="fas fa-calendar-alt"></i>
-                                        Pedir Cita Previa
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuándo baja del 70% al 50%?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            La prestación contributiva se cobra al 70% de la base reguladora durante los primeros 6 meses. 
+                            A partir del mes 7, baja al 50%. Esta reducción no se aplica si tienes 52 años o más, 
+                            en cuyo caso se mantiene al 70% durante toda la prestación.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Puedo trabajar mientras cobro la prestación?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            En general, no puedes trabajar mientras cobras prestación por desempleo. 
+                            Existen excepciones para trabajos de muy corta duración (menos de 90 días) o trabajos de colaboración social. 
+                            Cualquier actividad laboral debe comunicarse inmediatamente al SEPE para suspender temporalmente la prestación.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <div class="cta-text">
-                    <h2 class="cta-title">¿Ya has calculado tu prestación?</h2>
-                    <p class="cta-description">
-                        No esperes más. Solicita tu prestación por desempleo en la Sede Electrónica del SEPE.
-                    </p>
-                </div>
+                <h2 class="cta-title">¿Listo para solicitar tu prestación?</h2>
+                <p class="cta-description">
+                    Una vez calculada tu prestación, puedes solicitarla online o pedir cita previa
+                </p>
                 <div class="cta-actions">
-                    <a href="https://sede.sepe.gob.es" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                    <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-primary btn-large">
                         <i class="fas fa-external-link-alt"></i>
-                        Solicitar en SEPE
+                        Solicitar Online
                     </a>
-                    <a href="../prestaciones/" class="btn btn-outline btn-lg">
-                        <i class="fas fa-arrow-left"></i>
-                        Ver Todas las Prestaciones
+                    <a href="../cita-previa/" class="btn btn-ghost btn-large">
+                        <i class="fas fa-calendar-check"></i>
+                        Pedir Cita Previa
                     </a>
                 </div>
             </div>
@@ -501,703 +393,279 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-brand">
-                        <a href="../" class="brand-link">
-                            <i class="fas fa-briefcase brand-icon"></i>
-                            <span class="brand-text">InfoSEPE</span>
-                        </a>
-                        <p class="footer-description">
-                            Calculadora oficial de prestaciones por desempleo 2025. 
-                            Herramientas precisas y actualizadas para el SEPE.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-title">Calculadoras</h4>
-                    <ul class="footer-links">
-                        <li><a href="#calc-contributiva">Prestación Contributiva</a></li>
-                        <li><a href="#calc-asistencial">Prestación Asistencial</a></li>
-                        <li><a href="#calc-autonomos">Cese de Actividad</a></li>
-                        <li><a href="../subsidios/">Subsidios SEPE</a></li>
+                    <h4>Calculadoras</h4>
+                    <ul>
+                        <li><a href="#calculadora-contributiva"><i class="fas fa-money-check-alt" style="margin-right: 8px;"></i>Prestación Contributiva</a></li>
+                        <li><a href="#calculadora-asistencial"><i class="fas fa-hand-holding-usd" style="margin-right: 8px;"></i>Prestación Asistencial</a></li>
+                        <li><a href="#calculadora-autonomos"><i class="fas fa-user-tie" style="margin-right: 8px;"></i>Cese de Actividad</a></li>
+                        <li><a href="../subsidios/"><i class="fas fa-euro-sign" style="margin-right: 8px;"></i>Calculadora Subsidios</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Guías Completas</h4>
-                    <ul class="footer-links">
-                        <li><a href="contributiva.html">Prestación Contributiva</a></li>
-                        <li><a href="asistencial.html">Prestación Asistencial</a></li>
-                        <li><a href="autonomos.html">Prestación Autónomos</a></li>
-                        <li><a href="../tramites/">Trámites SEPE</a></li>
+                    <h4>Prestaciones SEPE</h4>
+                    <ul>
+                        <li><a href="contributiva.html"><i class="fas fa-money-check-alt" style="margin-right: 8px;"></i>Prestación Contributiva</a></li>
+                        <li><a href="asistencial.html"><i class="fas fa-hand-holding-usd" style="margin-right: 8px;"></i>Prestación Asistencial</a></li>
+                        <li><a href="autonomos.html"><i class="fas fa-user-tie" style="margin-right: 8px;"></i>Prestaciones Autónomos</a></li>
+                        <li><a href="../subsidios/mayores-52.html"><i class="fas fa-user-clock" style="margin-right: 8px;"></i>Subsidio +52 años</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Enlaces Oficiales</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://sede.sepe.gob.es" target="_blank" rel="noopener">Sede Electrónica SEPE</a></li>
-                        <li><a href="https://sede.seg-social.gob.es" target="_blank" rel="noopener">Seguridad Social</a></li>
-                        <li><a href="https://www.aeat.es" target="_blank" rel="noopener">Agencia Tributaria</a></li>
+                    <h4>Trámites Útiles</h4>
+                    <ul>
+                        <li><a href="../cita-previa/"><i class="fas fa-calendar-check" style="margin-right: 8px;"></i>Cita Previa</a></li>
+                        <li><a href="../tramites/demanda-empleo.html"><i class="fas fa-file-alt" style="margin-right: 8px;"></i>Demanda de Empleo</a></li>
+                        <li><a href="../tramites/certificados.html"><i class="fas fa-certificate" style="margin-right: 8px;"></i>Certificados</a></li>
+                        <li><a href="../tramites/renovar-demanda.html"><i class="fas fa-redo" style="margin-right: 8px;"></i>Renovar Demanda</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Información Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../legal/aviso-legal.html">Aviso Legal</a></li>
-                        <li><a href="../legal/politica-privacidad.html">Política de Privacidad</a></li>
-                        <li><a href="../legal/cookies.html">Política de Cookies</a></li>
-                        <li><a href="../contacto.html">Contacto</a></li>
+                    <h4>Información Legal</h4>
+                    <ul>
+                        <li><a href="../legal/aviso-legal.html"><i class="fas fa-gavel" style="margin-right: 8px;"></i>Aviso Legal</a></li>
+                        <li><a href="../legal/politica-privacidad.html"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i>Política de Privacidad</a></li>
+                        <li><a href="../legal/cookies.html"><i class="fas fa-cookie-bite" style="margin-right: 8px;"></i>Política de Cookies</a></li>
+                        <li><a href="../contacto.html"><i class="fas fa-envelope" style="margin-right: 8px;"></i>Contacto</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p class="copyright">
-                        © 2025 InfoSEPE. Web informativa no oficial del SEPE. 
-                        <strong>Calculadoras actualizadas al 13 de junio de 2025.</strong>
+                <div class="footer-info">
+                    <p>&copy; 2025 InfoSEPE. Portal informativo no oficial sobre calculadoras de prestaciones.</p>
+                    <p class="footer-disclaimer">
+                        Las calculadoras son orientativas. Para cálculos oficiales, consulta directamente con el SEPE.
                     </p>
-                    <div class="footer-social">
-                        <span class="social-text">Síguenos:</span>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="../assets/js/utils.js"></script>
-    <script src="../assets/js/main.js"></script>
-    
-    <!-- Page specific JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar aplicación
-            App.init();
-            
-            // Analytics
-            Analytics.trackPageView('Calculadora Prestaciones', '/prestaciones/calculadora.html');
-            
-            // Selector de calculadora
-            const calculatorOptions = document.querySelectorAll('.calculator-option');
-            const calculatorSections = document.querySelectorAll('.calculator-section');
-            
-            calculatorOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const calculatorType = this.dataset.calculator;
-                    
-                    // Actualizar opciones activas
-                    calculatorOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Mostrar sección correspondiente
-                    calculatorSections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    
-                    const targetSection = document.getElementById(`calc-${calculatorType}`);
-                    if (targetSection) {
-                        targetSection.style.display = 'block';
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    
-                    Analytics.trackEvent('Calculator', 'select', calculatorType);
-                });
-            });
-            
-            // Funciones de las calculadoras
-            setupCalculadoraContributiva();
-            setupCalculadoraAsistencial();
-            setupCalculadoraAutonomos();
-        });
-        
-        // Calculadora Contributiva
-        function setupCalculadoraContributiva() {
-            const calcularBtn = document.getElementById('calcularContrib');
-            const limpiarBtn = document.getElementById('limpiarContrib');
-            
-            if (calcularBtn) {
-                calcularBtn.addEventListener('click', function() {
-                    const salario = parseFloat(document.getElementById('salarioBrutoContrib').value) || 0;
-                    const dias = parseInt(document.getElementById('diasCotizadosContrib').value) || 0;
-                    const hijos = parseInt(document.getElementById('numeroHijosContrib').value) || 0;
-                    const edad = parseInt(document.getElementById('edadContrib').value) || 0;
-                    
-                    if (salario <= 0) {
-                        Notify.show('Introduce un salario válido', 'error');
-                        return;
-                    }
-                    
-                    if (dias < 365) {
-                        Notify.show('Necesitas mínimo 365 días cotizados', 'error');
-                        return;
-                    }
-                    
-                    const resultado = calcularPrestacionContributiva(salario, dias, hijos, edad);
-                    mostrarResultadoContributiva(resultado);
-                    
-                    Analytics.trackEvent('Calculator', 'calculate', 'contributiva');
-                });
-            }
-            
-            if (limpiarBtn) {
-                limpiarBtn.addEventListener('click', function() {
-                    document.getElementById('salarioBrutoContrib').value = '';
-                    document.getElementById('diasCotizadosContrib').value = '';
-                    document.getElementById('numeroHijosContrib').value = '0';
-                    document.getElementById('edadContrib').value = '';
-                    document.getElementById('resultadoContrib').style.display = 'none';
-                    
-                    Notify.show('Formulario limpiado', 'info');
-                });
-            }
-        }
-        
-        // Calculadora Asistencial
-        function setupCalculadoraAsistencial() {
-            const calcularBtn = document.getElementById('calcularAsist');
-            const limpiarBtn = document.getElementById('limpiarAsist');
-            
-            if (calcularBtn) {
-                calcularBtn.addEventListener('click', function() {
-                    const miembros = parseInt(document.getElementById('miembrosFamiliaAsist').value) || 1;
-                    const ingresos = parseFloat(document.getElementById('ingresosFamiliaAsist').value) || 0;
-                    const situacion = document.getElementById('situacionAsist').value;
-                    const edad = parseInt(document.getElementById('edadAsist').value) || 0;
-                    
-                    const resultado = verificarRequisitoAsistencial(miembros, ingresos, situacion, edad);
-                    mostrarResultadoAsistencial(resultado);
-                    
-                    Analytics.trackEvent('Calculator', 'calculate', 'asistencial');
-                });
-            }
-            
-            if (limpiarBtn) {
-                limpiarBtn.addEventListener('click', function() {
-                    document.getElementById('miembrosFamiliaAsist').value = '1';
-                    document.getElementById('ingresosFamiliaAsist').value = '';
-                    document.getElementById('situacionAsist').value = 'agotamiento';
-                    document.getElementById('edadAsist').value = '';
-                    document.getElementById('resultadoAsist').style.display = 'none';
-                    
-                    Notify.show('Formulario limpiado', 'info');
-                });
-            }
-        }
-        
-        // Calculadora Autónomos
-        function setupCalculadoraAutonomos() {
-            const calcularBtn = document.getElementById('calcularAut');
-            const limpiarBtn = document.getElementById('limpiarAut');
-            
-            if (calcularBtn) {
-                calcularBtn.addEventListener('click', function() {
-                    const base = parseFloat(document.getElementById('baseCotizacionAut').value) || 0;
-                    const meses = parseInt(document.getElementById('mesesCotizadosAut').value) || 0;
-                    const motivo = document.getElementById('motivoCese').value;
-                    const edad = parseInt(document.getElementById('edadAut').value) || 0;
-                    
-                    if (meses < 12) {
-                        Notify.show('Necesitas mínimo 12 meses cotizados', 'error');
-                        return;
-                    }
-                    
-                    const resultado = calcularPrestacionAutonomos(base, meses, motivo, edad);
-                    mostrarResultadoAutonomos(resultado);
-                    
-                    Analytics.trackEvent('Calculator', 'calculate', 'autonomos');
-                });
-            }
-            
-            if (limpiarBtn) {
-                limpiarBtn.addEventListener('click', function() {
-                    document.getElementById('baseCotizacionAut').value = '1000';
-                    document.getElementById('mesesCotizadosAut').value = '';
-                    document.getElementById('motivoCese').value = 'economicas';
-                    document.getElementById('edadAut').value = '';
-                    document.getElementById('resultadoAut').style.display = 'none';
-                    
-                    Notify.show('Formulario limpiado', 'info');
-                });
-            }
-        }
-        
-        // Función para calcular prestación contributiva
-        function calcularPrestacionContributiva(salario, dias, hijos, edad) {
-            // Base reguladora aproximada (90% del salario)
-            const baseReguladora = salario * 0.9;
-            
-            // Prestación 70% y 50%
-            let prestacion70 = baseReguladora * 0.7;
-            let prestacion50 = baseReguladora * 0.5;
-            
-            // Límites 2025
-            const maxPrestacion = 1398.96;
-            const minPrestacion = 463.21;
-            
-            // Aplicar límites
-            prestacion70 = Math.max(minPrestacion, Math.min(maxPrestacion, prestacion70));
-            prestacion50 = Math.max(minPrestacion, Math.min(maxPrestacion, prestacion50));
-            
-            // Incremento por hijos
-            if (hijos === 1) {
-                prestacion70 = Math.min(maxPrestacion, prestacion70 * 1.07);
-                prestacion50 = Math.min(maxPrestacion, prestacion50 * 1.07);
-            } else if (hijos >= 2) {
-                prestacion70 = Math.min(maxPrestacion, prestacion70 * 1.33);
-                prestacion50 = Math.min(maxPrestacion, prestacion50 * 1.33);
-            }
-            
-            // Duración según días cotizados
-            let duracionMeses = 0;
-            if (dias >= 365 && dias < 540) duracionMeses = 4;
-            else if (dias >= 540 && dias < 720) duracionMeses = 6;
-            else if (dias >= 720 && dias < 900) duracionMeses = 8;
-            else if (dias >= 900 && dias < 1080) duracionMeses = 10;
-            else if (dias >= 1080 && dias < 1260) duracionMeses = 12;
-            else if (dias >= 1260 && dias < 1440) duracionMeses = 14;
-            else if (dias >= 1440 && dias < 1620) duracionMeses = 16;
-            else if (dias >= 1620 && dias < 1800) duracionMeses = 18;
-            else if (dias >= 1800 && dias < 1980) duracionMeses = 20;
-            else if (dias >= 1980 && dias < 2160) duracionMeses = 22;
-            else if (dias >= 2160) duracionMeses = 24;
-            
-            // Total a percibir
-            const meses70 = Math.min(6, duracionMeses);
-            const meses50 = Math.max(0, duracionMeses - 6);
-            const totalPrestacion = (prestacion70 * meses70) + (prestacion50 * meses50);
-            
-            return {
-                prestacion70,
-                prestacion50,
-                duracionMeses,
-                totalPrestacion,
-                baseReguladora,
-                hijos
-            };
-        }
-        
-        // Función para verificar requisitos asistencial
-        function verificarRequisitoAsistencial(miembros, ingresos, situacion, edad) {
-            const limite = 810 * miembros; // 75% SMI por miembro
-            const cumpleRentas = ingresos < limite;
-            
-            let duracionMeses = 6; // Por defecto
-            let renovable = false;
-            
-            // Duración según situación
-            switch(situacion) {
-                case 'agotamiento':
-                    duracionMeses = 6;
-                    renovable = true;
-                    break;
-                case 'insuficiente':
-                    duracionMeses = 21;
-                    break;
-                case 'mayores45':
-                    duracionMeses = edad >= 45 ? 30 : 6;
-                    break;
-                case 'responsabilidades':
-                    duracionMeses = 18;
-                    renovable = true;
-                    break;
-            }
-            
-            return {
-                cumpleRentas,
-                ingresos,
-                limite,
-                duracionMeses,
-                renovable,
-                cuantia: 463.21,
-                situacion
-            };
-        }
-        
-        // Función para calcular prestación autónomos
-        function calcularPrestacionAutonomos(base, meses, motivo, edad) {
-            // Prestación 70% de la base
-            let prestacion = base * 0.7;
-            
-            // Límites 2025
-            const maxPrestacion = 1398.96;
-            const minPrestacion = 463.21;
-            prestacion = Math.max(minPrestacion, Math.min(maxPrestacion, prestacion));
-            
-            // Duración según meses cotizados
-            let duracionMeses = 0;
-            if (meses >= 12 && meses < 18) duracionMeses = 4;
-            else if (meses >= 18 && meses < 24) duracionMeses = 6;
-            else if (meses >= 24 && meses < 30) duracionMeses = 8;
-            else if (meses >= 30 && meses < 36) duracionMeses = 10;
-            else if (meses >= 36 && meses < 42) duracionMeses = 12;
-            else if (meses >= 42 && meses < 48) duracionMeses = 16;
-            else if (meses >= 48 && meses < 54) duracionMeses = 20;
-            else if (meses >= 54) duracionMeses = 24;
-            
-            const totalPrestacion = prestacion * duracionMeses;
-            
-            return {
-                prestacion,
-                duracionMeses,
-                totalPrestacion,
-                base,
-                motivo
-            };
-        }
-        
-        // Mostrar resultado contributiva
-        function mostrarResultadoContributiva(resultado) {
-            const contenedor = document.getElementById('resultadoContrib');
-            
-            contenedor.innerHTML = `
-                <div class="result-header">
-                    <h3><i class="fas fa-chart-line"></i> Resultado Prestación Contributiva</h3>
-                    <p class="result-disclaimer">
-                        <i class="fas fa-info-circle"></i>
-                        Cálculo orientativo. La cuantía final puede variar según las bases exactas.
-                    </p>
-                </div>
-                
-                <div class="result-grid">
-                    <div class="result-item primary">
-                        <span class="result-label">Prestación Mensual (primeros 6 meses)</span>
-                        <span class="result-value">${Format.currency(resultado.prestacion70)}</span>
-                    </div>
-                    
-                    <div class="result-item">
-                        <span class="result-label">Prestación Mensual (resto del periodo)</span>
-                        <span class="result-value">${Format.currency(resultado.prestacion50)}</span>
-                    </div>
-                    
-                    <div class="result-item">
-                        <span class="result-label">Duración Total</span>
-                        <span class="result-value">${resultado.duracionMeses} meses</span>
-                    </div>
-                    
-                    <div class="result-item highlight">
-                        <span class="result-label">Total Aproximado a Percibir</span>
-                        <span class="result-value">${Format.currency(resultado.totalPrestacion)}</span>
-                    </div>
-                </div>
-                
-                <div class="result-details">
-                    <h4>Detalles del Cálculo:</h4>
-                    <ul>
-                        <li>Base reguladora estimada: ${Format.currency(resultado.baseReguladora)}</li>
-                        <li>Incremento por hijos: ${resultado.hijos > 0 ? (resultado.hijos === 1 ? '7%' : '33%') : 'No aplica'}</li>
-                        <li>Duración: ${Math.min(6, resultado.duracionMeses)} meses al 70% + ${Math.max(0, resultado.duracionMeses - 6)} meses al 50%</li>
-                    </ul>
-                </div>
-                
-                <div class="result-actions">
-                    <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-primary" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i>
-                        Solicitar en SEPE
-                    </a>
-                    <button type="button" onclick="window.print()" class="btn btn-outline">
-                        <i class="fas fa-print"></i>
-                        Imprimir Resultado
-                    </button>
-                </div>
-            `;
-            
-            contenedor.style.display = 'block';
-            contenedor.scrollIntoView({ behavior: 'smooth' });
-            
-            Notify.show('Cálculo realizado correctamente', 'success');
-        }
-        
-        // Mostrar resultado asistencial
-        function mostrarResultadoAsistencial(resultado) {
-            const contenedor = document.getElementById('resultadoAsist');
-            
-            const cumpleClass = resultado.cumpleRentas ? 'success' : 'danger';
-            const cumpleIcon = resultado.cumpleRentas ? 'fa-check-circle' : 'fa-times-circle';
-            const cumpleText = resultado.cumpleRentas ? 'CUMPLES los requisitos' : 'NO CUMPLES el requisito de rentas';
-            
-            contenedor.innerHTML = `
-                <div class="result-header">
-                    <h3><i class="fas ${cumpleIcon}"></i> Verificación Subsidio Asistencial</h3>
-                </div>
-                
-                <div class="result-main alert alert-${cumpleClass}">
-                    <h4><strong>${cumpleText}</strong></h4>
-                    <p>Ingresos familiares: ${Format.currency(resultado.ingresos)}</p>
-                    <p>Límite permitido: ${Format.currency(resultado.limite)} (810€ × ${resultado.limite/810} miembros)</p>
-                </div>
-                
-                ${resultado.cumpleRentas ? `
-                <div class="result-grid">
-                    <div class="result-item primary">
-                        <span class="result-label">Cuantía Mensual</span>
-                        <span class="result-value">${Format.currency(resultado.cuantia)}</span>
-                    </div>
-                    
-                    <div class="result-item">
-                        <span class="result-label">Duración</span>
-                        <span class="result-value">${resultado.duracionMeses} meses</span>
-                    </div>
-                    
-                    <div class="result-item">
-                        <span class="result-label">Renovable</span>
-                        <span class="result-value">${resultado.renovable ? 'Sí' : 'No'}</span>
-                    </div>
-                    
-                    <div class="result-item highlight">
-                        <span class="result-label">Total a Percibir</span>
-                        <span class="result-value">${Format.currency(resultado.cuantia * resultado.duracionMeses)}</span>
-                    </div>
-                </div>
-                ` : `
-                <div class="result-help">
-                    <h4>¿Qué puedes hacer?</h4>
-                    <ul>
-                        <li>Reducir los ingresos familiares por debajo del límite</li>
-                        <li>Consultar si hay ayudas que no computan como renta</li>
-                        <li>Verificar si todos los ingresos están correctamente declarados</li>
-                        <li>Explorar otras ayudas disponibles</li>
-                    </ul>
-                </div>
-                `}
-                
-                <div class="result-actions">
-                    <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-primary" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i>
-                        ${resultado.cumpleRentas ? 'Solicitar en SEPE' : 'Consultar en SEPE'}
-                    </a>
-                    <a href="asistencial.html" class="btn btn-outline">
-                        <i class="fas fa-info-circle"></i>
-                        Más Información
-                    </a>
-                </div>
-            `;
-            
-            contenedor.style.display = 'block';
-            contenedor.scrollIntoView({ behavior: 'smooth' });
-            
-            const message = resultado.cumpleRentas ? 'Cumples los requisitos' : 'No cumples el requisito de rentas';
-            Notify.show(message, resultado.cumpleRentas ? 'success' : 'warning');
-        }
-        
-        // Mostrar resultado autónomos
-        function mostrarResultadoAutonomos(resultado) {
-            const contenedor = document.getElementById('resultadoAut');
-            
-            contenedor.innerHTML = `
-                <div class="result-header">
-                    <h3><i class="fas fa-user-tie"></i> Resultado Cese de Actividad</h3>
-                    <p class="result-disclaimer">
-                        <i class="fas fa-info-circle"></i>
-                        Cálculo orientativo basado en el 70% de tu base de cotización.
-                    </p>
-                </div>
-                
-                <div class="result-grid">
-                    <div class="result-item primary">
-                        <span class="result-label">Prestación Mensual</span>
-                        <span class="result-value">${Format.currency(resultado.prestacion)}</span>
-                    </div>
-                    
-                    <div class="result-item">
-                        <span class="result-label">Duración</span>
-                        <span class="result-value">${resultado.duracionMeses} meses</span>
-                    </div>
-                    
-                    <div class="result-item">
-                        <span class="result-label">Base de Cotización</span>
-                        <span class="result-value">${Format.currency(resultado.base)}</span>
-                    </div>
-                    
-                    <div class="result-item highlight">
-                        <span class="result-label">Total Aproximado</span>
-                        <span class="result-value">${Format.currency(resultado.totalPrestacion)}</span>
-                    </div>
-                </div>
-                
-                <div class="result-details">
-                    <h4>Información Importante:</h4>
-                    <ul>
-                        <li>Debes cesar completamente la actividad autónoma</li>
-                        <li>El cese debe ser involuntario y justificado</li>
-                        <li>Tienes 15 días hábiles para solicitar la prestación</li>
-                        <li>Puedes trabajar por cuenta ajena mientras la cobras</li>
-                    </ul>
-                </div>
-                
-                <div class="result-actions">
-                    <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-primary" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i>
-                        Solicitar en SEPE
-                    </a>
-                    <a href="autonomos.html" class="btn btn-outline">
-                        <i class="fas fa-info-circle"></i>
-                        Guía Completa
-                    </a>
-                </div>
-            `;
-            
-            contenedor.style.display = 'block';
-            contenedor.scrollIntoView({ behavior: 'smooth' });
-            
-            Notify.show('Cálculo realizado correctamente', 'success');
-        }
-        
-        // Función de búsqueda del header
-        function performSearch() {
-            const searchInput = document.getElementById('header-search');
-            const query = searchInput.value.trim();
-            
-            if (query) {
-                Analytics.trackEvent('Search', 'query', query);
-                window.location.href = `../buscar/?q=${encodeURIComponent(query)}`;
-            }
-        }
-        
-        // Permitir búsqueda con Enter
-        document.getElementById('header-search').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Prestaciones por Desempleo 2025 - SEPE | InfoSEPE</title>
-    <meta name="description" content="Calculadora oficial de prestaciones por desempleo 2025: contributiva, asistencial y autónomos. Calcula tu paro del SEPE de forma precisa.">
-    <meta name="keywords" content="calculadora paro, calcular prestación desempleo, SEPE calculadora 2025, cuánto paro me corresponde">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://infosepe.com/prestaciones/calculadora.html">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Calculadora de Prestaciones por Desempleo 2025 - SEPE">
-    <meta property="og:description" content="Calcula tu prestación por desempleo de forma precisa: contributiva, asistencial y autónomos.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://infosepe.com/prestaciones/calculadora.html">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-</head>
-<body>
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <!-- Banner de Cookies -->
+    <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <h3>🍪 Gestión de Cookies</h3>
-                <p>Utilizamos cookies para mejorar tu experiencia. 
-                   <a href="../legal/cookies.html" class="cookie-link">Más información</a>
-                </p>
+                <h4>🍪 Utilizamos cookies</h4>
+                <p>Usamos cookies propias y de terceros para mejorar tu experiencia. Al continuar navegando, aceptas su uso.</p>
             </div>
             <div class="cookie-actions">
-                <button id="accept-all-cookies" class="btn btn-primary btn-sm">Aceptar todas</button>
-                <button id="configure-cookies" class="btn btn-outline btn-sm">Configurar</button>
-                <button id="reject-cookies" class="btn btn-outline btn-sm">Rechazar</button>
+                <button id="acceptCookies" class="btn btn-primary btn-small">Aceptar todas</button>
+                <button id="configureCookies" class="btn btn-ghost btn-small">Configurar</button>
+                <a href="../legal/cookies.html" class="cookie-link">Más información</a>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="navbar-brand">
-                    <a href="../" class="brand-link">
-                        <i class="fas fa-briefcase brand-icon"></i>
-                        <span class="brand-text">InfoSEPE</span>
-                    </a>
-                </div>
-                <div class="navbar-menu">
-                    <a href="../cita-previa/" class="nav-link">Cita Previa</a>
-                    <a href="../prestaciones/" class="nav-link active">Prestaciones</a>
-                    <a href="../subsidios/" class="nav-link">Subsidios</a>
-                    <a href="../tramites/" class="nav-link">Trámites</a>
-                    <a href="../ayudas/" class="nav-link">Ayudas</a>
-                    <a href="../cursos/" class="nav-link">Cursos</a>
-                </div>
-                <div class="search-container">
-                    <input type="search" placeholder="Buscar..." class="search-input" id="header-search">
-                    <button type="button" class="search-btn" onclick="performSearch()">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb-section" aria-label="breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="../"><i class="fas fa-home"></i> Inicio</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="../prestaciones/"><i class="fas fa-euro-sign"></i> Prestaciones</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-calculator"></i> Calculadora
-                </li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section bg-gradient">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">🧮 Calculadora de Prestaciones por Desempleo 2025</h1>
-                    <p class="hero-subtitle">
-                        Calcula de forma precisa tu prestación contributiva, asistencial o por cese de actividad. 
-                        Herramientas actualizadas con los baremos del SEPE 2025.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Tipos de cálculo</span>
+    <!-- Scripts -->
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Variables globales
+        let calculadoraActiva = 'contributiva';
+        let calculosRealizados = 0;
+        
+        // Función para seleccionar tipo de calculadora
+        function selectCalculator(tipo) {
+            // Actualizar opciones visuales
+            document.querySelectorAll('.calc-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            document.getElementById(`option-${tipo}`).classList.add('active');
+            
+            // Ocultar todas las calculadoras
+            document.querySelectorAll('[id^="calculadora-"]').forEach(calc => {
+                calc.style.display = 'none';
+            });
+            
+            // Mostrar la calculadora seleccionada
+            document.getElementById(`calculadora-${tipo}`).style.display = 'block';
+            
+            // Actualizar variable global
+            calculadoraActiva = tipo;
+            
+            // Scroll suave a la calculadora
+            setTimeout(() => {
+                document.getElementById(`calculadora-${tipo}`).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+            
+            trackEvent('calculator_selected', { tipo: tipo });
+        }
+        
+        // Cálculo de prestación contributiva
+        function calcularContributiva(event) {
+            event.preventDefault();
+            calculosRealizados++;
+            
+            const salario = parseFloat(document.getElementById('salario').value);
+            const mesesCotizados = parseInt(document.getElementById('mesesCotizados').value);
+            const edad = parseInt(document.getElementById('edad').value);
+            const hijosACargo = parseInt(document.getElementById('hijosACargo').value);
+            
+            if (!salario || !mesesCotizados || !edad) {
+                showNotification('Por favor, completa todos los campos obligatorios', 'warning');
+                return false;
+            }
+            
+            // Calcular duración según meses cotizados
+            let duracionMeses = 0;
+            if (mesesCotizados >= 12 && mesesCotizados < 18) duracionMeses = 4;
+            else if (mesesCotizados >= 18 && mesesCotizados < 24) duracionMeses = 6;
+            else if (mesesCotizados >= 24 && mesesCotizados < 30) duracionMeses = 8;
+            else if (mesesCotizados >= 30 && mesesCotizados < 36) duracionMeses = 10;
+            else if (mesesCotizados >= 36 && mesesCotizados < 42) duracionMeses = 12;
+            else if (mesesCotizados >= 42 && mesesCotizados < 48) duracionMeses = 14;
+            else if (mesesCotizados >= 48 && mesesCotizados < 54) duracionMeses = 16;
+            else if (mesesCotizados >= 54 && mesesCotizados < 60) duracionMeses = 18;
+            else if (mesesCotizados >= 60 && mesesCotizados < 66) duracionMeses = 20;
+            else if (mesesCotizados >= 66) duracionMeses = 24;
+            
+            // Base reguladora (salario bruto / 30 * 30)
+            const baseReguladora = salario;
+            
+            // Cuantía primeros 6 meses (70%)
+            let cuantia70 = baseReguladora * 0.70;
+            
+            // Cuantía siguientes meses (50% o 70% si >52 años)
+            let cuantia50 = edad >= 52 ? cuantia70 : baseReguladora * 0.50;
+            
+            // Aplicar topes máximos y mínimos 2025
+            const maximoMensual = 1398.96;
+            let minimoMensual = 501.43; // Sin hijos
+            
+            if (hijosACargo === 1) minimoMensual = 659.73;
+            else if (hijosACargo >= 2) minimoMensual = 818.40;
+            
+            cuantia70 = Math.min(Math.max(cuantia70, minimoMensual), maximoMensual);
+            cuantia50 = Math.min(Math.max(cuantia50, minimoMensual), maximoMensual);
+            
+            // Calcular totales
+            const mesesAl70 = Math.min(duracionMeses, 6);
+            const mesesAl50 = Math.max(0, duracionMeses - 6);
+            const totalPrimeros6 = cuantia70 * mesesAl70;
+            const totalSiguientes = cuantia50 * mesesAl50;
+            const totalPrestacion = totalPrimeros6 + totalSiguientes;
+            
+            mostrarResultadoContributiva({
+                baseReguladora: baseReguladora,
+                cuantia70: cuantia70,
+                cuantia50: cuantia50,
+                duracionMeses: duracionMeses,
+                mesesAl70: mesesAl70,
+                mesesAl50: mesesAl50,
+                totalPrimeros6: totalPrimeros6,
+                totalSiguientes: totalSiguientes,
+                totalPrestacion: totalPrestacion,
+                edad: edad,
+                hijosACargo: hijosACargo
+            });
+            
+            trackEvent('calculo_contributiva', {
+                salario: salario,
+                meses_cotizados: mesesCotizados,
+                edad: edad,
+                hijos: hijosACargo,
+                cuantia_calculada: cuantia70,
+                duracion: duracionMeses
+            });
+            
+            return false;
+        }
+        
+        function mostrarResultadoContributiva(resultado) {
+            const container = document.getElementById('resultadoContributiva');
+            
+            container.innerHTML = `
+                <div class="resultado-success">
+                    <div class="resultado-header">
+                        <div class="resultado-icon">
+                            <i class="fas fa-check-circle"></i>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Actualizado 2025</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">0€</span>
-                            <span class="stat-label">Coste - Gratis</span>
-                        </div>
+                        <h4>Cálculo de Prestación Contributiva</h4>
                     </div>
+                    
+                    <div class="resultado-details">
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Base reguladora:</span>
+                                <span class="detail-value">${resultado.baseReguladora.toFixed(2)}€</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Primeros ${resultado.mesesAl70} meses (70%):</span>
+                                <span class="detail-valueHerramientas actualizadas con los baremos del SEPE 2025.
+                    </p>
                     <div class="hero-actions">
-                        <a href="#calculadoras" class="btn btn-primary btn-lg">
-                            <i class="fas fa-play"></i>
-                            Empezar a Calcular
+                        <a href="#calculadora-contributiva" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calculator"></i>
+                            Calcular Prestación
+                        </a>
+                        <a href="#como-funciona" class="btn btn-ghost btn-lg">
+                            <i class="fas fa-question-circle"></i>
+                            ¿Cómo funciona?
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selector de Calculadoras -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Tipo de Prestación a Calcular</h2>
+                <p>Selecciona el tipo de prestación según tu situación laboral</p>
+            </div>
+            
+            <div class="calculator-selector">
+                <div class="calc-option active" onclick="selectCalculator('contributiva')" id="option-contributiva">
+                    <div class="calc-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>Prestación Contributiva</h3>
+                    <p>Para trabajadores por cuenta ajena que han cotizado y perdido el empleo</p>
+                    <div class="calc-details">
+                        <span class="detail">70% base reguladora</span>
+                        <span class="detail">4-24 meses duración</span>
+                    </div>
+                </div>
+                
+                <div class="calc-option" onclick="selectCalculator('asistencial')" id="option-asistencial">
+                    <div class="calc-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Prestación Asistencial</h3>
+                    <p>Subsidio tras agotar la prestación contributiva o para mayores de 45 años</p>
+                    <div class="calc-details">
+                        <span class="detail">463,21€ fijos</span>
+                        <span class="detail">6 meses prorrogables</span>
+                    </div>
+                </div>
+                
+                <div class="calc-option" onclick="selectCalculator('autonomos')" id="option-autonomos">
+                    <div class="calc-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Cese de Actividad</h3>
+                    <p>Para autónomos que cesan su actividad por causas económicas o fuerza mayor</p>
+                    <div class="calc-details">
+                        <span class="detail">70% base cotización</span>
+                        <span class="detail">4-24 meses duración</span>
+                    </div>

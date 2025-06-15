@@ -3,476 +3,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subsidios SEPE 2025 - Mayores 45, 52 Años, RAI | Guía Completa | InfoSEPE</title>
-    <meta name="description" content="Subsidios SEPE 2025: ✅ Subsidio +45 años ✅ Subsidio +52 años ✅ RAI ✅ Calculadoras ✅ Requisitos actualizados ✅ Cuantías 463,21€ ✅ Solicitud online">
-    <meta name="keywords" content="subsidios sepe 2025, subsidio mayores 45 años, subsidio mayores 52 años, RAI, subsidio desempleo, 463 euros, ayuda asistencial">
+    <title>Subsidios SEPE 2025 - Portal Completo de Subsidios por Desempleo</title>
+    <meta name="description" content="Información completa sobre subsidios por desempleo SEPE 2025: mayores de 52, agotamiento, eventual agrario, RAI. Calculadora y requisitos actualizados.">
+    <meta name="keywords" content="subsidios SEPE 2025, subsidio mayores 52, subsidio agotamiento, eventual agrario, RAI, requisitos subsidios">
+    <meta name="author" content="InfoSEPE">
+    <link rel="canonical" href="https://infosepe.es/subsidios/">
     
+    <!-- Open Graph -->
+    <meta property="og:title" content="Subsidios SEPE 2025 - Portal Completo de Subsidios">
+    <meta property="og:description" content="Información actualizada sobre todos los subsidios por desempleo: mayores de 52, agotamiento, eventual agrario y RAI.">
+    <meta property="og:image" content="https://infosepe.es/assets/images/subsidios-og.jpg">
+    <meta property="og:url" content="https://infosepe.es/subsidios/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Subsidios SEPE 2025 - Portal Completo">
+    <meta name="twitter:description" content="Información actualizada sobre todos los subsidios por desempleo SEPE 2025.">
+    <meta name="twitter:image" content="https://infosepe.es/assets/images/subsidios-og.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Subsidios SEPE 2025",
+        "url": "https://infosepe.es/subsidios/",
+        "description": "Portal completo de información sobre subsidios por desempleo SEPE 2025",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "InfoSEPE",
+                    "item": "https://infosepe.es"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Subsidios",
+                    "item": "https://infosepe.es/subsidios/"
+                }
+            ]
+        }
+    }
+    </script>
+</body>
+</html>
+    
+    <!-- AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
     
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        .subsidios-hero {
-            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-            color: white;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .amount-highlight {
-            background: rgba(255, 255, 255, 0.2);
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: var(--border-radius-full);
-            display: inline-block;
-            font-size: var(--font-size-3xl);
-            font-weight: bold;
-            margin: var(--spacing-lg) 0;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            animation: pulse 2s infinite;
-        }
-        
-        .selector-container {
-            background: white;
-            border-radius: var(--border-radius-xl);
-            padding: var(--spacing-2xl);
-            box-shadow: var(--shadow-xl);
-            border-top: 6px solid #8b5cf6;
-            margin-top: -50px;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .subsidio-selector {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-            margin: var(--spacing-xl) 0;
-        }
-        
-        .subsidio-card {
-            background: var(--background-light);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-xl);
-            border: 3px solid transparent;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-        }
-        
-        .subsidio-card:hover {
-            border-color: #8b5cf6;
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .subsidio-card.selected {
-            border-color: #8b5cf6;
-            background: rgba(139, 92, 246, 0.1);
-        }
-        
-        .subsidio-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--font-size-3xl);
-            margin: 0 auto var(--spacing-lg);
-        }
-        
-        .calculator-widget {
-            background: white;
-            border-radius: var(--border-radius-xl);
-            padding: var(--spacing-2xl);
-            box-shadow: var(--shadow-xl);
-            margin: var(--spacing-2xl) 0;
-            border-top: 6px solid #10b981;
-        }
-        
-        .calculator-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-            margin: var(--spacing-xl) 0;
-        }
-        
-        .calc-btn {
-            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
-            color: white;
-            padding: var(--spacing-lg) var(--spacing-2xl);
-            border: none;
-            border-radius: var(--border-radius-full);
-            font-weight: 600;
-            font-size: var(--font-size-lg);
-            cursor: pointer;
-            transition: var(--transition);
-            grid-column: 1 / -1;
-            justify-self: center;
-        }
-        
-        .calc-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: var(--spacing-xl) 0;
-            background: white;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .comparison-table th,
-        .comparison-table td {
-            padding: var(--spacing-md);
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .comparison-table th {
-            background: #8b5cf6;
-            color: white;
-            font-weight: 600;
-        }
-        
-        .faq-item {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            margin-bottom: var(--spacing-md);
-            box-shadow: var(--shadow-sm);
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            padding: var(--spacing-lg);
-            background: var(--background-light);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .faq-question:hover {
-            background: #8b5cf6;
-            color: white;
-        }
-        
-        .faq-answer {
-            padding: 0 var(--spacing-lg);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .faq-answer.active {
-            padding: var(--spacing-lg);
-            max-height: 800px;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-    </style>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <nav class="navbar">
-                <a href="../" class="logo">
-                    <i class="fas fa-hands-helping"></i>
-                    InfoSEPE
-                </a>
-                <div class="search-box">
-                    <input type="text" class="search-input" placeholder="Buscar subsidios...">
-                    <button class="search-btn" type="button">
-                        <i class="fas fa-search"></i>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../" aria-label="InfoSEPE - Inicio">
+                        <img src="../assets/images/logo.png" alt="InfoSEPE Logo" width="120" height="40">
+                        <span class="logo-text">InfoSEPE 2025</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="../prestaciones/" class="nav-link">
+                                <i class="fas fa-money-check-alt"></i>
+                                Prestaciones
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./" class="nav-link active">
+                                <i class="fas fa-euro-sign"></i>
+                                Subsidios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../ayudas/" class="nav-link">
+                                <i class="fas fa-hands-helping"></i>
+                                Ayudas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../cursos/" class="nav-link">
+                                <i class="fas fa-graduation-cap"></i>
+                                Cursos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../cita-previa/" class="nav-link">
+                                <i class="fas fa-calendar-check"></i>
+                                Cita Previa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../tramites/" class="nav-link">
+                                <i class="fas fa-file-alt"></i>
+                                Trámites
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Buscar subsidios..." aria-label="Búsqueda">
+                        <button type="button" aria-label="Buscar">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <button class="mobile-toggle" aria-label="Menú móvil">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
-            </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Breadcrumbs -->
-    <section class="breadcrumbs">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
         <div class="container">
-            <nav>
-                <ol class="breadcrumb-list">
-                    <li class="breadcrumb-item">
-                        <a href="../" class="breadcrumb-link">Inicio</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <span class="breadcrumb-current">Subsidios SEPE</span>
-                    </li>
-                </ol>
-            </nav>
+            <ol class="breadcrumb-list">
+                <li><a href="../"><i class="fas fa-home"></i> Inicio</a></li>
+                <li class="active"><i class="fas fa-euro-sign"></i> Subsidios</li>
+            </ol>
         </div>
-    </section>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="subsidios-hero">
+    <section class="hero hero-subsidios">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Persona mayor revisando documentos de subsidio" 
+                 class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container">
-            <div class="text-center">
-                <h1 class="text-5xl font-weight-bold mb-3">Subsidios SEPE 2025</h1>
-                <p class="text-xl mb-4">Ayudas asistenciales por desempleo - Guía completa actualizada</p>
-                
-                <div class="amount-highlight">
-                    463,21€/mes
-                </div>
-                
-                <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
-                    <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-users" style="color: #10b981;"></i>
-                        <span>+45 y +52 años</span>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Subsidios por Desempleo
+                        <span class="highlight">SEPE 2025</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Información completa y actualizada sobre todos los subsidios por desempleo: 
+                        requisitos, cuantías, duración y cómo solicitarlos.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">463,21€</div>
+                            <div class="stat-label">Cuantía subsidio 2025</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">578,60€</div>
+                            <div class="stat-label">Límite de rentas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Tipos de subsidios</div>
+                        </div>
                     </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-calendar-alt" style="color: #10b981;"></i>
-                        <span>6-30 meses</span>
+                    
+                    <div class="hero-cta">
+                        <a href="#calculadora" class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Calcular mi Subsidio
+                        </a>
+                        <a href="#subsidios" class="btn btn-ghost btn-large">
+                            <i class="fas fa-list"></i>
+                            Ver Todos los Subsidios
+                        </a>
                     </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-heart" style="color: #10b981;"></i>
-                        <span>Sin cotización</span>
-                    </div>
-                </div>
-                
-                <p class="text-lg">
-                    <strong>✅ Información oficial SEPE • Sin cotización previa • Ayuda asistencial</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Selector de Subsidios -->
-    <section class="container">
-        <div class="selector-container">
-            <div class="text-center">
-                <h3 class="text-3xl font-weight-bold mb-3">
-                    <i class="fas fa-hand-holding-usd" style="color: #8b5cf6;"></i>
-                    ¿Qué Subsidio Necesitas?
-                </h3>
-                <p class="text-lg text-secondary mb-4">
-                    Selecciona tu situación para obtener información personalizada
-                </p>
-            </div>
-            
-            <div class="subsidio-selector">
-                <div class="subsidio-card" onclick="selectSubsidio('mayores45')" id="card-mayores45">
-                    <div class="subsidio-icon">
-                        <i class="fas fa-user-clock"></i>
-                    </div>
-                    <div class="text-xl font-weight-bold">Mayores de 45 años</div>
-                    <div class="text-2xl font-weight-bold" style="color: #8b5cf6; margin: 1rem 0;">463,21€</div>
-                    <div class="text-secondary">6 meses prorrogables</div>
-                    <p class="text-sm mt-3">Sin cotización mínima requerida</p>
-                </div>
-                
-                <div class="subsidio-card" onclick="selectSubsidio('mayores52')" id="card-mayores52">
-                    <div class="subsidio-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="text-xl font-weight-bold">Mayores de 52 años</div>
-                    <div class="text-2xl font-weight-bold" style="color: #8b5cf6; margin: 1rem 0;">463,21€</div>
-                    <div class="text-secondary">Hasta jubilación</div>
-                    <p class="text-sm mt-3">Incluye cotización a pensión</p>
-                </div>
-                
-                <div class="subsidio-card" onclick="selectSubsidio('insuficiencia')" id="card-insuficiencia">
-                    <div class="subsidio-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="text-xl font-weight-bold">Insuficiencia de Cotización</div>
-                    <div class="text-2xl font-weight-bold" style="color: #8b5cf6; margin: 1rem 0;">463,21€</div>
-                    <div class="text-secondary">6 meses</div>
-                    <p class="text-sm mt-3">3-12 meses cotizados</p>
-                </div>
-                
-                <div class="subsidio-card" onclick="selectSubsidio('rai')" id="card-rai">
-                    <div class="subsidio-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="text-xl font-weight-bold">RAI (Renta Activa)</div>
-                    <div class="text-2xl font-weight-bold" style="color: #8b5cf6; margin: 1rem 0;">463,21€</div>
-                    <div class="text-secondary">11 meses</div>
-                    <p class="text-sm mt-3">Colectivos especiales</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Calculadora -->
-    <section class="container">
-        <div class="calculator-widget">
-            <div class="text-center">
-                <h3 class="text-3xl font-weight-bold mb-3">
-                    <i class="fas fa-calculator" style="color: #10b981;"></i>
-                    ¿Qué Subsidio Puedo Solicitar?
-                </h3>
-                <p class="text-lg text-secondary mb-4">
-                    Responde unas preguntas y descubre qué subsidios puedes solicitar
-                </p>
+    <!-- Información importante -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card info-success">
+                    <div class="info-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Información Actualizada 2025</h3>
+                        <p>Cuantías, requisitos y procedimientos actualizados según la normativa vigente en 2025.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card info-warning">
+                    <div class="info-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Límite de Rentas Actualizado</h3>
+                        <p>El límite de rentas para 2025 es de <strong>578,60€ mensuales</strong> para acceder a subsidios.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card info-info">
+                    <div class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Tramitación Online</h3>
+                        <p>Todos los subsidios pueden solicitarse online a través de la sede electrónica del SEPE.</p>
+                    </div>
+                </div>
             </div>
-            
-            <form class="calculator-form" onsubmit="return calcularElegibilidad(event)">
-                <div class="form-group">
-                    <label class="form-label">Tu edad</label>
-                    <input type="number" class="form-control" id="edad" placeholder="Ej: 47" min="16" max="67" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Meses cotizados (total)</label>
-                    <input type="number" class="form-control" id="mesesCotizados" placeholder="Ej: 180" min="0" max="600">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Ingresos mensuales</label>
-                    <input type="number" class="form-control" id="ingresos" placeholder="Ej: 400" step="0.01" min="0">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Situación familiar</label>
-                    <select class="form-control" id="situacionFamiliar" required>
-                        <option value="">Selecciona</option>
-                        <option value="soltero">Soltero/a sin cargas</option>
-                        <option value="conyuge">Con cónyuge/pareja</option>
-                        <option value="hijos">Con hijos a cargo</option>
-                        <option value="familia_numerosa">Familia numerosa</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="calc-btn">
-                    <i class="fas fa-search"></i>
-                    Calcular Mis Subsidios Disponibles
-                </button>
-            </form>
-            
-            <div id="resultadoCalculadora" style="display: none; margin-top: 2rem;"></div>
         </div>
     </section>
 
-    <!-- Tabla Comparativa -->
-    <section class="content-section" style="background: var(--background-light);">
+    <!-- Tipos de Subsidios -->
+    <section class="section" id="subsidios">
         <div class="container">
             <div class="section-header">
-                <h2>📊 Comparativa Completa de Subsidios SEPE 2025</h2>
-                <p>Todas las características de cada subsidio en una tabla comparativa</p>
+                <h2 class="section-title">Tipos de Subsidios por Desempleo 2025</h2>
+                <p class="section-subtitle">
+                    Conoce todos los subsidios disponibles y sus características específicas
+                </p>
             </div>
             
-            <div class="table-responsive">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Tipo de Subsidio</th>
-                            <th>Cuantía</th>
-                            <th>Duración</th>
-                            <th>Edad Mínima</th>
-                            <th>Cotización Requerida</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Mayores 45 años</strong></td>
-                            <td>463,21€</td>
-                            <td>6 meses (prorrogable)</td>
-                            <td>45 años</td>
-                            <td>No</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Mayores 52 años</strong></td>
-                            <td>463,21€</td>
-                            <td>Hasta jubilación</td>
-                            <td>52 años</td>
-                            <td>15 años</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Insuficiencia Cotización</strong></td>
-                            <td>463,21€</td>
-                            <td>6 meses</td>
-                            <td>No</td>
-                            <td>3-12 meses</td>
-                        </tr>
-                        <tr>
-                            <td><strong>RAI</strong></td>
-                            <td>463,21€</td>
-                            <td>11 meses</td>
-                            <td>Variable</td>
-                            <td>No</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="subsidios-grid">
+                <!-- Subsidio Mayores de 52 años -->
+                <div class="subsidio-card subsidio-52" id="card-52" onclick="selectSubsidio('52')">
+                    <div class="subsidio-header">
+                        <div class="subsidio-icon">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <h3 class="subsidio-title">Subsidio Mayores de 52 años</h3>
+                        <div class="subsidio-badge">Más demandado</div>
+                    </div>
+                    
+                    <div class="subsidio-content">
+                        <div class="subsidio-amount">463,21€/mes</div>
+                        <div class="subsidio-duration">Hasta la jubilación</div>
+                        
+                        <div class="subsidio-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Edad: 52 años o más</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Cotización: 15 años mínimo</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Rentas: Máximo 578,60€</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Protección hasta jubilación</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subsidio-actions">
+                            <a href="mayores-52.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i>
+                                Información Completa
+                            </a>
+                            <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-ghost">
+                                <i class="fas fa-external-link-alt"></i>
+                                Solicitar Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subsidio por Agotamiento -->
+                <div class="subsidio-card subsidio-agotamiento" id="card-agotamiento" onclick="selectSubsidio('agotamiento')">
+                    <div class="subsidio-header">
+                        <div class="subsidio-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="subsidio-title">Subsidio por Agotamiento</h3>
+                        <div class="subsidio-badge">General</div>
+                    </div>
+                    
+                    <div class="subsidio-content">
+                        <div class="subsidio-amount">463,21€/mes</div>
+                        <div class="subsidio-duration">6 meses prorrogables</div>
+                        
+                        <div class="subsidio-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Edad: 45 años o más</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Prestación agotada</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Rentas: Máximo 578,60€</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>6 meses cotizados mínimo</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subsidio-actions">
+                            <a href="agotamiento.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i>
+                                Información Completa
+                            </a>
+                            <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-ghost">
+                                <i class="fas fa-external-link-alt"></i>
+                                Solicitar Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subsidio Eventual Agrario -->
+                <div class="subsidio-card subsidio-agrario" id="card-agrario" onclick="selectSubsidio('agrario')">
+                    <div class="subsidio-header">
+                        <div class="subsidio-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="subsidio-title">Subsidio Eventual Agrario</h3>
+                        <div class="subsidio-badge">Sectorial</div>
+                    </div>
+                    
+                    <div class="subsidio-content">
+                        <div class="subsidio-amount">463,21€/mes</div>
+                        <div class="subsidio-duration">Variable</div>
+                        
+                        <div class="subsidio-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Trabajadores agrarios</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Andalucía y Extremadura</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Rentas: Máximo 578,60€</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Días trabajados requeridos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subsidio-actions">
+                            <a href="eventual-agrario.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i>
+                                Información Completa
+                            </a>
+                            <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-ghost">
+                                <i class="fas fa-external-link-alt"></i>
+                                Solicitar Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RAI -->
+                <div class="subsidio-card subsidio-rai" id="card-rai" onclick="selectSubsidio('rai')">
+                    <div class="subsidio-header">
+                        <div class="subsidio-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="subsidio-title">Renta Activa de Inserción (RAI)</h3>
+                        <div class="subsidio-badge">Especial</div>
+                    </div>
+                    
+                    <div class="subsidio-content">
+                        <div class="subsidio-amount">463,21€/mes</div>
+                        <div class="subsidio-duration">11 meses</div>
+                        
+                        <div class="subsidio-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Colectivos vulnerables</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Mayores de 45 años</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Víctimas violencia género</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Personas con discapacidad</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subsidio-actions">
+                            <a href="rai.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i>
+                                Información Completa
+                            </a>
+                            <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-ghost">
+                                <i class="fas fa-external-link-alt"></i>
+                                Solicitar Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora de Subsidios -->
+    <section class="section section-light" id="calculadora">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calculadora de Subsidios</h2>
+                <p class="section-subtitle">
+                    Descubre qué subsidios puedes solicitar según tu situación personal
+                </p>
+            </div>
+            
+            <div class="calculadora-container">
+                <form class="calculadora-form" onsubmit="return calcularElegibilidad(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="edad">Edad *</label>
+                            <input type="number" id="edad" name="edad" min="16" max="70" required>
+                            <small>Introduce tu edad actual</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mesesCotizados">Meses cotizados</label>
+                            <input type="number" id="mesesCotizados" name="mesesCotizados" min="0" max="600">
+                            <small>Total de meses cotizados en tu vida laboral</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ingresos">Ingresos mensuales (€)</label>
+                            <input type="number" id="ingresos" name="ingresos" min="0" step="0.01">
+                            <small>Todos los ingresos de la unidad familiar</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="situacionFamiliar">Situación familiar *</label>
+                            <select id="situacionFamiliar" name="situacionFamiliar" required>
+                                <option value="">Selecciona...</option>
+                                <option value="soltero">Soltero/a sin hijos</option>
+                                <option value="conyuge">Con cónyuge</option>
+                                <option value="hijos">Con hijos a cargo</option>
+                                <option value="familia_numerosa">Familia numerosa</option>
+                                <option value="monoparental">Familia monoparental</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prestacionAgotada">¿Has agotado la prestación?</label>
+                            <select id="prestacionAgotada" name="prestacionAgotada">
+                                <option value="no">No</option>
+                                <option value="si">Sí</option>
+                                <option value="nunca">Nunca he cobrado prestación</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comunidad">Comunidad Autónoma</label>
+                            <select id="comunidad" name="comunidad">
+                                <option value="">Selecciona...</option>
+                                <option value="andalucia">Andalucía</option>
+                                <option value="extremadura">Extremadura</option>
+                                <option value="otras">Otras</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Calcular Subsidios Disponibles
+                        </button>
+                        <button type="reset" class="btn btn-ghost">
+                            <i class="fas fa-undo"></i>
+                            Limpiar Formulario
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="calculadora-resultado" id="resultadoCalculadora" style="display: none;">
+                    <!-- Los resultados se mostrarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requisitos Generales -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Requisitos Generales para Subsidios</h2>
+                <p class="section-subtitle">
+                    Condiciones comunes que debes cumplir para acceder a cualquier subsidio por desempleo
+                </p>
+            </div>
+            
+            <div class="requisitos-grid">
+                <div class="requisito-card">
+                    <div class="requisito-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Situación Legal</h3>
+                    <ul>
+                        <li>Estar inscrito como demandante de empleo</li>
+                        <li>Encontrarse en situación legal de desempleo</li>
+                        <li>No realizar actividad por cuenta propia o ajena</li>
+                        <li>Suscribir compromiso de actividad</li>
+                    </ul>
+                </div>
+                
+                <div class="requisito-card">
+                    <div class="requisito-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Límite de Rentas</h3>
+                    <ul>
+                        <li>Rentas mensuales inferiores a 578,60€</li>
+                        <li>Se computan todas las rentas de la unidad familiar</li>
+                        <li>Excluidas las asignaciones familiares</li>
+                        <li>Revisión mensual de ingresos</li>
+                    </ul>
+                </div>
+                
+                <div class="requisito-card">
+                    <div class="requisito-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Cotización</h3>
+                    <ul>
+                        <li>Tener cotizado el período mínimo exigido</li>
+                        <li>Haber agotado prestación contributiva (si procede)</li>
+                        <li>No tener derecho a prestación contributiva</li>
+                        <li>Cumplir período de carencia específico</li>
+                    </ul>
+                </div>
+                
+                <div class="requisito-card">
+                    <div class="requisito-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Documentación</h3>
+                    <ul>
+                        <li>DNI o NIE en vigor</li>
+                        <li>Declaración de rentas de la unidad familiar</li>
+                        <li>Certificado de empresa (si procede)</li>
+                        <li>Documentación adicional según tipo de subsidio</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="content-section">
+    <section class="section section-light">
         <div class="container">
             <div class="section-header">
-                <h2>❓ Preguntas Frecuentes sobre Subsidios</h2>
-                <p>Resuelve tus dudas más importantes</p>
+                <h2 class="section-title">Preguntas Frecuentes sobre Subsidios</h2>
+                <p class="section-subtitle">
+                    Resolvemos las dudas más comunes sobre los subsidios por desempleo
+                </p>
             </div>
             
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>¿Cuál es la diferencia entre prestación y subsidio?</span>
                         <i class="fas fa-chevron-down"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
-                        <p><strong>PRESTACIÓN:</strong> Basada en cotizaciones, 70%/50% del salario, 4-24 meses</p>
-                        <p><strong>SUBSIDIO:</strong> Ayuda asistencial, 463,21€ fijos, requiere carecer de rentas</p>
+                        <p>
+                            La prestación contributiva se basa en las cotizaciones realizadas y su cuantía es proporcional 
+                            al salario. El subsidio es una ayuda asistencial de cuantía fija (463,21€ en 2025) que se 
+                            concede cuando no se tiene derecho a prestación o se ha agotado.
+                        </p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Qué significa carecer de rentas superiores al 75% del SMI?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p><strong>Límite 2025:</strong> 578,60€ mensuales máximo</p>
-                        <p>Se cuentan: salarios, pensiones, alquileres, rendimientos del capital</p>
-                        <p>NO se cuentan: asignaciones familiares, becas, ayudas de emergencia</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>¿Puedo trabajar mientras cobro un subsidio?</span>
                         <i class="fas fa-chevron-down"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
-                        <p><strong>Muy limitado:</strong> Cualquier trabajo regular suspende el subsidio</p>
-                        <p><strong>Excepciones:</strong> Trabajos esporádicos < 90 días, colaboración social</p>
-                        <p><strong>⚠️ CRUCIAL:</strong> Comunicar al SEPE ANTES de empezar cualquier trabajo</p>
+                        <p>
+                            No puedes realizar ninguna actividad laboral mientras cobras subsidio, salvo excepciones muy específicas 
+                            como trabajos de colaboración social o actividades de muy escasa entidad económica (máximo 75€/mes).
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué pasa si supero el límite de rentas?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Si superas el límite de 578,60€ mensuales, se suspende el subsidio automáticamente. 
+                            Cuando vuelvas a estar por debajo del límite, puedes solicitar la reanudación 
+                            del subsidio por el tiempo que te quedaba.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuándo puedo solicitar un subsidio?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Puedes solicitar el subsidio cuando hayas agotado la prestación contributiva o cuando, 
+                            no teniendo derecho a ella, cumplas los requisitos específicos de algún tipo de subsidio. 
+                            La solicitud debe presentarse dentro del mes siguiente al agotamiento de la prestación.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Se puede compatibilizar subsidio con pensión?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            En general, no es compatible el subsidio con pensiones. Sin embargo, hay excepciones específicas 
+                            como pensiones de viudedad inferiores a cierta cuantía o pensiones por incapacidad parcial. 
+                            La suma de ambas prestaciones no puede superar el límite de rentas establecido.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué documentación necesito para solicitar un subsidio?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Documentación básica: DNI/NIE, declaración de rentas de todos los miembros de la unidad familiar, 
+                            libro de familia (si tienes cargas familiares), certificado de empresa del último empleo. 
+                            Según el tipo de subsidio, pueden requerirse documentos adicionales específicos.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="text-center">
-                <h3>📧 Mantente Actualizado sobre Subsidios</h3>
-                <p>Recibe información sobre cambios en subsidios y nuevos requisitos</p>
-                <form class="newsletter-form" onsubmit="return suscribirNewsletter(event)">
-                    <input type="email" class="newsletter-input" placeholder="Tu email..." required>
-                    <button type="submit" class="newsletter-btn">Suscribirme Gratis</button>
-                </form>
+            <div class="cta-content">
+                <h2 class="cta-title">¿Necesitas solicitar un subsidio?</h2>
+                <p class="cta-description">
+                    Te ayudamos paso a paso para que puedas solicitar tu subsidio de forma rápida y sin errores
+                </p>
+                <div class="cta-actions">
+                    <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fas fa-external-link-alt"></i>
+                        Solicitar en SEPE
+                    </a>
+                    <a href="../cita-previa/" class="btn btn-ghost btn-large">
+                        <i class="fas fa-calendar-check"></i>
+                        Pedir Cita Previa
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -482,40 +719,75 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Subsidios SEPE</h4>
+                    <h4>Subsidios Principales</h4>
                     <ul>
-                        <li><a href="mayores-45.html">Subsidio Mayores 45</a></li>
-                        <li><a href="mayores-52.html">Subsidio Mayores 52</a></li>
-                        <li><a href="insuficiencia-cotizacion.html">Insuficiencia Cotización</a></li>
-                        <li><a href="rai.html">RAI - Renta Activa</a></li>
+                        <li><a href="mayores-52.html"><i class="fas fa-user-clock" style="margin-right: 8px;"></i>Subsidio +52 años</a></li>
+                        <li><a href="agotamiento.html"><i class="fas fa-clock" style="margin-right: 8px;"></i>Subsidio Agotamiento</a></li>
+                        <li><a href="eventual-agrario.html"><i class="fas fa-seedling" style="margin-right: 8px;"></i>Eventual Agrario</a></li>
+                        <li><a href="rai.html"><i class="fas fa-hands-helping" style="margin-right: 8px;"></i>RAI</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Otros Servicios</h4>
+                    <h4>Otras Prestaciones</h4>
                     <ul>
-                        <li><a href="../prestaciones/desempleo.html">Prestación Desempleo</a></li>
-                        <li><a href="../ayudas/">Ayudas SEPE</a></li>
-                        <li><a href="../tramites/sellar-paro.html">Sellar Paro</a></li>
-                        <li><a href="../cita-previa/">Cita Previa</a></li>
+                        <li><a href="../prestaciones/contributiva.html"><i class="fas fa-money-check-alt" style="margin-right: 8px;"></i>Prestación Contributiva</a></li>
+                        <li><a href="../prestaciones/asistencial.html"><i class="fas fa-hand-holding-usd" style="margin-right: 8px;"></i>Prestación Asistencial</a></li>
+                        <li><a href="../ayudas/ingreso-minimo-vital.html"><i class="fas fa-home" style="margin-right: 8px;"></i>Ingreso Mínimo Vital</a></li>
+                        <li><a href="../pensiones/"><i class="fas fa-user-shield" style="margin-right: 8px;"></i>Pensiones</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Enlaces Oficiales</h4>
+                    <h4>Trámites Útiles</h4>
                     <ul>
-                        <li><a href="https://www.sepe.es" target="_blank">SEPE Oficial</a></li>
-                        <li><a href="https://sede.sepe.gob.es" target="_blank">Sede Electrónica</a></li>
-                        <li><a href="tel:919267970">Teléfono: 919 26 79 70</a></li>
+                        <li><a href="../cita-previa/"><i class="fas fa-calendar-check" style="margin-right: 8px;"></i>Cita Previa</a></li>
+                        <li><a href="../tramites/demanda-empleo.html"><i class="fas fa-file-alt" style="margin-right: 8px;"></i>Demanda de Empleo</a></li>
+                        <li><a href="../tramites/certificados.html"><i class="fas fa-certificate" style="margin-right: 8px;"></i>Certificados</a></li>
+                        <li><a href="../tramites/renovar-demanda.html"><i class="fas fa-redo" style="margin-right: 8px;"></i>Renovar Demanda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información Legal</h4>
+                    <ul>
+                        <li><a href="../legal/aviso-legal.html"><i class="fas fa-gavel" style="margin-right: 8px;"></i>Aviso Legal</a></li>
+                        <li><a href="../legal/politica-privacidad.html"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i>Política de Privacidad</a></li>
+                        <li><a href="../legal/cookies.html"><i class="fas fa-cookie-bite" style="margin-right: 8px;"></i>Política de Cookies</a></li>
+                        <li><a href="../contacto.html"><i class="fas fa-envelope" style="margin-right: 8px;"></i>Contacto</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 InfoSEPE. Portal informativo no oficial sobre subsidios por desempleo.</p>
+                <div class="footer-info">
+                    <p>&copy; 2025 InfoSEPE. Portal informativo no oficial sobre subsidios SEPE.</p>
+                    <p class="footer-disclaimer">
+                        Portal informativo no oficial sobre subsidios por desempleo.
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Banner de Cookies -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4>🍪 Utilizamos cookies</h4>
+                <p>Usamos cookies propias y de terceros para mejorar tu experiencia. Al continuar navegando, aceptas su uso.</p>
+            </div>
+            <div class="cookie-actions">
+                <button id="acceptCookies" class="btn btn-primary btn-small">Aceptar todas</button>
+                <button id="configureCookies" class="btn btn-ghost btn-small">Configurar</button>
+                <a href="../legal/cookies.html" class="cookie-link">Más información</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script>
         let calculadoraUsada = false;
         let tiempoEnPagina = 0;
@@ -525,7 +797,7 @@
                 card.classList.remove('selected');
             });
             document.getElementById(`card-${tipo}`).classList.add('selected');
-            trackEvent('subsidio-seleccionado', tipo);
+            trackEvent('subsidio-seleccionado', { tipo: tipo });
         }
         
         function calcularElegibilidad(event) {
@@ -538,13 +810,19 @@
             const situacionFamiliar = document.getElementById('situacionFamiliar').value;
             
             if (!edad || !situacionFamiliar) {
-                alert('Por favor, completa todos los campos obligatorios');
+                showNotification('Por favor, completa todos los campos obligatorios', 'warning');
                 return false;
             }
             
             const subsidios = calcularSubsidiosDisponibles(edad, mesesCotizados, ingresos, situacionFamiliar);
             mostrarResultados(subsidios);
-            trackEvent('calculadora-subsidios-usada');
+            trackEvent('calculadora-subsidios-usada', { 
+                edad: edad,
+                meses_cotizados: mesesCotizados,
+                ingresos: ingresos,
+                situacion: situacionFamiliar,
+                subsidios_disponibles: subsidios.length
+            });
             return false;
         }
         
@@ -560,7 +838,8 @@
                     cuantia: '463,21€',
                     duracion: 'Hasta jubilación',
                     motivo: 'Tienes 52+ años y 15+ años cotizados',
-                    color: '#8b5cf6'
+                    color: '#8b5cf6',
+                    url: 'mayores-52.html'
                 });
             }
             
@@ -570,18 +849,32 @@
                     cuantia: '463,21€',
                     duracion: '6 meses (prorrogable)',
                     motivo: 'Tienes 45+ años y cumples requisitos',
-                    color: '#3b82f6'
+                    color: '#3b82f6',
+                    url: 'agotamiento.html'
                 });
             }
             
             if (mesesCotizados >= 3 && mesesCotizados <= 12 && cumpleLimite && 
-                ['conyuge', 'hijos', 'familia_numerosa'].includes(situacionFamiliar)) {
+                ['conyuge', 'hijos', 'familia_numerosa', 'monoparental'].includes(situacionFamiliar)) {
                 subsidios.push({
                     tipo: 'Subsidio Insuficiencia Cotización',
                     cuantia: '463,21€',
                     duracion: '6 meses',
                     motivo: 'Tienes 3-12 meses cotizados y cargas familiares',
-                    color: '#f59e0b'
+                    color: '#f59e0b',
+                    url: 'agotamiento.html'
+                });
+            }
+            
+            // RAI - condiciones especiales
+            if (edad >= 45 && cumpleLimite) {
+                subsidios.push({
+                    tipo: 'Renta Activa de Inserción (RAI)',
+                    cuantia: '463,21€',
+                    duracion: '11 meses',
+                    motivo: 'Colectivos en especial situación de necesidad',
+                    color: '#10b981',
+                    url: 'rai.html'
                 });
             }
             
@@ -593,273 +886,155 @@
             
             if (subsidios.length === 0) {
                 container.innerHTML = `
-                    <div style="background: #fee2e2; padding: 2rem; border-radius: 8px; text-align: center;">
-                        <h4 style="color: #dc2626; margin-bottom: 1rem;">No cumples requisitos actuales</h4>
-                        <p>Posibles motivos: superas límite de rentas, edad insuficiente o falta documentación</p>
-                        <button onclick="solicitarAsesoria()" style="background: #dc2626; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; margin-top: 1rem;">Consulta Gratuita</button>
+                    <div class="resultado-negativo">
+                        <div class="resultado-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <h4>No cumples requisitos actuales</h4>
+                        <p>Posibles motivos: superas límite de rentas, edad insuficiente o falta documentación específica</p>
+                        <div class="resultado-actions">
+                            <a href="../cita-previa/" class="btn btn-primary">
+                                <i class="fas fa-calendar-check"></i>
+                                Consulta Gratuita
+                            </a>
+                            <a href="../prestaciones/calculadora.html" class="btn btn-ghost">
+                                <i class="fas fa-calculator"></i>
+                                Calcular Prestación
+                            </a>
+                        </div>
                     </div>
                 `;
             } else {
-                let html = `<h4 style="color: #10b981; text-align: center; margin-bottom: 2rem;">🎉 ¡Puedes solicitar ${subsidios.length} subsidio${subsidios.length > 1 ? 's' : ''}!</h4>`;
+                let html = `
+                    <div class="resultado-positivo">
+                        <div class="resultado-header">
+                            <div class="resultado-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>¡Puedes solicitar ${subsidios.length} subsidio${subsidios.length > 1 ? 's' : ''}!</h4>
+                            <p>Basado en la información proporcionada, estos son los subsidios disponibles:</p>
+                        </div>
+                        
+                        <div class="subsidios-disponibles">
+                `;
                 
                 subsidios.forEach(subsidio => {
                     html += `
-                        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 5px solid ${subsidio.color};">
-                            <h5 style="margin-bottom: 0.5rem; color: ${subsidio.color};">${subsidio.tipo}</h5>
-                            <p style="margin-bottom: 1rem; color: #6b7280;">${subsidio.motivo}</p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                                <div><strong>Cuantía:</strong> ${subsidio.cuantia}</div>
-                                <div><strong>Duración:</strong> ${subsidio.duracion}</div>
+                        <div class="subsidio-disponible" style="border-left: 4px solid ${subsidio.color}">
+                            <div class="subsidio-info">
+                                <h5>${subsidio.tipo}</h5>
+                                <div class="subsidio-detalles">
+                                    <span class="subsidio-cuantia">${subsidio.cuantia}</span>
+                                    <span class="subsidio-duracion">${subsidio.duracion}</span>
+                                </div>
+                                <p class="subsidio-motivo">${subsidio.motivo}</p>
                             </div>
-                            <button onclick="solicitarSubsidio()" style="background: ${subsidio.color}; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; width: 100%;">Solicitar ${subsidio.tipo}</button>
+                            <div class="subsidio-acciones">
+                                <a href="${subsidio.url}" class="btn btn-primary btn-small">
+                                    <i class="fas fa-info-circle"></i>
+                                    Más info
+                                </a>
+                                <a href="https://sede.sepe.gob.es" target="_blank" class="btn btn-ghost btn-small">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Solicitar
+                                </a>
+                            </div>
                         </div>
                     `;
                 });
+                
+                html += `
+                        </div>
+                        
+                        <div class="resultado-disclaimer">
+                            <p><strong>Importante:</strong> Esta es una estimación orientativa. Los requisitos reales pueden variar según tu situación específica. Te recomendamos consultar con el SEPE para confirmación oficial.</p>
+                        </div>
+                    </div>
+                `;
                 
                 container.innerHTML = html;
             }
             
             container.style.display = 'block';
+            container.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('i');
+
+        // FAQ functionality
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('i');
             
-            document.querySelectorAll('.faq-answer.active').forEach(faq => {
-                if (faq !== answer) {
-                    faq.classList.remove('active');
-                    faq.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
-                }
+            const isOpen = faqItem.classList.contains('active');
+            
+            // Cerrar todas las FAQ
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').style.maxHeight = '0';
+                item.querySelector('.faq-question i').classList.remove('fa-chevron-up');
+                item.querySelector('.faq-question i').classList.add('fa-chevron-down');
             });
             
-            const isOpening = !answer.classList.contains('active');
-            answer.classList.toggle('active');
-            icon.style.transform = isOpening ? 'rotate(180deg)' : 'rotate(0deg)';
-            
-            if (isOpening) {
-                trackEvent('faq-abierta', element.querySelector('span').textContent.substring(0, 50));
+            // Abrir la FAQ actual si no estaba abierta
+            if (!isOpen) {
+                faqItem.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
             }
-        }
-        
-        function solicitarSubsidio() {
-            trackEvent('solicitar-subsidio');
-            const mensaje = `🌐 REDIRECCIÓN AL SEPE OFICIAL
-
-📍 Destino: sede.sepe.gob.es
-🔐 Necesitas: Certificado digital o cl@ve PIN
-
-📋 Documentos:
-• DNI/NIE en vigor
-• Vida laboral actualizada
-• Declaración de rentas familiares
-• Certificado de empadronamiento
-
-⏰ Duración: 15-20 minutos
-🎯 Disponible: 24/7
-
-¿Continuar al sitio oficial?`;
-
-            if (confirm(mensaje)) {
-                window.open('https://sede.sepe.gob.es', '_blank');
-            }
-        }
-        
-        function solicitarAsesoria() {
-            trackEvent('solicitar-asesoria');
-            alert(`📞 CONSULTA GRATUITA
-
-🕒 Horario: Lunes a Viernes 9:00-19:00h
-📞 Teléfono: 900 123 456
-💬 WhatsApp: 600 123 456
-📧 Email: subsidios@infosepe.com
-
-✅ Servicios incluidos:
-• Análisis personalizado
-• Verificación de requisitos
-• Ayuda con documentación
-• Seguimiento del expediente
-
-¿Te gustaría agendar una consulta?`);
-        }
-        
-        function suscribirNewsletter(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
             
-            if (email && validarEmail(email)) {
-                alert(`🎉 ¡Suscripción confirmada!
-
-📧 Recibirás:
-• Cambios en requisitos de subsidios
-• Nuevas convocatorias
-• Consejos para optimizar solicitudes
-• Casos de éxito
-
-Gracias por confiar en InfoSEPE.`);
-                event.target.reset();
-                trackEvent('newsletter-suscripcion', email);
-            } else {
-                alert('❌ Email no válido');
-            }
+            trackEvent('faq_clicked', { question: button.textContent.trim() });
         }
-        
-        function validarEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-        
-        function trackEvent(action, label = '') {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', action, {
-                    'event_category': 'Subsidios SEPE',
-                    'event_label': label
-                });
-            }
-            console.log(`🎯 Evento: ${action}`, label);
-        }
-        
-        function setupSearch() {
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
-            
-            const realizarBusqueda = (query) => {
-                if (!query.trim()) return;
-                
-                alert(`🔍 Buscando: "${query}"
 
-📄 Contenido encontrado:
-• Calculadora de elegibilidad
-• Comparativa de subsidios
-• Requisitos detallados
-• FAQ completa
-• Proceso de solicitud
-
-Usa el selector y calculadora para información personalizada.`);
-                
-                trackEvent('busqueda-subsidios', query);
-            };
-            
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') realizarBusqueda(searchInput.value);
-            });
-            
-            searchBtn.addEventListener('click', () => {
-                realizarBusqueda(searchInput.value);
-            });
-        }
-        
-        function mostrarNotificacion(mensaje, tipo = 'info') {
-            const colores = { 'info': '#8b5cf6', 'success': '#10b981', 'warning': '#f59e0b' };
-            const iconos = { 'info': '💡', 'success': '✅', 'warning': '⚠️' };
-
-            const notificacion = document.createElement('div');
-            notificacion.style.cssText = `
-                position: fixed; top: 20px; right: 20px;
-                background: ${colores[tipo]}; color: white;
-                padding: 1rem 1.5rem; border-radius: 8px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-                z-index: 10000; max-width: 350px;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-                cursor: pointer; font-size: 0.9rem;
-            `;
-            
-            notificacion.innerHTML = `
-                <div style="display: flex; align-items: flex-start; gap: 8px;">
-                    <span>${iconos[tipo]}</span>
-                    <span style="flex: 1;">${mensaje}</span>
-                    <span onclick="this.parentElement.parentElement.remove()" style="cursor: pointer;">&times;</span>
-                </div>
-            `;
-            
-            notificacion.addEventListener('click', function() {
-                this.style.transform = 'translateX(100%)';
-                setTimeout(() => this.remove(), 300);
-            });
-            
-            document.body.appendChild(notificacion);
-            setTimeout(() => notificacion.style.transform = 'translateX(0)', 100);
-            setTimeout(() => {
-                if (notificacion.parentNode) {
-                    notificacion.style.transform = 'translateX(100%)';
-                    setTimeout(() => notificacion.remove(), 300);
-                }
-            }, 6000);
-        }
-        
-        // Inicialización
+        // Inicialización al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
-            setupSearch();
-            trackEvent('pagina-cargada');
+            // Inicializar banner de cookies
+            initCookieBanner();
             
-            const esMobile = window.innerWidth <= 768;
-            trackEvent('dispositivo', esMobile ? 'mobile' : 'desktop');
+            // Tracking de tiempo en página
+            let startTime = Date.now();
+            let hasUsedCalculator = false;
             
-            setInterval(() => tiempoEnPagina++, 1000);
+            // Event listeners para formulario
+            document.getElementById('edad').addEventListener('input', function() {
+                if (this.value && !hasUsedCalculator) {
+                    trackEvent('calculator_started');
+                    hasUsedCalculator = true;
+                }
+            });
             
-            // Animaciones
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
+            // Tracking de scroll
+            let maxScroll = 0;
+            window.addEventListener('scroll', throttle(function() {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                }
+            }, 1000));
+            
+            // Tracking antes de salir
+            window.addEventListener('beforeunload', function() {
+                const timeSpent = Math.round((Date.now() - startTime) / 1000);
+                trackEvent('page_view_complete', { 
+                    page: 'subsidios',
+                    time_seconds: timeSpent,
+                    max_scroll: maxScroll,
+                    calculator_used: calculadoraUsada,
+                    device: window.innerWidth < 768 ? 'mobile' : 'desktop' 
                 });
-            }, { threshold: 0.1 });
-            
-            document.querySelectorAll('.subsidio-card, .faq-item').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
             });
             
-            // Notificaciones contextuales
-            setTimeout(() => {
-                if (tiempoEnPagina >= 30) {
-                    mostrarNotificacion('💡 Usa el selector para encontrar tu subsidio ideal', 'info');
-                }
-            }, 30000);
-            
-            setTimeout(() => {
-                if (tiempoEnPagina >= 60 && !calculadoraUsada) {
-                    mostrarNotificacion('📊 Prueba la calculadora para ver qué subsidios puedes solicitar', 'success');
-                }
-            }, 60000);
-            
-            // Exit intent
-            let exitIntentShown = false;
-            document.addEventListener('mouseleave', function(e) {
-                if (e.clientY <= 0 && !calculadoraUsada && !exitIntentShown && tiempoEnPagina > 25) {
-                    exitIntentShown = true;
-                    setTimeout(() => {
-                        const respuesta = confirm(`⚠️ ¡ESPERA! ¿Te vas sin saber qué subsidios puedes solicitar?
+            console.log('🚀 Portal de Subsidios cargado correctamente');
+        });
 
-🎯 EN 3 MINUTOS DESCUBRIRÁS:
-✅ Qué subsidios puedes solicitar
-✅ Cuánto dinero recibirás (463,21€/mes)
-✅ Durante cuánto tiempo
-✅ Qué documentos necesitas
-
-💰 El subsidio mayores 52 años dura hasta la jubilación
-
-👆 Usa la calculadora GRATIS`);
-                        
-                        if (respuesta) {
-                            document.querySelector('.calculator-widget').scrollIntoView({ 
-                                behavior: 'smooth', block: 'center' 
-                            });
-                            document.getElementById('edad').focus();
-                            trackEvent('exit-intent-retenido');
-                        } else {
-                            trackEvent('exit-intent-perdido');
-                        }
-                    }, 500);
-                }
+        // Manejo de errores global
+        window.addEventListener('error', function(e) {
+            console.error('Error capturado:', e.error);
+            trackEvent('javascript_error', { 
+                message: e.message,
+                filename: e.filename,
+                lineno: e.lineno,
+                page: 'subsidios'
             });
-            
-            console.log('✅ Portal de subsidios SEPE inicializado correctamente');
         });
     </script>
-</body>
-</html>
